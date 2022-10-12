@@ -21,3 +21,32 @@
 .pop1:hover{
  background-color: rgb(237, 237, 237);
 }
+
+.explore3{
+    font-style: italic;
+    cursor: pointer;
+    font-size: 11px;
+
+}
+
+.explore4{
+    font-style: italic;
+    cursor: pointer;
+    font-size: 11px;
+
+}
+.drawer{
+    font-weight: 600;
+}
+.drawercontent{
+    overflow-y: hidden;
+}
+.header{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    font-size: 18px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -8px;
+}
