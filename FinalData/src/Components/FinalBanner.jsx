@@ -38,21 +38,20 @@ function FinalBanner() {
     };
     return (
 
-        <Box className="fiximg" style={{ marginTop: "20px" }} height={{ base: '130px', md: '250px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
+        <Box className="fiximg" style={{ marginTop: "20px" }} height={{ base: '130px', md: '220px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
             <Slider  {...settings}
-
             >
                 <div>
-                    <Img height={{ base: '130px', md: '250px', lg: '300px' }} src="https://raw.githubusercontent.com/jigar-sable/flipkart-mern/master/frontend/src/assets/images/Banners/fashion-sale.webp" alt="" />
+                    <Img height={{ base: '130px', md: '220px', lg: '300px' }} src="https://raw.githubusercontent.com/jigar-sable/flipkart-mern/master/frontend/src/assets/images/Banners/fashion-sale.webp" alt="" />
                 </div>
                 <div>
-                    <Img height={{ base: '130px', md: '250px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/fashionsale.jpg?raw=true" alt="" />
+                    <Img height={{ base: '130px', md: '220px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/fashionsale.jpg?raw=true" alt="" />
                 </div>
                 <div>
-                    <Img height={{ base: '130px', md: '250px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/gadget-sale.jpg?raw=true" alt="" />
+                    <Img height={{ base: '130px', md: '220px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/gadget-sale.jpg?raw=true" alt="" />
                 </div>
                 <div>
-                    <Img height={{ base: '130px', md: '250px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/kitchen-sale.jpg?raw=true" alt="" />
+                    <Img height={{ base: '130px', md: '220px', lg: '300px' }} src="https://github.com/jigar-sable/flipkart-mern/blob/master/frontend/src/assets/images/Banners/kitchen-sale.jpg?raw=true" alt="" />
                 </div>
 
             </Slider>
