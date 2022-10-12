@@ -10,6 +10,7 @@ function Fashion() {
     const [fashion, setFashion] = useState([]);
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
+    const[category, setCategory]=useState({});
     const PreviousBtn = (props) => {
         const { className, onClick } = props;
         return (
@@ -72,8 +73,11 @@ function Fashion() {
     }
     useEffect(() => {
         getFashion();
-    }, [])
+         setCategory(fashion[0])
 
+    }, [])
+     console.log( category ,"log")
+     
     if (loading) {
         return (
             <>
@@ -111,7 +115,7 @@ function Fashion() {
                     {fashion.map(item => <Box  m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
                         <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
-
+                       
                         <Text color={"green"}>₹ {item.new_price}</Text>
                         <Text > {item.brand}</Text>
                     </Box>)}
@@ -128,7 +132,7 @@ function Fashion() {
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>
-                        <Text > {item.brand}</Text>
+                        <Text pb="5px" > {item.brand}</Text>
                     </Box>)}
                     
                 </Box>

@@ -132,10 +132,10 @@ function Mobile() {
                     
                     {mobile.map(item => <Box borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
                         <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
-                        <Text fontWeight="700"> {item.description}</Text>
+                        <Text   maxHeight="40px" fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>
-                        <Text > {item.brand}</Text>
+                        <Text pb="5px" > {item.brand}</Text>
                     </Box>)}
                     
                 </Box>

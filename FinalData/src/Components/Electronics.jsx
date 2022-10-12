@@ -138,7 +138,7 @@ function Electronics() {
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>
-                        <Text > {item.brand}</Text>
+                        <Text pb="5px" > {item.brand}</Text>
                     </Box>)}
                     
                 </Box>

@@ -7,6 +7,7 @@ import Groceries from "./Components/Groceries";
 import Mobile from "./Components/Mobile";
 import TopOffers from "./Components/TopOffers";
 import Footer from "./Components/Footer";
+import BeforeFooter from "./Components/BeforeFooter";
 
 function App() {
   const containerStyles = {
@@ -24,6 +25,7 @@ function App() {
       <Electronics />
      <Groceries/>
       <Mobile />
+      <BeforeFooter/>
     <Footer/>
     </div>
   );
