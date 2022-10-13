@@ -11,7 +11,7 @@ function App() {
     <Navbar/>
     
       <div></div>
-     {/* <Categories/> */}
+     <Categories/>
     </div>
   );
 }

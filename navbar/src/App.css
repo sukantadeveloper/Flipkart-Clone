@@ -50,3 +50,24 @@
     margin-right: -20px;
     margin-top: -8px;
 }
+.whole{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 40px;
+}
+.secnav{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+  header{
+    font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.shade{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
