@@ -8,7 +8,8 @@ import Mobile from "./Components/Mobile";
 import TopOffers from "./Components/TopOffers";
 import Footer from "./Components/Footer";
 import BeforeFooter from "./Components/BeforeFooter";
-
+import OfferBanner from "./Components/OfferBanner";
+import BannerOffer from "./Components/BannerOffer";
 function App() {
   const containerStyles = {
     width: "100%",
@@ -18,6 +19,8 @@ function App() {
   return (
     <div className="App">
        <FinalBanner/>
+       <OfferBanner/>
+       <BannerOffer/>
       <Fashion/>
       <Bestselling/> 
      <Appliances/> 
