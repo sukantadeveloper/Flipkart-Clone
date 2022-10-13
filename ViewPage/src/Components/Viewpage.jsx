@@ -36,7 +36,7 @@ function Viewpage() {
 
             <HStack p="10px" display={{ base: 'block', md: 'flex', lg: 'flex' }}>
                 {viewData.map((item) => (
-                    <Box w={{ base: '100%', md: '40%', lg: '40%' }}  h="100vh" position={"sticky"}>
+                    <Box w={{ base: '100%', md: '40%', lg: '40%' }} h="100vh" position={"sticky"}>
                         <Box display={"flex"} p="15px">
                             <Box w="15%"   > <Img h="20%" display={{ base: 'none', md: 'block', lg: 'block' }} border={"2px solid #2974F1"} src={item.image} alt="smallImg" /> </Box>
                             <Box w="79%">
@@ -45,25 +45,27 @@ function Viewpage() {
                                         alt: 'Wristwatch by Ted Baker London',
                                         isFluidWidth: true,
                                         src: `${item.image}`,
-                                        border:"1px solid blue"
+                                        border: "1px solid blue"
                                     },
                                     largeImage: {
                                         src: `${item.image}`,
                                         width: 1000,
                                         height: 1800,
-                                        border:"1px solid blue"
+                                        border: "1px solid blue"
                                     },
                                     enlargedImageContainerDimensions: {
                                         width: '200%',
                                         height: '100%',
-                                        border:"1px solid blue"
+                                        border: "1px solid blue"
                                     }
-                                }} />
+                                }}
+
+                                />
 
                             </Box>
                             <Box w="6%" bg="white" marginLeft="15px" > <FaHeart color="silver" size="25px" /> </Box>
                         </Box>
-                        <Flex alignContent={"center"} justifyContent="space-around" w="100%" m="auto" color={"white"}  >
+                        <Flex display={{ base: 'none', md: 'block', lg: 'block' }} alignContent={"center"} justifyContent="space-around" w="100%" m="auto" color={"white"}  >
 
                             <Button alignItems={"center"}
                                 size='md'
@@ -73,6 +75,7 @@ function Viewpage() {
                                 rounded='1px'
                                 fontSize={{ base: '10px', md: '13px', lg: '18px' }}
                                 _hover={{ backgroundColor: "#FE9E00" }}
+                                mr="5px"
                             > <HiShoppingCart />
                                 ADD TO CART
                             </Button><Button
@@ -89,11 +92,36 @@ function Viewpage() {
                             </Button>
                         </Flex>
 
-
+                        <Flex  zIndex={"1"} display={{ base: 'block', md: 'none', lg: 'none' }} position={"fixed"} bottom="0" alignContent={"center"} justifyContent="space-around" w="100%" m="auto" color={"white"}  bg="white">
+                            <Button alignItems={"center"}
+                                size='md'
+                                height="50px"
+                                width='48%'
+                                bg="white"
+                                rounded='1px'
+                                color={"black"}
+                                fontSize="15px"
+                                _hover={{ backgroundColor: "#FE9E00" }}
+                            > 
+                                ADD TO CART
+                            </Button><Button
+                                size='md'
+                                height="50px"
+                                width='48%'
+                                bg="#FB641B"
+                                rounded='1px'
+                                fontSize="15px"
+                                _hover={{ backgroundColor: "#FB641B" }}
+                            >
+                                
+                                BUY NOW
+                            </Button>
+                        </Flex>
                     </Box>
+
                 ))}
                 {viewData.map((item) => (
-                    <Box w={{ base: '100%', md: '60%', lg: '60%' }} h="100vh" overflow="auto" pl="2%" className='example'> 
+                    <Box w={{ base: '100%', md: '60%', lg: '60%' }} pt="-50px" h="100vh" overflow="auto" pl="2%" className='example'>
                         <Box > <Text p="15px" display="flex" alignItems="center" float="right"> <IoMdShareAlt /> Share</Text></Box>
                         <Box> <Text color={"silver"} > {item.brand} </Text></Box>
                         <Text> {item.description}</Text>
@@ -109,7 +137,7 @@ function Viewpage() {
 
                         <Text> Available offers</Text>
                         <Box fontSize={{ base: '8px', md: '10px', lg: '15px' }} mt="10px" mb="5px" display="flex" alignItems="center" >  <Img w="18px" mr="5px" src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" alt="small copoun" />Special PriceGet extra 22% off (price inclusive of cashback/coupon) <Text color={"#2974F1"} pl="5px"> T&C</Text> </Box>
-                        <Box  fontSize={{ base: '8px', md: '10px', lg: '15px' }} display={"flex"} mb="5px" alignItems="center" > <Img w="18px" mr="5px" src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" alt="small copoun" />Combo OfferBuy 2 items save 5%; Buy 3 or more save 10% <Text color={"#2974F1"} pl="10px"> See all productsT&C</Text> </Box>
+                        <Box fontSize={{ base: '8px', md: '10px', lg: '15px' }} display={"flex"} mb="5px" alignItems="center" > <Img w="18px" mr="5px" src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" alt="small copoun" />Combo OfferBuy 2 items save 5%; Buy 3 or more save 10% <Text color={"#2974F1"} pl="10px"> See all productsT&C</Text> </Box>
                         <Box fontSize={{ base: '8px', md: '10px', lg: '15px' }} display={"flex"} mb="5px" alignItems="center"> <Img w="18px" mr="5px" src="https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" alt="small copoun" /> Bank OfferTest - 10% off on HDFC Bank Cardless EMI, up to ₹500. On orders of ₹3000 and above</Box>
                         <br />
                         <br />
@@ -118,7 +146,7 @@ function Viewpage() {
                                 <Box display={"flex"} mb="15px" alignItems="center"> <Img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZWxsaXBzZSBjeD0iOSIgY3k9IjE0LjQ3OCIgZmlsbD0iI0ZGRTExQiIgcng9IjkiIHJ5PSIzLjUyMiIvPjxwYXRoIGZpbGw9IiMyODc0RjAiIGQ9Ik04LjYwOSA3LjAxYy0xLjA4IDAtMS45NTctLjgyNi0xLjk1Ny0xLjg0NSAwLS40ODkuMjA2LS45NTguNTczLTEuMzA0YTIuMDIgMi4wMiAwIDAgMSAxLjM4NC0uNTRjMS4wOCAwIDEuOTU2LjgyNSAxLjk1NiAxLjg0NCAwIC40OS0uMjA2Ljk1OS0uNTczIDEuMzA1cy0uODY0LjU0LTEuMzgzLjU0ek0zLjEzIDUuMTY1YzAgMy44NzQgNS40NzkgOC45MjIgNS40NzkgOC45MjJzNS40NzgtNS4wNDggNS40NzgtOC45MjJDMTQuMDg3IDIuMzEzIDExLjYzNCAwIDguNjA5IDAgNS41ODMgMCAzLjEzIDIuMzEzIDMuMTMgNS4xNjV6Ii8+PC9nPjwvc3ZnPg==" alt="" />
                                     <Text> Deliver to</Text>
                                 </Box>
-                                <Box display="flex" alignItems={"center"} borderBottom="1px solid #2974F1"> <Input fontSize={{ base: '8px', md: '12px', lg: '15px' }} zIndex={"-1"} variant='unstyled' placeholder='Enter Delivery pincode' type="text"/> Check </Box>
+                                <Box display="flex" alignItems={"center"} borderBottom="1px solid #2974F1"> <Input fontSize={{ base: '8px', md: '12px', lg: '15px' }} zIndex={"-1"} variant='unstyled' placeholder='Enter Delivery pincode' type="text" /> Check </Box>
                             </Box>
                             <Box>
                                 <Text display={"flex"} mb="15px" alignItems="center"> <MdRestartAlt size="15px" color='#2974F1' /> 10 Days Return Policy</Text>
@@ -184,12 +212,12 @@ function Viewpage() {
                             </AccordionItem>
                         </Accordion>
 
-                        <Flex alignItems="center" justifyContent={"space-between"} pt="10px"> 
-                            <Box fontSize={{ base: '8px', md: '15px', lg: '25px' }}> <Text  fontWeight={"500"}>  Ratings & Reviews</Text></Box>
+                        <Flex alignItems="center" justifyContent={"space-between"} pt="10px">
+                            <Box fontSize={{ base: '8px', md: '15px', lg: '25px' }}> <Text fontWeight={"500"}>  Ratings & Reviews</Text></Box>
                             <Box fontSize={{ base: '10px', md: '11px', lg: '15px' }} mb="15px" color={"#868786"} mt="8px" display="flex" alignItems="center" > <Box bg="green" color={"white"} pl="5px" pr="5px" display="flex" alignItems="center" borderRadius={"25px"} > {item.stars} <AiFillStar /></Box>
-                           <Text pl="2px" pr="2px"> {item.ratings}</Text> <Text> and </Text> <Text pl="2px" pr="2px"> {item.reviews}</Text> 
-                        </Box>
-                            <Box>  <Button bg='#2974F1' color={"white"} fontSize={{ base: '8px', md: '11px', lg: '15px' }} h={{ base: '18px', md: '30px', lg: '40px' }} _hover={{bg:"#2974F1"}}> Rate Product</Button></Box>
+                                <Text pl="2px" pr="2px"> {item.ratings}</Text> <Text> and </Text> <Text pl="2px" pr="2px"> {item.reviews}</Text>
+                            </Box>
+                            <Box>  <Button bg='#2974F1' color={"white"} fontSize={{ base: '8px', md: '11px', lg: '15px' }} h={{ base: '18px', md: '30px', lg: '40px' }} _hover={{ bg: "#2974F1" }}> Rate Product</Button></Box>
                         </Flex>
                     </Box>
                 ))}
