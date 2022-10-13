@@ -8,7 +8,7 @@ import { HiCurrencyRupee } from 'react-icons/hi'
 import { AiFillStar } from 'react-icons/ai'
 import { BsLightningCharge } from 'react-icons/bs'
 import ReactImageMagnify from 'react-image-magnify'
-import './App.css'
+import './viewPage.css'
 function Viewpage() {
     const viewData = [
         {
