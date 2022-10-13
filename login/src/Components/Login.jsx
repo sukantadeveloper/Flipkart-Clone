@@ -35,7 +35,14 @@ export function Login() {
     const[error, setError] = useState({});
     const[isSubmit, setIsSubmit] = useState(false);
     const [isAuth, setIsAuth] = useState(false);
- 
+    const [isCheck, setIscheck] = useState(false);
+
+
+
+
+
+
+
     const handleChange =(inp)=>{
       const {name,value} = inp.target;
       setInputValues({...inputValues, [name] : value});
@@ -47,11 +54,16 @@ export function Login() {
         .then((res) => res.json()).then((res)=>{
           res.map((el)=>{
             if(el.email==inputValues.email && el.password==inputValues.password){
-          setIsAuth(true);
+              if(inputValues){
+                setIsAuth(true);
+              }
+             
             }
+          
           })
         })
     };
+  
   
     useEffect(()=>{
      
@@ -68,7 +80,7 @@ export function Login() {
         e.preventDefault();
         setError(validate(inputValues));
         setIsSubmit(true);
-
+    
     }
 
     const validate =(values)=>{
@@ -123,17 +135,15 @@ export function Login() {
                 (isAuth ? (<Alert width={150} marginBottom={2}  height={6} status='success'>
                 <AlertIcon height={4} />
                 <AlertTitle>Logged in</AlertTitle>
-              </Alert>) : 
-              (<Alert width={250} height={6} status='error'>
-  <AlertIcon height={4} />
-  <AlertTitle>Incorrect Details</AlertTitle>
-</Alert>)
+              </Alert>) :  ""
               )}
+              
+               
                 <FormLabel>Email address</FormLabel>
                <Input color="black" marginTop="-3" name="email"  variant="flushed"  placeholder="Enter Email"  value={inputValues.email} onChange={handleChange}  />
                <Text color="red" fontSize='xs'>{error.email}</Text>
                <FormLabel marginTop="5">Password</FormLabel>
-              <Input color="black" marginTop="-3" name="password"  variant="flushed" placeholder="Enter Password" value={inputValues.password} onChange={handleChange} />
+              <Input color="black" marginTop="-3" name="password" type="password"  variant="flushed" placeholder="Enter Password" value={inputValues.password} onChange={handleChange} />
               <Text  color="red" fontSize='xs'>{error.password}</Text>
               <Text marginTop="5" fontSize='xs'>By continuing, you agree to Flipkart's <Link color="#2f74f0" href="">Terms of Use </Link>and <Link color="#2f74f0" href="">Privacy Policy.</Link></Text>
               

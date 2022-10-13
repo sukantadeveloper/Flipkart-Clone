@@ -1,0 +1,49 @@
+{
+  "Userdetails": [
+    {
+      "id": 1,
+      "email": "rajgupta09875@gmail.com",
+      "password": "123"
+    },
+    {
+      "email": "rajgupta0875@gmail.com",
+      "password": "1235555",
+      "id": 2
+    },
+    {
+      "email": "rajgupta0875@gmail.com",
+      "password": "1235555",
+      "id": 3
+    },
+    {
+      "email": "ra75@gmail.com",
+      "password": "1235555",
+      "id": 4
+    },
+    {
+      "email": "rajguptatttttttttttttt0875@gmail.com",
+      "password": "1235555",
+      "id": 5
+    },
+    {
+      "email": "rajguptatttttttttttttt0875@gmail.com",
+      "password": "1235555",
+      "id": 6
+    },
+    {
+      "email": "rajguptatttttttttttttt0875@gmail.com",
+      "password": "12355tttttttttt",
+      "id": 7
+    },
+    {
+      "email": "upta0875@gmail.com",
+      "password": "1235555",
+      "id": 8
+    },
+    {
+      "email": "raj75@gail.com",
+      "password": "123555nnnn",
+      "id": 9
+    }
+  ]
+}

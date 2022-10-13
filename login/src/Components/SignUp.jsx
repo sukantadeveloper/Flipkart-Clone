@@ -35,7 +35,7 @@ export function Signup() {
     const[inputValues, setInputValues] = useState(initialvalues);
     const[error, setError] = useState({});
     const[isSubmit, setIsSubmit] = useState(false);
-
+    const[isCheck, setIscheck] = useState(false);
     
  
     const handleChange =(inp)=>{
@@ -43,33 +43,60 @@ export function Signup() {
       setInputValues({...inputValues, [name] : value});
       console.log(inputValues);
     }
-     const handleSignup = (body) => {
-      fetch(`http://localhost:4000/Userdetails`, {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(() => setIsAuth(true))
-        .catch(() => setIsAuth(false));
-    };
+
+    const handleSignup = (body) => {
+
+     
+        fetch(`http://localhost:4000/Userdetails`)
+          .then((res) => res.json()).then((res)=>{
+            res.map((el)=>{
+              if(el.email==body.email){
+             setIscheck(true);
+          }
+            })
+          })
+
+      if(isCheck){
+        fetch(`http://localhost:4000/Userdetails`, {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+          .then(() => {setIsAuth(true)
+            return setIscheck(false);
+               }
+          )
+
+          .catch(() => setIsAuth(false));
+      };
+      }
+
+    
+
+
+   
+
   
+
     useEffect(()=>{
       if(Object.keys(error).length===0 && isSubmit){
            handleSignup(inputValues);
 
       }
+     
 
     },[error])
 
-
+   
 
     const handleSubmit =(e)=>{
         e.preventDefault();
         setError(validate(inputValues));
         setIsSubmit(true);
         setIsAuth(false)
+     
     }
 
     const validate =(values)=>{
@@ -118,15 +145,26 @@ export function Signup() {
                    
                <FormControl>
                {
+                (isCheck ? (<Alert width={250} marginBottom={2}  height={6} status='error'>
+                <AlertIcon height={4} />
+                <AlertTitle>Already exist</AlertTitle>
+              </Alert>) : (isAuth ? (<Alert width={250} marginBottom={2}  height={6} status='success'>
+                <AlertIcon height={4} />
+                <AlertTitle>SignUp Succesfully</AlertTitle>
+              </Alert>) : ""
+     
+              )
+     
+              )}
+            
+               {/* {
                 (isAuth ? (<Alert width={250} marginBottom={2}  height={6} status='success'>
                 <AlertIcon height={4} />
                 <AlertTitle>SignUp Succesfully</AlertTitle>
-              </Alert>) : 
-              (<Alert width={250} height={6} status='error'>
-  <AlertIcon height={4} />
-  <AlertTitle>Incorrect Details</AlertTitle>
-</Alert>)
-              )}
+              </Alert>) : ""
+     
+              )} */}
+            
                <FormLabel>Email address</FormLabel>
                <Input color="black" marginTop="-3" name="email"  variant="flushed"  placeholder="Enter Email"  value={inputValues.email} onChange={handleChange}  />
                <Text color="red" fontSize='xs'>{error.email}</Text>
