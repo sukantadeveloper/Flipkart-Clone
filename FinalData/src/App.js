@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import BeforeFooter from "./Components/BeforeFooter";
 import OfferBanner from "./Components/OfferBanner";
 import BannerOffer from "./Components/BannerOffer";
+import BannerOffer2 from "./Components/BannerOffer2";
 function App() {
   const containerStyles = {
     width: "100%",
@@ -24,6 +25,7 @@ function App() {
       <Fashion/>
       <Bestselling/> 
      <Appliances/> 
+     <BannerOffer2/>
       <TopOffers />
       <Electronics />
      <Groceries/>
