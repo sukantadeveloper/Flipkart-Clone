@@ -212,7 +212,7 @@ function Viewpage() {
                             </AccordionItem>
                         </Accordion>
 
-                        <Flex alignItems="center" justifyContent={"space-between"} pt="10px">
+                        <Flex alignItems="center" justifyContent={"space-between"} pt="10px" pb="50px">
                             <Box fontSize={{ base: '8px', md: '15px', lg: '25px' }}> <Text fontWeight={"500"}>  Ratings & Reviews</Text></Box>
                             <Box fontSize={{ base: '10px', md: '11px', lg: '15px' }} mb="15px" color={"#868786"} mt="8px" display="flex" alignItems="center" > <Box bg="green" color={"white"} pl="5px" pr="5px" display="flex" alignItems="center" borderRadius={"25px"} > {item.stars} <AiFillStar /></Box>
                                 <Text pl="2px" pr="2px"> {item.ratings}</Text> <Text> and </Text> <Text pl="2px" pr="2px"> {item.reviews}</Text>
