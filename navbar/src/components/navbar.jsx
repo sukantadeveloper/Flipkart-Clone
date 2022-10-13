@@ -69,7 +69,7 @@ const Navbar = () => {
 if(isLargerThan670){
   return (
     <div>
-      <Flex bg="#2874f0" h="56px" align="center">
+      <Flex bg="#2874f0" h="56px" align="center" position='fixed' w='100%'>
         <Spacer />
 
         <Box>
@@ -152,7 +152,7 @@ if(isLargerThan670){
               </Flex>
               <hr margin="0px" />
               <Flex h="49px" fontSize='14px' className="pop1">
-              <Center ml='10px'><HiUserCircle color="#2874f0" size="18px" /></Center> <Center ml='16px'>Flipkart Plus Zone</Center>
+              <Center ml='10px'><HiUserCircle color="#2874f0" size="18px" /></Center> <Center ml='16px'>My Profile</Center>
               </Flex>
               <hr />
               <Flex  className="pop1" h='49px' fontSize='14px'><Center ml='10px'><Image src={vikas}  alt="vikas"/></Center> <Center ml='16px'>Flipkart Plus Zone</Center></Flex>

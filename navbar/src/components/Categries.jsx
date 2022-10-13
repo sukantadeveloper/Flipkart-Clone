@@ -1,10 +1,51 @@
 import { Flex,Center,Popover,PopoverBody,PopoverContent,List,ListItem,PopoverTrigger } from "@chakra-ui/react"
-import {ChevronDownIcon} from "@chakra-ui/icons"
+import {ChevronDownIcon} from "@chakra-ui/icons";
+import { useMediaQuery } from '@chakra-ui/react';
+import {useEffect,useState} from "react";
+import React from "react";
+
 export const Categories=()=>{
+  
+   const [arr, setarr]=React.useState([]);
+   const [arra,setarra] =useState([]);
+   const [arrb,setarrb] =useState([]);
+   const [arrc,setarrc]=useState([]);
+   const [arrd ,setarrd]=useState([]);
+   const [arre,setarre]=useState([]);
+   const [arrf,setarrf] =useState([]);
+   const [arrg,setarrg]=useState([]);
+   const [arrh,setarrh]=useState([]);
+   const [arri,setarri]=useState([]);
+   const [arrj,setarrj]=useState([]);
+   const [arrk,setarrk]=useState([]);
+   const [arrl,setarrl]=useState([]);
+   const [arrm,setarrm]=useState([]);
+   
+   
+  const [isLargerThan670] = useMediaQuery('(min-width: 1000px)');
+
+  useEffect(()=>{
+    setarr(arr1);
+    setarra(arr2);
+    setarrb(arr3);
+    setarrc(arr4);
+    setarrd(arr5);
+    setarre(arr6);
+    setarrf(arr7);
+    setarrg(arr8);
+    setarrh(arr9);
+    setarri(arr10);
+    setarrj(arr11);
+    setarrk(arr12);
+    setarrl(arr13);
+    setarrm(arr14);
+  },[])
+
+  if(isLargerThan670){
     return(
 
         <>
-        <Flex justifyContent='space-around' className="whole">
+        <Flex justifyContent='space-around' className="whole" >
         <Popover trigger='hover' >
   <PopoverTrigger>
     <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>Electronics<ChevronDownIcon _hover={{ transform: "rotate(180deg)" }}/></Center>
@@ -81,14 +122,14 @@ export const Categories=()=>{
   <PopoverTrigger>
     <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>TVs & Appliances</Center>
   </PopoverTrigger>
-  <PopoverContent w='1100px'  >
+  <PopoverContent w='1200px'  >
   
    
  
     <PopoverBody display='flex' justifyContent="space-between">
    <List w='100%' pl='15px'>
-  <ListItem>Television</ListItem>
-  <ListItem>New Launches</ListItem>
+  {/* <ListItem>Television</ListItem> */}
+  {/* <ListItem>New Launches</ListItem>
   <ListItem>Smart & Ultra HD</ListItem>
   <ListItem>Top Brands</ListItem>
   <ListItem>Mi</ListItem>
@@ -100,11 +141,14 @@ export const Categories=()=>{
   <ListItem>LG</ListItem>
   <ListItem>realme</ListItem>
   <ListItem>Motorola</ListItem>
-  <ListItem>Shop by Screen Size</ListItem>
+  <ListItem>Shop by Screen Size</ListItem> */}
+  {arra.map((el)=>(
+    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+  ))}
 
 </List>
     <List w='100%' bg='gray.100' pl='15px' >
-  <ListItem>Washing Machine </ListItem>
+  {/* <ListItem>Washing Machine </ListItem>
   <ListItem>Fully Automatic Front Load</ListItem>
   <ListItem>Semi Automatic Top Load</ListItem>
   <ListItem>Fully Automatic Top Load</ListItem>
@@ -115,10 +159,13 @@ export const Categories=()=>{
   <ListItem>Shop By Brand</ListItem>
   <ListItem>LG</ListItem>
   <ListItem>Hitachi</ListItem>
-  <ListItem>Carrier</ListItem>
+  <ListItem>Carrier</ListItem> */}
+  {arrb.map(el=>(
+    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
          <List w='100%' pl='15px'>
-  <ListItem>Small Home Appliances</ListItem>
+  {/* <ListItem>Small Home Appliances</ListItem>
   <ListItem>Irons</ListItem>
   <ListItem>Water Purifiers</ListItem>
   <ListItem>Fans</ListItem>
@@ -132,21 +179,23 @@ export const Categories=()=>{
   <ListItem>Top Brands</ListItem>
   <ListItem>Livpure</ListItem>
   <ListItem>Philips</ListItem>
-  <ListItem>Bajaj</ListItem>
-</List><List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Buying Guides</ListItem>
-  <ListItem>Televisions</ListItem>
-  <ListItem>Washing Machines</ListItem>
-  <ListItem>Refrigerators</ListItem>
-  <ListItem>Air Conditioners</ListItem>
-  <ListItem>Water Purifiers</ListItem>
-  <ListItem>Air Purifiers</ListItem>
-  <ListItem>Chimneys</ListItem>
-  <ListItem>Water Geysers</ListItem>
-  <ListItem>New Launches</ListItem>
-  <ListItem>Coocaa Smart TVs</ListItem>
-  <ListItem>Nokia (55) 4k Android Tv</ListItem>
+  <ListItem>Bajaj</ListItem> */}
+  {arrc.map(el=>(
+    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+  ))}
+</List><List w='100%'  pl='15px'>
+  
+  {arrd.map(el=>(
+    <ListItem fontSize='14px' pb='10px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
+
+<List w="100%" pl='15px'>
+{arre.map(el=>(
+    <ListItem fontSize='14px' pb='10px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+</List>
+
     </PopoverBody>
   </PopoverContent>
 </Popover>
@@ -160,67 +209,37 @@ export const Categories=()=>{
    
  
     <PopoverBody display='flex' justifyContent="space-between">
-   <List w='100%'>
-  <ListItem>Footwear</ListItem>
-  <ListItem>Sports Shoes</ListItem>
-  <ListItem>Casual Shoes</ListItem>
-  <ListItem>Formal </ListItem>
-  <ListItem>Sandals & Floaters</ListItem>
-  <ListItem>Flip-Flops</ListItem>
-  <ListItem>Loafers</ListItem>
-  <ListItem>Boots</ListItem>
-  <ListItem>Running Shoes</ListItem>
-  <ListItem>Sneakers</ListItem>
-  <ListItem>Men's Grooming</ListItem>
-  <ListItem>Deodrants</ListItem>
-  <ListItem>Perfumes</ListItem>
-  <ListItem>Beard Care & Grooming</ListItem>
+   <List w='100%' >
+ 
+   {arrf.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+
 
 </List>
-    <List w='100%' bg='gray.100'>
-  <ListItem>Clothing </ListItem>
-  <ListItem>Top Wear</ListItem>
-  <ListItem>T-Shirts</ListItem>
-  <ListItem>Formal Shirts</ListItem>
-  <ListItem>Casual Shirts</ListItem>
-  <ListItem>Bottom Wear</ListItem>
-  <ListItem>Jeans</ListItem>
-  <ListItem>Casual Trousers</ListItem>
-  <ListItem>Formal Trousers</ListItem>
-  <ListItem>Track Pants</ListItem>
-  <ListItem>Shorts</ListItem>
-  <ListItem>Cargos</ListItem>
+    <List w='100%' bg='gray.100' pl='15px'>
+ 
+    {arrg.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
          <List w='100%'>
-  <ListItem>Winter Wear</ListItem>
-  <ListItem>SweatShirts</ListItem>
-  <ListItem>Jackets</ListItem>
-  <ListItem>Sweater</ListItem>
-  <ListItem>Tracksuits</ListItem>
-  <ListItem>Ethnic wear</ListItem>
-  <ListItem>Kurta</ListItem>
-  <ListItem>Ethnic Sets</ListItem>
-  <ListItem>Sherwanis</ListItem>
-  <ListItem>Ethnic Pyjama</ListItem>
-  <ListItem>Dhoti</ListItem>
-  <ListItem>Lungi</ListItem>
-  <ListItem>Innerwear & Loungewear</ListItem>
-  <ListItem>Briefs & Trunks</ListItem>
-  <ListItem>Vests</ListItem>
-</List><List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Watches</ListItem>
-  <ListItem>Fastrack</ListItem>
-  <ListItem>Casio</ListItem>
-  <ListItem>Titan</ListItem>
-  <ListItem>Fossil</ListItem>
-  <ListItem>Sonata</ListItem>
-  <ListItem>Accessories</ListItem>
-  <ListItem>Backpacks</ListItem>
-  <ListItem>Wallets</ListItem>
-  <ListItem>Belts</ListItem>
-  <ListItem>Sunglasses</ListItem>
-  <ListItem>Frames</ListItem>
+         {arrh.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+</List><List w='100%' bg='#f9f9f' >
+{arri.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+  
 </List>
+<List w='100%' bg='#f9f9f' >
+{arrj.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+  
+</List>
+
     </PopoverBody>
   </PopoverContent>
 </Popover>
@@ -234,53 +253,22 @@ export const Categories=()=>{
    
  
     <PopoverBody display='flex' justifyContent="space-between">
-   <List w='100%' pl='15px'>
-  <ListItem>Clothing</ListItem>
-  <ListItem>Women Western & Maternity Wear</ListItem>
-  <ListItem>Topwear</ListItem>
-  <ListItem>Dresses </ListItem>
-  <ListItem>Jeans</ListItem>
-  <ListItem>Shorts</ListItem>
-  <ListItem>Skirts</ListItem>
-  <ListItem>Jegging & Tights</ListItem>
-  <ListItem>Trousers & Capris</ListItem>
-  <ListItem>Lingerie & Sleepwear</ListItem>
-  <ListItem>Bras</ListItem>
-  <ListItem>Panties</ListItem>
-  <ListItem>Lingerie</ListItem>
-  <ListItem>Night Dresses & Nighties</ListItem>
+   <List w='100%' >
+   {arrk.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
 
 </List>
     <List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Ethnic Wear </ListItem>
-  <ListItem>Sarees</ListItem>
-  <ListItem>Kurtas & Kurtis</ListItem>
-  <ListItem>Dress Material</ListItem>
-  <ListItem>Lehenga Choli</ListItem>
-  <ListItem>Blouse</ListItem>
-  <ListItem>Kurta Sets & Salwar Suits</ListItem>
-  <ListItem>Gowns</ListItem>
-  <ListItem>Dupattas</ListItem>
-  <ListItem>Ethnic Bottoms</ListItem>
-  <ListItem>Leggings & Churidars</ListItem>
-  <ListItem>Palazzos</ListItem>
+    {arrl.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
-         <List w='100%' pl='15px'>
-  <ListItem>Winter Wear</ListItem>
-  <ListItem>SweatShirts</ListItem>
-  <ListItem>Jackets</ListItem>
-  <ListItem>Sweater</ListItem>
-  <ListItem>Tracksuits</ListItem>
-  <ListItem>Ethnic wear</ListItem>
-  <ListItem>Kurta</ListItem>
-  <ListItem>Ethnic Sets</ListItem>
-  <ListItem>Sherwanis</ListItem>
-  <ListItem>Ethnic Pyjama</ListItem>
-  <ListItem>Dhoti</ListItem>
-  <ListItem>Lungi</ListItem>
-  <ListItem>Innerwear & Loungewear</ListItem>
-  <ListItem>Briefs & Trunks</ListItem>
-  <ListItem>Vests</ListItem>
+   <List w='100%' >
+   {arrm.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+  ))}
+  
 </List><List w='100%' bg='gray.100' pl='15px'>
   <ListItem>Watches</ListItem>
   <ListItem>Fastrack</ListItem>
@@ -380,4 +368,242 @@ export const Categories=()=>{
         
         </>
     )
+  }
 }
+
+
+var arr1=['Xiaomi',  'Samsung','Vivo','Oppo','Apple','Realme','OnePlus','Poco','Nokia'
+]
+
+
+var arr2=[
+  'Television',          'New Launches',
+  'Smart & Ultra HD',    'Top Brands',
+  'Mi',                  'vu',
+  'Thomson',             'Samsung',
+  'iFFALCON by TCL',     'Nokia',
+  'realme',              'Motorola',
+  'Shop by Screen Size', '24 & below',
+  '28-32',               '39 - 43',
+  '48 - 55',             '60 & above'
+]
+
+
+var arr3=[
+  'Washing Machine',
+  'Fully Automatic Front Load',
+  'Semi Automatic Top Load',
+  'Fully Automatic Top Load',
+  'Air Conditioners',
+  'Inverter AC',
+  'split ACs',
+  'Window ACS',
+  'Shop By Brand',
+  'Hitachi',
+  'Carrier',
+  'Refrigerators',
+  'Single Door',
+  'Double Door',
+  'Triple door',
+  'Side by Side',
+  'Convertible'
+]
+
+var arr4=[
+  'Kitchen Appliances',
+  'Microwave Ovens',
+  'Oven Toaster Grills (OTG)',
+  'Juicer/Mixer/Grinder',
+  'Electric Kettle',
+  'Induction Cooktops',
+  'Chimneys',
+  'Hand Blenders',
+  'Sandwich Makers',
+  'Pop Up Toasters',
+  'Electric Cookers',
+  'Wet Grinders',
+  'Food Processors',
+  'Coffee Makers',
+  'Dishwashers',
+  'Healthy Living Appliances'
+]
+
+var arr5=[
+  'Small Home Appliances', 'Irons',
+  'Water Purifiers',       'Fans',
+  'Air Coolers',           'Inverters',
+  'Vacuum Cleaners',       'Sewing Machines',
+  'Voltage Stabilizers',   'Water Geysers',
+  'Immersion Rods',        'Top Brands',
+  'Livpure',               'Philips',
+  'Bajaj',                 'IFB',
+  'Eureka Forbes',         'Kaff'
+]
+
+var arr6= [
+  'Buying Guides',
+  'Televisions',
+  'Washing Machines',
+  'Refrigerators',
+  'Air Conditioners',
+  'Water Purifiers',
+  'Air Purifiers',
+  'Chimneys',
+  'Water Geysers',
+  'New Launches',
+  'Coocaa Smart TVs',
+  'Nokia (55) 4K Android TV',
+  'Mi (32) 4A Pro Android TV',
+  'MarQ (43) FHD smart TV',
+  'LG Refrigerators',
+  'Thomson (40) 4K Smart TV',
+  'Whirlpool Refrigerators',
+  'Kodak (22) | (32) LED TVs'
+]
+
+var arr7= [
+  'Footwear',
+  'Sports Shoes',
+  'Casual Shoes',
+  'Formal Shoes',
+  'Sandals & Floaters',
+  'Flip- Flops',
+  'Loafers',
+  'Boots',
+  'Running Shoes',
+  'Sneakers',
+  "Men's Grooming",
+  'Deodorants',
+  'Perfumes',
+  'Beard Care & Grooming',
+  'Shaving & Aftershave',
+  'Sexual Wellness'
+]
+
+var arr8=[
+  'Clothing',              'Top wear',
+  'T-Shirts',              'Formal Shirts',
+  'Casual Shirts',         'Bottom wear',
+  'Jeans',                 'Casual Trousers',
+  'Formal Trousers',       'Track pants',
+  'Shorts',                'Cargos',
+  'Three Fourths',         'Suits',
+  ' Blazers & Waistcoats', 'Ties',
+  ' Socks',                ' Caps & More',
+  'Fabrics'
+]
+
+var arr9=[
+  'Winter Wear',
+  'Sweatshirts',
+  'Jackets',
+  'Sweater',
+  'Tracksuits',
+  'Ethnic wear',
+  'Kurta',
+  'Ethnic Sets',
+  'Sherwanis',
+  'Ethnic Pyjama',
+  'Dhoti',
+  'Lungi',
+  'Innerwear & Loungewear',
+  'Briefs & Trunks',
+  'Vests',
+  'Boxers',
+  'Pyjamas and Lounge Pants',
+  'Thermals',
+  'Night Suits',
+  'Raincoats & Windcheaters'
+]
+
+var arr10=[
+  'Watches',
+  'Fastrack',
+  'Casio',
+  'Titan',
+  'Fossil',
+  'Sonata',
+  'Accessories',
+  'Backpacks',
+  'Wallets',
+  'Belts',
+  'Sunglasses',
+  'Luggage & Travel',
+  'Frames',
+  'Jewellery',
+  'Sports & Fitness Store'
+]
+
+ var arr11=[
+  'Smart Watches',
+  'Smart Bands',
+  'Personal Care Appliances',
+  'Trimmers',
+  'Shavers',
+  'Grooming Kits',
+  'Featured',
+  'Watches Store',
+  'Footwear Club',
+  'Bags & Wallet',
+  'T-Shirt Store',
+  'Adidas',
+  'Beardo',
+  'Reebok',
+  'Skechers',
+  'Nike'
+]
+
+var arr12=[
+  'Clothing',
+  'Women Western & Maternity Wear',
+  'Topwear',
+  'Dresses',
+  'Jeans',
+  'Shorts',
+  'Skirts',
+  'Jeggings & Tights',
+  'Trousers & Capris',
+  'Lingerie & Sleepwear',
+  'Bras',
+  'Panties',
+  'Lingerie Sets',
+  'Night Dresses & Nighties',
+  'Shapewear',
+  'Camisoles & Slips',
+  'Swim & Beachwear',
+  'Party Dresses',
+  'Sports Wear',
+  'Winter Wear'
+]
+var arr13=[
+  'Clothing',              'Top wear',
+  'T-shirts',              'Formal Shirts',
+  'Casual Shirts',         'Bottom wear',
+  'Jeans',                 'Casual Trousers',
+  'Formal Trousers',       'Track pants',
+  'Shorts',                'Cargos',
+  'Three Fourths',         'Suits',
+  ' Blazers & Waistcoats', 'Ties',
+  ' Socks',                ' Caps & More',
+  'Fabrics'
+]
+
+var arr14=[
+  'Footwear',
+  'Sandals',
+  'Flats',
+  'Heels',
+  'Wedges',
+  'Shoes',
+  'Sports Shoes',
+  'Casual Shoes',
+  'Boots',
+  'Ballerinas',
+  "Slippers & Flip- Flop's",
+  'Watches',
+  'Smart Watches',
+  'Personal Care Appliances',
+  'Hair Straightners',
+  'Hair Dryers',
+  'Epilators'
+]
