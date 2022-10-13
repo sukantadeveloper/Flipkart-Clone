@@ -8,6 +8,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Heading,
   HStack,
   Image,
   Popover,
@@ -23,10 +24,12 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { AiFillSafetyCertificate } from 'react-icons/ai'
 import { MdSecurity } from 'react-icons/md'
 import { Link } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 
 function CartPage() {
@@ -39,15 +42,20 @@ function CartPage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
 
-  const [cartData, SetCartData] = useState([]);
+  // const [cartData, SetCartData] = useState([]);
+  const { cartData, SetCartData } = useContext(CartContext);
+  
+  const [ loading, setLoading ] = useState(false);
 
   const initialFocusRef = useRef();
 
   function getData() {
+    setLoading(true);
     fetch(`http://localhost:4000/products`)
       .then((res) => res.json())
       .then((res) => SetCartData(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(()=>setLoading(false))
   }
 
   useEffect(() => {
@@ -102,6 +110,18 @@ function CartPage() {
   discount = Math.floor(((discount/cartData.length)* sellingPrice)/100); 
   console.log(sellingPrice);
   console.log(discount);
+
+
+
+
+  if(loading){
+    return (
+      <Box display='flex' w='100%' h='100vh' justifyContent='center' alignItems='center' >
+        <Heading>Loading</Heading>
+      </Box>
+    )
+  }
+
 
 
   if(cartData.length===0){
