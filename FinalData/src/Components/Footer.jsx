@@ -1,6 +1,5 @@
 import { GridItem, Grid, Text, Box, Img } from '@chakra-ui/react';
 import React from 'react';
-import { GrFormNext, GrPrevious, GrFormPrevious } from 'react-icons/gr';
 
 function Footer() {
     return (
