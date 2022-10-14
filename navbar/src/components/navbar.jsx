@@ -243,6 +243,7 @@ if(isLargerThan670){
             placement='left'
             onClose={onClose}
             finalFocusRef={btnRef}
+            
           >
             <DrawerOverlay />
             <DrawerContent

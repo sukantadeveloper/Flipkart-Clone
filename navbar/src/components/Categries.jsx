@@ -140,31 +140,31 @@ export const Categories=()=>{
    <List w='100%' pl='15px'>
 
   {arra.map((el)=>(
-    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' cursor='pointer' key={el}>{el}</ListItem>
   ))}
 
 </List>
     <List w='100%' bg='dadada' pl='15px' >
 
   {arrb.map(el=>(
-    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
          <List w='100%' pl='15px'>
  
   {arrc.map(el=>(
-    <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List><List w='100%'  pl='15px'>
   
   {arrd.map(el=>(
-    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
 
 <List w="100%" pl='15px'>
 {arre.map(el=>(
-    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
 
@@ -184,7 +184,7 @@ export const Categories=()=>{
    <List w='100%' >
  
    {arrf.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'key={el}>{el}</ListItem>
   ))}
 
 
@@ -192,22 +192,22 @@ export const Categories=()=>{
     <List w='100%' bg='dadada' pl='15px'>
  
     {arrg.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
          <List w='100%'>
          {arrh.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List><List w='100%' bg='#f9f9f' >
 {arri.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
   
 </List>
 <List w='100%' bg='#f9f9f' >
 {arrj.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
   
 </List>
@@ -227,23 +227,23 @@ export const Categories=()=>{
     <PopoverBody display='flex' justifyContent="space-between">
    <List w='100%' >
    {arrk.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 
 </List>
     <List w='100%' bg='dadada' pl='15px'>
     {arrl.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
    <List w='100%' >
    {arrm.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
   
 </List><List w='100%' bg='dadada' >
 {arrn.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
     </PopoverBody>
@@ -263,22 +263,22 @@ export const Categories=()=>{
     <PopoverBody display='flex' justifyContent="space-between">
    <List w='100%' >
    {arro.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 
 </List>
     <List w='100%' bg='dadada' >
     {arrp.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
          <List w='100%' >
          {arrq.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List><List w='100%' bg='dadada'>
 {arrr.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
 </List>
     </PopoverBody>
