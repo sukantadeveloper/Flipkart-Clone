@@ -101,7 +101,7 @@ function Viewpage() {
                                 rounded='1px'
                                 color={"black"}
                                 fontSize="15px"
-                                _hover={{ backgroundColor: "#FE9E00" }}
+                                _hover={{ backgroundColor: "#ffff" }}
                             > 
                                 ADD TO CART
                             </Button><Button
