@@ -3,6 +3,7 @@ import { CheckIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
 import { MdSecurity } from "react-icons/md";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -27,7 +28,14 @@ function DeliveryPage(){
       console.log(discount, "DIS");
       console.log(totalAmount, "TOTAL");
 
+      console.log(cartData);
+
+
     const [allFilled, setAllFilled] = useState(true);
+
+    const [ forward, setForward ]  = useState(false);
+
+    const { globalAddress, setGlobalAddress } = useContext(CartContext);
 
     const [address, setAddress] = useState({Name:'', Number:'', Pincode:'',Email:'',Address:'',City:'',State:''})
     const {Name, Number, Pincode, Email, Address, City, State } = address;
@@ -40,7 +48,15 @@ function DeliveryPage(){
         // console.log(address);
         const {value,  name } = e.target;
     setAddress({...address, [name] : value})
+    setGlobalAddress( {...globalAddress, [name] : value} )
     }
+
+    console.log(globalAddress, "GLOBAL");
+
+    if(cartData.length === 0 ){
+    //    return  <Navigate to='/cart'/>
+    }
+
 
     const handelCheckAddress= ()=>{
         setAllFilled(true);
@@ -55,11 +71,18 @@ function DeliveryPage(){
                 }
             })
 
+            setForward(true);
+
+            // return <Navigate to='/summary' />
 
         }else{
             console.log("Wrong");
             setAllFilled(false)
         }
+    }
+
+    if(forward){
+        return <Navigate to='/summary' />
     }
  
     return (
@@ -198,11 +221,11 @@ function DeliveryPage(){
              {/* Right BOX */}
              <Box 
              w='29.5%'
-             h='35vh'
+             h='40vh'
              bg="white" 
              position="sticky"
              top="0"
-             shadow="md"
+             shadow='sm'
              >
                 <Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' w='100%' h='12' >
             <Text ml='5' fontWeight='500' color='grey' >PRICE DETAILS</Text>
@@ -232,7 +255,7 @@ function DeliveryPage(){
           < Box display='flex'justifyContent='flex-start' alignItems='center'  bg='white' >
             <Text ml='5' mt='4' mb='5' fontWeight='500' fontSize='17px' color='green' > Your Total Savings on this order ₹{discount}</Text>
           </Box>
-          < Box display='flex'justifyContent='flex-start' mt='5' alignItems='center'  bg='white' >
+          < Box display='flex'justifyContent='flex-start' mt='5' alignItems='center' shadow='sm' bg='white' >
             <Image w='45%' src='https://assets.mspimages.in/wp-content/uploads/2021/01/Flipkart-SuperCoin.png' />
             <Box display='grid' >
             <Text mt='3' ml='-4' fontWeight='700' fontSize='15px'   >For every 100 spent, </Text>
@@ -242,7 +265,7 @@ function DeliveryPage(){
             <Text mt='-7' mb='2' ml='-6' fontSize='13px' color='grey'  >Max 50 coins per order</Text>
             </Box>
           </Box>
-          <Box mt='5' p='5' display='grid' justifyContent='flex-end' alignItems='center'  >
+          <Box mt='5'    p='5'  display='grid' justifyContent='flex-start' alignItems='center'  >
           <MdSecurity fill="grey"   />
           <Text mt='-5' ml='5' w='100%' textTransform='full-width' fontWeight='500' > Safe and Secure Payments.Easy returns.{<br/>}100% Authentic products.</Text>
           </Box>

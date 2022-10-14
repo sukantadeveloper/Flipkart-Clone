@@ -12,8 +12,10 @@ const CartContextProvider = ( {children} )=>{
     
     const [cartData, SetCartData] = useState([]);
 
+    const [globalAddress, setGlobalAddress] = useState({})
 
-return <CartContext.Provider value={{ cartData, SetCartData }} >
+
+return <CartContext.Provider value={{ cartData, SetCartData, globalAddress, setGlobalAddress }} >
     {children}
 </CartContext.Provider>
 

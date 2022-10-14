@@ -8,7 +8,6 @@ import {
   Box,
   Button,
   ButtonGroup,
-  Heading,
   HStack,
   Image,
   Popover,
@@ -18,6 +17,7 @@ import {
   PopoverContent,
   PopoverFooter,
   PopoverTrigger,
+  SkeletonText,
   Spacer,
   Text,
   useDisclosure,
@@ -37,8 +37,24 @@ function CartPage() {
   let discount=0;
   let totalAmount= 0;
   const [count, setCount] = useState(0);
+  const [addQuantityState, setAddQuantityState] = useState(0);
+  const [lessQuantityState, setLessQuantityState] = useState(0);
   const [Deleteid, setDeleteId] = useState(0);
 
+  const [address, setAddress]  = useState({})
+
+  function getAddress(){
+
+
+    fetch (`http://localhost:4000/address`)
+    .then((res)=>res.json())
+    .then((res)=>setAddress(res));
+  }
+
+  console.log(address);
+  
+  console.log( address.Name === undefined ? "working" : "fukin wrong" );
+  console.log( address.Name );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
 
@@ -58,9 +74,11 @@ function CartPage() {
       .finally(()=>setLoading(false))
   }
 
+
   useEffect(() => {
     getData();
-  }, [count]);
+    getAddress();
+  }, [count , addQuantityState , lessQuantityState ]);
 
   console.log(cartData);
 
@@ -87,7 +105,8 @@ function CartPage() {
       body: JSON.stringify({ ...quantity, quantity: quantity - 1 }),
     });
     console.log(id);
-    setCount(count - 1);
+    // setCount(count - 1);
+    setLessQuantityState( lessQuantityState - 1 );
   };
 
   const handelPatchAdd = (id, quantity) => {
@@ -98,8 +117,26 @@ function CartPage() {
       },
       body: JSON.stringify({ ...quantity, quantity: quantity + 1 }),
     });
-    setCount(count + 1);
+    // setCount(count + 1);
+    setAddQuantityState(addQuantityState + 1);
   };
+
+      const handelDeleteAddress= ()=>{
+
+        const useradd = {
+          "Deleted": "ADD NEW ADDRESS"
+        }
+
+        fetch (`http://localhost:4000/address`,{
+          method: 'POST',
+          headers: {
+            'Content-Type' : 'application/json'
+          },
+          body: JSON.stringify(useradd)
+        })
+        setCount(count+1);
+      }
+   
 
 
   cartData.map((data)=>{
@@ -117,7 +154,10 @@ function CartPage() {
   if(loading){
     return (
       <Box display='flex' w='100%' h='100vh' justifyContent='center' alignItems='center' >
-        <Heading>Loading</Heading>
+        <Box padding='6' boxShadow='lg' w='80%' bg='white'>
+        {/* <SkeletonCircle size='10' /> */}
+        <SkeletonText noOfLines={15} w='100%' spacing='4' />
+        </Box>
       </Box>
     )
   }
@@ -217,8 +257,20 @@ function CartPage() {
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverBody color="black">
-                  OOPS!! <br />
-                  You Don't Have Any Saved Adress
+
+                  <Text display={ address.Name !== undefined? 'none' : 'flex'  } justifyContent='center' >OOPS!! <br /> You Don't Have Any Saved Adress </Text>
+
+                  <Text display={ address.Name === undefined? 'none' : 'grid' } justifyContent='start'  >
+                    <Box  textAlign='left' bg='white' >
+                     {address.Name} <br />     
+                     {/* {address.Number} <br/> */}
+                     {address.Address} , {address.City}
+                    </Box>
+                    {/* <br/> */}
+                    <Button w='20%' h='30px' mt='1' mb='-5' bg='red' colorScheme='red' color='white' onClick={handelDeleteAddress} >Delete</Button>
+                     </Text>
+                  {/* OOPS!! <br />
+                  You Don't Have Any Saved Adress */}
                 </PopoverBody>
                 <PopoverFooter
                   border="0"
