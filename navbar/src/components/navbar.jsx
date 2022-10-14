@@ -233,7 +233,7 @@ if(isLargerThan670){
 
  else{
   
-    return( <Box>
+    return( <Box  position='fixed' w='100%'>
       <Flex bg="#2874f0" h='52px'> 
       <Center ml='10px' ref={btnRef} colorScheme='white' onClick={onOpen}>
             <HamburgerIcon color='white' fontSize='20px' />
@@ -298,8 +298,8 @@ if(isLargerThan670){
             <Center  w='45px'><FaShoppingCart color='white'/></Center>
            <Center color='white' mr='10px'>Login</Center>
       </Flex>
-      <Flex  bg="#2874f0" h='52px'>
-        <Center w='100%' ml='1%' mr='1%'> <InputGroup>
+      <Flex  bg="#2874f0" h='52px'  w='100%'>
+        <Center w='100%' ml='1%' mr='2%'> <InputGroup>
                 <Input
                   placeholder="Search for products,brands and more"
                   bg="white"
@@ -318,8 +318,14 @@ if(isLargerThan670){
                     />
                   }
                 />
-              </InputGroup></Center>
+              </InputGroup>
+
+           
+              
+              </Center>
+              
       </Flex>
+    
         </Box>)
   
  }

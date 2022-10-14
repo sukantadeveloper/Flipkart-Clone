@@ -108,7 +108,8 @@ export const Categories=()=>{
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mouse</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Computer Peripherals</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Printers & Ink Cartridges</ListItem>
-</List><List w="100%" pl='15px' bg='dadada'>
+</List>
+<List w="100%" pl='15px' bg='dadada'>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Television</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Speaker</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'> Home Audio System</ListItem>
@@ -533,7 +534,7 @@ var arr14=[
 
 var arr15=[
   'Featured',               'Forever 21',
-  'Accessorize',            'w',
+  'Accessorize',            
   'Pantaloons',             'Chemistry',
   'Lakme',                  'Nivea',
   'Catwalk',                'Titan-Raga',
