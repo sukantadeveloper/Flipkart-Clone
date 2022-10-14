@@ -36,7 +36,7 @@ function Viewpage() {
 
             <HStack p="10px" display={{ base: 'block', md: 'flex', lg: 'flex' }}>
                 {viewData.map((item) => (
-                    <Box w={{ base: '100%', md: '40%', lg: '40%' }}  h={{base:"100h", md:"100vh", lg:"100h"}} position={"sticky"}>
+                    <Box  key={Math.random()} w={{ base: '100%', md: '40%', lg: '40%' }}  h={{base:"100h", md:"100vh", lg:"100h"}} position={"sticky"}>
                         <Box display={"flex"} p="15px">
                             <Box w="15%"   > <Img h="20%" display={{ base: 'none', md: 'block', lg: 'block' }} border={"2px solid #2974F1"} src={item.image} alt="smallImg" /> </Box>
                             <Box w="79%">
@@ -121,7 +121,7 @@ function Viewpage() {
 
                 ))}
                 {viewData.map((item) => (
-                    <Box w={{ base: '100%', md: '60%', lg: '60%' }} pt="-50px" h="100vh" overflow={{base:"none", md:"auto", lg:"auto"}} pl="2%" className='example'>
+                    <Box key={Math.random()} w={{ base: '100%', md: '60%', lg: '60%' }} pt="-50px" h="100vh" overflow={{base:"none", md:"auto", lg:"auto"}} pl="2%" className='example'>
                         <Box display={{base:"none", md:"block",lg:"block"}}> <Text p="15px" display="flex" alignItems="center" float="right"> <IoMdShareAlt /> Share</Text></Box>
                         <Box> <Text color={"silver"} > {item.brand} </Text></Box>
                         <Text fontWeight={"500"}> {item.description}</Text>
