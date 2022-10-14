@@ -115,7 +115,7 @@ function Mobile() {
             </Box>
             <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
-                    {mobile.map(item => <Box m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
+                    {mobile.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} key={item.item_id}>
                         <Img mw="130px" h="230px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                         
@@ -130,7 +130,7 @@ function Mobile() {
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }}>
                     
                     
-                    {mobile.map(item => <Box borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
+                    {mobile.map(item => <Box key={Math.random()} borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
                         <Img h="150px" mw="200px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text   maxHeight="40px" fontWeight="700"> {item.description}</Text>
 

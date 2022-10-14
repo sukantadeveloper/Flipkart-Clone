@@ -1,5 +1,6 @@
 import { Box, Grid, GridItem, Img, Text } from '@chakra-ui/react';
 import React from 'react';
+
 import { BsBox } from 'react-icons/bs';
 
 function CategoryBar() {
@@ -53,7 +54,7 @@ function CategoryBar() {
             <Grid   pb="20px" textAlign={"center"} templateColumns='repeat(10, 1fr)' m="auto" gap="20px" >
                 {
                     data.map((ele) => (
-                        <GridItem  _hover={{color:"#2874F0"}} fontSize={{base:"0px", md:"13px", lg:"14px"}} >
+                        <GridItem key={Math.random()} _hover={{color:"#2874F0"}} fontSize={{base:"0px", md:"13px", lg:"14px"}} >
                             <Box > <Img src={ele.image} alt=""  height={{base:"0px", md:"60px", lg:"70px"}} m="auto" />
                              <Text> {ele.title}</Text>
                             </Box>

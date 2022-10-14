@@ -116,7 +116,7 @@ function Electronics() {
             </Box>
             <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
-                    {electronics.map(item => <Box m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
+                    {electronics.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} key={item.item_id}>
                         <Img maxWidth="150px" h="150px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                         
@@ -133,7 +133,7 @@ function Electronics() {
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }} >
                     
                     
-                    {electronics.map(item => <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
+                    {electronics.map(item => <Box m="5px" key={Math.random()} borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
                         <Img mw="160px" h="160px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 

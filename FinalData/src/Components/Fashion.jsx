@@ -76,7 +76,6 @@ function Fashion() {
          setCategory(fashion[0])
 
     }, [])
-     console.log( category ,"log")
      
     if (loading) {
         return (
@@ -112,7 +111,7 @@ function Fashion() {
             </Box>
             <Box w={{ base: '60%', md: '60%', lg: '70%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
-                    {fashion.map(item => <Box  m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
+                    {fashion.map(item => <Box key={Math.random()}  m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
                         <Img maxWidth="190px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                        
@@ -133,7 +132,7 @@ function Fashion() {
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }}>
                     
                     
-                    {fashion.map(item => <Box borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
+                    {fashion.map(item => <Box key={Math.random()} borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
                         <Img maxWidth="150px"  maxHeight="150px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
