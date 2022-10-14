@@ -109,7 +109,7 @@ function Appliances() {
             <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className='OffSlider'>
                 <Slider {...settings}>
                     {appliances.map(item => <Box m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img w="170px" h="240px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
+                        <Img maxWidth="170px" h="240px"  m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                         
                         <Text color={"green"}>₹ {item.new_price}</Text>
@@ -125,7 +125,7 @@ function Appliances() {
                     
                     
                     {appliances.map(item => <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
-                        <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
+                        <Img maxWidth="120px" maxHeight="150px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>

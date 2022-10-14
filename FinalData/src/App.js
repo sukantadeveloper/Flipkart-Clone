@@ -12,6 +12,7 @@ import OfferBanner from "./Components/OfferBanner";
 import BannerOffer from "./Components/BannerOffer";
 import BannerOffer2 from "./Components/BannerOffer2";
 import CategoryBar from "./Components/CategoryBar";
+import CategoryBarForMobile from "./Components/CategoryBarForMobile";
 function App() {
   const containerStyles = {
     width: "100%",
@@ -20,20 +21,21 @@ function App() {
   };
   return (
     <div className="App">
-       <FinalBanner/>
-       <CategoryBar/>
-       <OfferBanner/>
-       <BannerOffer/>
-      <Fashion/>
-      <Bestselling/> 
-     <Appliances/> 
-     <BannerOffer2/>
+      <CategoryBar /> 
+      <FinalBanner />
+      <CategoryBarForMobile/>
+      <OfferBanner />
+      <BannerOffer />
+      <Fashion />
+      <Bestselling />
+      <Appliances />
+      <BannerOffer2 />
       <TopOffers />
       <Electronics />
-     <Groceries/>
+      <Groceries />
       <Mobile />
-      <BeforeFooter/>
-    <Footer/>
+      <BeforeFooter />
+      <Footer />
     </div>
   );
 }

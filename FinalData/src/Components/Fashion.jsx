@@ -99,7 +99,7 @@ function Fashion() {
         )
     }
     return (
-        <Box display={"flex"} mt="20px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
+        <Box display={"flex"}  mt="20px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
 
             <Box w="18%" m="auto" textAlign={"center"} className="dealsBox">
                 <Text mt="10%" fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Fashion Top Deals</Text>
@@ -113,7 +113,7 @@ function Fashion() {
             <Box w={{ base: '60%', md: '60%', lg: '70%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
                     {fashion.map(item => <Box  m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                        <Img maxWidth="190px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                        
                         <Text color={"green"}>₹ {item.new_price}</Text>
@@ -122,17 +122,19 @@ function Fashion() {
 
                 </Slider>
                 </Box>
+               
                 <Box  display={{base:'none' , md:'block' , lg:'block'}} w={{base:'0px', md:'26%', lg:"20%"}} >
 
-                    <Img h={{base:'0px', md:'300px', lg:"350px"}} src="https://rukminim1.flixcart.com/fk-p-flap/464/708/image/74eaeafbf1a19432.jpeg?q=70" />
+                    <Img maxHeight={{base:'0px', md:'300px', lg:"350px"}} src="https://rukminim1.flixcart.com/fk-p-flap/464/708/image/74eaeafbf1a19432.jpeg?q=70" />
                 </Box>
+                 {/* mobile start  */}
                 <Box display={{ base: 'block', md: 'none', lg: 'none' }} bg="#FFC3E6" p="10px" backgroundImage={"https://rukminim1.flixcart.com/fk-p-reco/600/150/images/Reco_BDS_ffb8e3.jpg?q=90"}> 
                 <Box mb="20px" mt="10px" alignItems={"center"} display="flex" justifyContent={"space-between"}> <Text> Fashion Top Deals</Text> <Button size="sm" colorScheme='messenger'>View All</Button></Box>
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }}>
                     
                     
                     {fashion.map(item => <Box borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
-                        <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
+                        <Img maxWidth="150px"  maxHeight="150px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>

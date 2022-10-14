@@ -117,7 +117,7 @@ function Electronics() {
             <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
                     {electronics.map(item => <Box m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
+                        <Img maxWidth="150px" h="150px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
                         
                         <Text color={"green"}>₹ {item.new_price}</Text>
@@ -134,7 +134,7 @@ function Electronics() {
                     
                     
                     {electronics.map(item => <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
-                        <Img w="180px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
+                        <Img mw="160px" h="160px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>

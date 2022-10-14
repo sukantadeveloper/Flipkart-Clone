@@ -111,7 +111,7 @@ function TopOffers() {
             <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
                     {topOffers.map(item => <Box  m="5px" alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img w="160px" h="250px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                        <Img mw="160px" h="200px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>
@@ -127,7 +127,7 @@ function TopOffers() {
                     
                     
                     {topOffers.map(item => <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
-                        <Img   m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
+                        <Img  maxHeight="150px" maxWidth="120px" display="block"  m="auto" maxWeidth="10px" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 
                         <Text color={"green"}>₹ {item.new_price}</Text>
