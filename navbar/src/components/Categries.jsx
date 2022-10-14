@@ -20,7 +20,11 @@ export const Categories=()=>{
    const [arrk,setarrk]=useState([]);
    const [arrl,setarrl]=useState([]);
    const [arrm,setarrm]=useState([]);
-   
+   const [arrn,setarrn]=useState([]);
+   const [arro,setarro]=useState([]);
+   const [arrp,setarrp]=useState([]);
+   const [arrq,setarrq]=useState([]);
+   const[arrr,setarrr]=useState([]);
    
   const [isLargerThan670] = useMediaQuery('(min-width: 1000px)');
 
@@ -39,6 +43,11 @@ export const Categories=()=>{
     setarrk(arr12);
     setarrl(arr13);
     setarrm(arr14);
+    setarrn(arr15);
+    setarro(arr16);
+    setarrp(arr17);
+    setarrq(arr18);
+    setarrr(arr19);
   },[])
 
   if(isLargerThan670){
@@ -55,63 +64,63 @@ export const Categories=()=>{
    
  
     <PopoverBody display='flex' justifyContent="space-between" >
-   <List w='90%' pl ='10px'>
-  <ListItem>Mobile</ListItem>
-  <ListItem>Mi</ListItem>
-  <ListItem>Realme</ListItem>
-  <ListItem>oppo</ListItem>
-  <ListItem>Samsung</ListItem>
-  <ListItem>Infinix</ListItem>
-  <ListItem>Vivo</ListItem>
-  <ListItem>Honor</ListItem>
-  <ListItem>Asus</ListItem>
-  <ListItem>Iphone SE</ListItem>
-  <ListItem>Poco X2</ListItem>
-  <ListItem>Motorola</ListItem>
-  <ListItem>IQOO3</ListItem>
-  <ListItem>Iphone 13</ListItem>
+   <List w='90%' pl ='15px'>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mi</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Realme</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>oppo</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Samsung</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Infinix</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Vivo</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Honor</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Asus</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Iphone SE</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Poco X2</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Motorola</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>IQOO3</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Iphone 13</ListItem>
 
 </List>
-    <List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Mobile Accesories</ListItem>
-  <ListItem>Cover</ListItem>
-  <ListItem>Power Bank</ListItem>
-  <ListItem>Mobile case</ListItem>
-  <ListItem>Headphones</ListItem>
-  <ListItem>Screenguards</ListItem>
-  <ListItem>Memory Cards</ListItem>
-  <ListItem>Mobile Cables</ListItem>
-  <ListItem>Mobile Holders</ListItem>
-  <ListItem>Smart Wearable Tech</ListItem>
-  <ListItem>Smart Watches</ListItem>
-  <ListItem>Smart Glasses</ListItem>
+    <List w='100%' bg='dadada' pl='15px'>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile Accesories</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Cover</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Power Bank</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile case</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Headphones</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Screenguards</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Memory Cards</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile Cables</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile Holders</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Smart Wearable Tech</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Smart Watches</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Smart Glasses</ListItem>
 </List>
          <List w='100%' pl='15px'>
-  <ListItem>Laptop</ListItem>
-  <ListItem>Gaming Laptop</ListItem>
-  <ListItem>Destop PCs</ListItem>
-  <ListItem>Notebook</ListItem>
-  <ListItem>Gaming & Accessories</ListItem>
-  <ListItem>External Hard Disks</ListItem>
-  <ListItem>Pendrives</ListItem>
-  <ListItem>Laptop Skins & Decals</ListItem>
-  <ListItem>Laptop Bags</ListItem>
-  <ListItem>Mouse</ListItem>
-  <ListItem>Computer Peripherals</ListItem>
-  <ListItem>Printers & Ink Cartridges</ListItem>
-</List><List w="100%" pl='15px' >
-  <ListItem>Television</ListItem>
-  <ListItem>Speaker</ListItem>
-  <ListItem> Home Audio System</ListItem>
-  <ListItem>Soundbars</ListItem>
-  <ListItem>Bluetooth Speakers</ListItem>
-  <ListItem>DTH Set Top Box</ListItem>
-  <ListItem>Smart Home Automation</ListItem>
-  <ListItem>Google Nest</ListItem>
-  <ListItem>Camera</ListItem>
-  <ListItem>DSLR & Mirrorless</ListItem>
-  <ListItem>Compact & Bridge Cameras</ListItem>
-  <ListItem>Sports & Action</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Laptop</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Gaming Laptop</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Destop PCs</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Notebook</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Gaming & Accessories</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>External Hard Disks</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Pendrives</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Laptop Skins & Decals</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Laptop Bags</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mouse</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Computer Peripherals</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Printers & Ink Cartridges</ListItem>
+</List><List w="100%" pl='15px' bg='dadada'>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Television</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Speaker</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'> Home Audio System</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Soundbars</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Bluetooth Speakers</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>DTH Set Top Box</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Smart Home Automation</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Google Nest</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Camera</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>DSLR & Mirrorless</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Compact & Bridge Cameras</ListItem>
+  <ListItem fontSize='14px' pb='10px' cursor='pointer'>Sports & Action</ListItem>
 </List>
     </PopoverBody>
   </PopoverContent>
@@ -120,7 +129,7 @@ export const Categories=()=>{
 {/* =========================================tv Appliances==== */}
 <Popover trigger='hover' >
   <PopoverTrigger>
-    <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>TVs & Appliances</Center>
+    <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>TVs & Appliances<ChevronDownIcon _hover={{ transform: "rotate(180deg)" }}/></Center>
   </PopoverTrigger>
   <PopoverContent w='1200px'  >
   
@@ -128,71 +137,33 @@ export const Categories=()=>{
  
     <PopoverBody display='flex' justifyContent="space-between">
    <List w='100%' pl='15px'>
-  {/* <ListItem>Television</ListItem> */}
-  {/* <ListItem>New Launches</ListItem>
-  <ListItem>Smart & Ultra HD</ListItem>
-  <ListItem>Top Brands</ListItem>
-  <ListItem>Mi</ListItem>
-  <ListItem>Vu</ListItem>
-  <ListItem>Thomson</ListItem>
-  <ListItem>Samsung</ListItem>
-  <ListItem>iFFALCON by TCL</ListItem>
-  <ListItem>Nokia</ListItem>
-  <ListItem>LG</ListItem>
-  <ListItem>realme</ListItem>
-  <ListItem>Motorola</ListItem>
-  <ListItem>Shop by Screen Size</ListItem> */}
+
   {arra.map((el)=>(
     <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
   ))}
 
 </List>
-    <List w='100%' bg='gray.100' pl='15px' >
-  {/* <ListItem>Washing Machine </ListItem>
-  <ListItem>Fully Automatic Front Load</ListItem>
-  <ListItem>Semi Automatic Top Load</ListItem>
-  <ListItem>Fully Automatic Top Load</ListItem>
-  <ListItem>Air Conditioners</ListItem>
-  <ListItem>Inverter AC</ListItem>
-  <ListItem>Split Acs</ListItem>
-  <ListItem>Window Acs</ListItem>
-  <ListItem>Shop By Brand</ListItem>
-  <ListItem>LG</ListItem>
-  <ListItem>Hitachi</ListItem>
-  <ListItem>Carrier</ListItem> */}
+    <List w='100%' bg='dadada' pl='15px' >
+
   {arrb.map(el=>(
     <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
   ))}
 </List>
          <List w='100%' pl='15px'>
-  {/* <ListItem>Small Home Appliances</ListItem>
-  <ListItem>Irons</ListItem>
-  <ListItem>Water Purifiers</ListItem>
-  <ListItem>Fans</ListItem>
-  <ListItem>Air Coolers</ListItem>
-  <ListItem>Inverters</ListItem>
-  <ListItem>Vacum Cleaners</ListItem>
-  <ListItem>Sewing Machines</ListItem>
-  <ListItem>Voltage stabilizers</ListItem>
-  <ListItem>Water Geysers</ListItem>
-  <ListItem>Immersion Rods</ListItem>
-  <ListItem>Top Brands</ListItem>
-  <ListItem>Livpure</ListItem>
-  <ListItem>Philips</ListItem>
-  <ListItem>Bajaj</ListItem> */}
+ 
   {arrc.map(el=>(
     <ListItem fontSize='14px' pb='10px' cursor='pointer'>{el}</ListItem>
   ))}
 </List><List w='100%'  pl='15px'>
   
   {arrd.map(el=>(
-    <ListItem fontSize='14px' pb='10px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 </List>
 
 <List w="100%" pl='15px'>
 {arre.map(el=>(
-    <ListItem fontSize='14px' pb='10px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 </List>
 
@@ -202,7 +173,7 @@ export const Categories=()=>{
 {/* ======================men will be men=============== */}
 <Popover trigger='hover' >
   <PopoverTrigger>
-  <Center _hover={{color:"#2874f0" ,cursor:"pointer"}}>Men</Center>
+  <Center _hover={{color:"#2874f0" ,cursor:"pointer"}}>Men <ChevronDownIcon _hover={{ transform: "rotate(180deg)" }}/></Center>
   </PopoverTrigger>
   <PopoverContent w='1100px'  >
   
@@ -212,30 +183,30 @@ export const Categories=()=>{
    <List w='100%' >
  
    {arrf.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 
 
 </List>
-    <List w='100%' bg='gray.100' pl='15px'>
+    <List w='100%' bg='dadada' pl='15px'>
  
     {arrg.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 </List>
          <List w='100%'>
          {arrh.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 </List><List w='100%' bg='#f9f9f' >
 {arri.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
   
 </List>
 <List w='100%' bg='#f9f9f' >
 {arrj.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
   
 </List>
@@ -246,7 +217,7 @@ export const Categories=()=>{
     {/* ===================================womem=====     */}
 <Popover trigger='hover' >
   <PopoverTrigger>
-  <Center _hover={{color:"#2874f0" ,cursor:"pointer"}}className='secnav'>Women</Center>
+  <Center _hover={{color:"#2874f0" ,cursor:"pointer"}}className='secnav'>Women <ChevronDownIcon _hover={{ transform: "rotate(180deg)" }}/></Center>
   </PopoverTrigger>
   <PopoverContent w='1100px' >
   
@@ -255,107 +226,59 @@ export const Categories=()=>{
     <PopoverBody display='flex' justifyContent="space-between">
    <List w='100%' >
    {arrk.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 
 </List>
-    <List w='100%' bg='gray.100' pl='15px'>
+    <List w='100%' bg='dadada' pl='15px'>
     {arrl.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
 </List>
    <List w='100%' >
    {arrm.map(el=>(
-    <ListItem fontSize='14px' pb='10px' pl='15px' bg="f9f9f9" cursor='pointer'>{el}</ListItem>
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
   ))}
   
-</List><List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Watches</ListItem>
-  <ListItem>Fastrack</ListItem>
-  <ListItem>Casio</ListItem>
-  <ListItem>Titan</ListItem>
-  <ListItem>Fossil</ListItem>
-  <ListItem>Sonata</ListItem>
-  <ListItem>Accessories</ListItem>
-  <ListItem>Backpacks</ListItem>
-  <ListItem>Wallets</ListItem>
-  <ListItem>Belts</ListItem>
-  <ListItem>Sunglasses</ListItem>
-  <ListItem>Frames</ListItem>
+</List><List w='100%' bg='dadada' >
+{arrn.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
     </PopoverBody>
   </PopoverContent>
 </Popover>
-        <Center  _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>Baby & Kids</Center>
+        <Center  _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>Baby & Kids </Center>
+
+        {/* ================================home &furniyure================ */}
         <Popover trigger='hover' >
   <PopoverTrigger>
-    <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>Home & Furniture</Center>
+    <Center _hover={{color:"#2874f0" ,cursor:"pointer"}} className='secnav'>Home & Furniture <ChevronDownIcon _hover={{ transform: "rotate(180deg)" }}/></Center>
   </PopoverTrigger>
   <PopoverContent w='1100px'  >
   
    
  
     <PopoverBody display='flex' justifyContent="space-between">
-   <List w='100%' pl='15px'>
-  <ListItem>Television</ListItem>
-  <ListItem>New Launches</ListItem>
-  <ListItem>Smart & Ultra HD</ListItem>
-  <ListItem>Top Brands</ListItem>
-  <ListItem>Mi</ListItem>
-  <ListItem>Vu</ListItem>
-  <ListItem>Thomson</ListItem>
-  <ListItem>Samsung</ListItem>
-  <ListItem>iFFALCON by TCL</ListItem>
-  <ListItem>Nokia</ListItem>
-  <ListItem>LG</ListItem>
-  <ListItem>realme</ListItem>
-  <ListItem>Motorola</ListItem>
-  <ListItem>Shop by Screen Size</ListItem>
+   <List w='100%' >
+   {arro.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+  ))}
 
 </List>
-    <List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Washing Machine </ListItem>
-  <ListItem>Fully Automatic Front Load</ListItem>
-  <ListItem>Semi Automatic Top Load</ListItem>
-  <ListItem>Fully Automatic Top Load</ListItem>
-  <ListItem>Air Conditioners</ListItem>
-  <ListItem>Inverter AC</ListItem>
-  <ListItem>Split Acs</ListItem>
-  <ListItem>Window Acs</ListItem>
-  <ListItem>Shop By Brand</ListItem>
-  <ListItem>LG</ListItem>
-  <ListItem>Hitachi</ListItem>
-  <ListItem>Carrier</ListItem>
+    <List w='100%' bg='dadada' >
+    {arrp.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
-         <List w='100%' pl='15px'>
-  <ListItem>Small Home Appliances</ListItem>
-  <ListItem>Irons</ListItem>
-  <ListItem>Water Purifiers</ListItem>
-  <ListItem>Fans</ListItem>
-  <ListItem>Air Coolers</ListItem>
-  <ListItem>Inverters</ListItem>
-  <ListItem>Vacum Cleaners</ListItem>
-  <ListItem>Sewing Machines</ListItem>
-  <ListItem>Voltage stabilizers</ListItem>
-  <ListItem>Water Geysers</ListItem>
-  <ListItem>Immersion Rods</ListItem>
-  <ListItem>Top Brands</ListItem>
-  <ListItem>Livpure</ListItem>
-  <ListItem>Philips</ListItem>
-  <ListItem>Bajaj</ListItem>
-</List><List w='100%' bg='gray.100' pl='15px'>
-  <ListItem>Buying Guides</ListItem>
-  <ListItem>Televisions</ListItem>
-  <ListItem>Washing Machines</ListItem>
-  <ListItem>Refrigerators</ListItem>
-  <ListItem>Air Conditioners</ListItem>
-  <ListItem>Water Purifiers</ListItem>
-  <ListItem>Air Purifiers</ListItem>
-  <ListItem>Chimneys</ListItem>
-  <ListItem>Water Geysers</ListItem>
-  <ListItem>New Launches</ListItem>
-  <ListItem>Coocaa Smart TVs</ListItem>
-  <ListItem>Nokia (55) 4k Android Tv</ListItem>
+         <List w='100%' >
+         {arrq.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+  ))}
+</List><List w='100%' bg='dadada'>
+{arrr.map(el=>(
+    <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer'>{el}</ListItem>
+  ))}
 </List>
     </PopoverBody>
   </PopoverContent>
@@ -606,4 +529,69 @@ var arr14=[
   'Hair Straightners',
   'Hair Dryers',
   'Epilators'
+]
+
+var arr15=[
+  'Featured',               'Forever 21',
+  'Accessorize',            'w',
+  'Pantaloons',             'Chemistry',
+  'Lakme',                  'Nivea',
+  'Catwalk',                'Titan-Raga',
+  'Fastrack',               'Divastri',
+  'Rare Roots',             'Anmi',
+  'Coins & Bars',           'Crocs',
+  'Trending today!',        'Ruffles & Frills',
+  'Pastel Kurtas & Kurtis', 'Designer Net Sarees'
+]
+
+var arr16=[
+  'Kitchen',            ' Cookware & Serveware',
+  'Pans',               'Tawas',
+  'Pressure Cookers',   'Kitchen tools',
+  'Gas Stoves',         'Tableware & Dinnerware',
+  'Coffee Mugs',        'Dinner Set',
+  'Barware',            'Kitchen Storage',
+  'Water Bottles',      'Lunch Boxes',
+  'Flasks',             'Casseroles',
+  'Kitchen Containers', 'Cleaning Supplies'
+]
+
+var arr17=[ 'Furniture Top Offers', 'Bed Room Furniture', 'Beds', 'Mattresses', 'Wardrobes', 'Living Room Furniture', 'Sofa', 'Sofa Beds', 'TV Units', 'Dining Tables & Chairs', 'Coffee Tables', 'Shoe Racks', 'Office & Study Furniture', 'Kids Room Furniture', 'DIY Furniture', 'Bean Bags', 'Collapsible Wardrobes' ]
+
+var arr18=[
+  'Furnishing',
+  'Bedsheets',
+  'Curtains',
+  'Cushions & Pillows',
+  'Blankets',
+  'Bath Towels',
+  'Kitchen & Table Linen',
+  'Floor Coverings',
+  'Smart Home Automation',
+  'Smart Security System',
+  'Smart Door Locks',
+  'Home Improvement',
+  'Tools & Measuring Equipments',
+  'Home Utilities & Organizers',
+  'Lawn & Gardening',
+  'Bathroom & Kitchen Fittings'
+]
+var arr19=[
+  'Home Decor',
+  'Paintings',
+  'Clocks',
+  'Wall Shelves',
+  'Stickers',
+  'Showpieces & Figurines',
+  'Home Lighting',
+  'Bulbs',
+  'Wall Lamp',
+  'Table Lamp',
+  'Ceiling Lamp',
+  'Emergency Lights',
+  'Festive Decor & Gifts',
+  'Pet Supplies',
+  'Dogs',
+  'Cats',
+  'Fish & Aquatics'
 ]
