@@ -33,6 +33,7 @@ export function Login() {
   const [isCheck, setIsCheck] = useState(false)
   const [incorrect, setIncorrect] = useState(0)
   const [correct, setCorrect] = useState(0)
+  const [otpvalue, setOtpValue] = useState(false)
 
   let otp
   let raj = 0
@@ -42,14 +43,14 @@ export function Login() {
     for (let i = 0; i < 6; i++) {
       otp += Math.floor(Math.random() * 10)
     }
-    raj = otp
+    localStorage.setItem('otp', JSON.stringify(otp))
     return Number(otp)
   }
-  console.log(raj)
+
   let checkOtp = (e) => {
     setIsAuth(e.target.value)
   }
-
+  console.log(isAuth)
   const handleChange = (inp) => {
     const { name, value } = inp.target
     setInputValues({ ...inputValues, [name]: value })
@@ -78,6 +79,7 @@ export function Login() {
     toast('login SuccesFully', {
       position: 'top-center',
     })
+    setIsAuth('')
   }
 
   const check = () => {
@@ -119,7 +121,12 @@ export function Login() {
       position: 'top-center',
     })
   }
-
+  const OTPVALUES = () => {
+    toast('WRONG OTP', {
+      position: 'top-center',
+    })
+    setIsAuth('')
+  }
   const Otp = () => {
     setIsCheck(true)
     generateOtp()
@@ -130,8 +137,19 @@ export function Login() {
     setIsCheck(false)
   }
 
+  let popotp = JSON.parse(localStorage.getItem('otp'))
+
+  const sukantaotp = () => {
+    if (isAuth == popotp) {
+      notify()
+    } else {
+      OTPVALUES()
+    }
+  }
+
   const SubmitOtp = (e) => {
     e.preventDefault()
+    sukantaotp()
   }
 
   const handleSubmit = (e) => {
@@ -199,6 +217,7 @@ export function Login() {
                         placeholder="Enter Email"
                         value={inputValues.email}
                         onChange={handleChange}
+                        required
                       />
                       <Text color="red" fontSize="xs">
                         {error.email}
@@ -221,6 +240,7 @@ export function Login() {
                         placeholder="Enter OTP"
                         value={isAuth}
                         onChange={checkOtp}
+                        required
                       />
                     </>
                   ) : (
@@ -236,6 +256,7 @@ export function Login() {
                         placeholder="Enter Password"
                         value={inputValues.password}
                         onChange={handleChange}
+                        required
                       />
                       <Text color="red" fontSize="xs">
                         {error.password}
@@ -275,6 +296,7 @@ export function Login() {
                       color="white"
                       bg="#fb641b"
                       width="19.7rem"
+                      required
                     >
                       Submit OTP
                     </Button>
@@ -324,7 +346,7 @@ export function Login() {
                       textAlign="center"
                       color="#2f74f0"
                     >
-                      New to Flipkart? {<Signup />}{' '}
+                      New to Flipkart? {<Signup onClose={onClose} />}{' '}
                     </Text>{' '}
                   </Link>
                 </FormControl>
