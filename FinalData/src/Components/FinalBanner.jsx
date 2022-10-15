@@ -40,7 +40,7 @@ function FinalBanner() {
         <Box>
 
 
-            <Box display={{ base: 'none', md: 'none', lg: 'block' }} className="fiximg" style={{ marginTop: "20px" }} height={{ base: '130px', md: '220px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
+            <Box display={{ base: 'none', md: 'none', lg: 'block' }} className="fiximg" style={{ marginTop: "7px" }} height={{ base: '130px', md: '220px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
                 <Slider  {...settings}
                 >
                     <div>
