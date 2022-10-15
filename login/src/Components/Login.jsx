@@ -21,8 +21,6 @@ import {
 } from '@chakra-ui/react'
 
 export function Login() {
-  const myotp = Math.floor(Math.random() * 999999) + 100000
-
   const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
@@ -31,10 +29,23 @@ export function Login() {
   const [inputValues, setInputValues] = useState(initialvalues)
   const [error, setError] = useState({})
   const [isSubmit, setIsSubmit] = useState(false)
-  const [isAuth, setIsAuth] = useState(0)
+  const [isAuth, setIsAuth] = useState()
   const [isCheck, setIsCheck] = useState(false)
   const [incorrect, setIncorrect] = useState(0)
   const [correct, setCorrect] = useState(0)
+
+  let otp
+  let raj = 0
+  const generateOtp = () => {
+    otp = ''
+
+    for (let i = 0; i < 6; i++) {
+      otp += Math.floor(Math.random() * 10)
+    }
+    raj = otp
+    return Number(otp)
+  }
+  console.log(raj)
   let checkOtp = (e) => {
     setIsAuth(e.target.value)
   }
@@ -55,34 +66,6 @@ export function Login() {
             ? setCorrect(true)
             : setIncorrect(true)
         })
-        // res.map((el) => {
-        //   // setIncorrect(false)
-        //   // console.log(inputValues, 'hhhhhhhhhhh')
-        //   if (
-        //     el.email == inputValues.email &&
-        //     (el.password == inputValues.password || isAuth == myotp)
-        //   ) {
-        //     // notify()
-        //     setCorrect(1)
-        //     console.log(correct)
-        //     // setIncorrect(false)
-
-        //   }
-        //   //  else if (
-        //   //   (el.email == inputValues.email &&
-        //   //     el.password != inputValues.password) ||
-        //   //   (el.email != inputValues.email &&
-        //   //     el.password == inputValues.password)
-        //   // ) {
-        //   //   setIncorrect(true)
-        //   //   // setCorrect(false)
-        //   //   return
-        //   // }
-        //   else {
-        //     setIncorrect(incorrect + 1)
-        //     console.log(incorrect)
-        //   }
-        // })
       })
       .catch((err) => {
         console.log(err)
@@ -110,11 +93,7 @@ export function Login() {
     // console.log('ra')
     check()
   }
-  // if (incorrect == 1) {
-  //   check()
-  // } else {
-  //   console.log('raj')
-  // }
+
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmit) {
     }
@@ -136,17 +115,23 @@ export function Login() {
     return errors
   }
   const getOtp = () => {
-    toast(myotp, {
+    toast(otp, {
       position: 'top-center',
     })
   }
 
   const Otp = () => {
     setIsCheck(true)
+    generateOtp()
     getOtp()
   }
+
   const Pass = () => {
     setIsCheck(false)
+  }
+
+  const SubmitOtp = (e) => {
+    e.preventDefault()
   }
 
   const handleSubmit = (e) => {
@@ -202,19 +187,26 @@ export function Login() {
               </Box>
               <Box height="32rem" padding="35" width="24rem" color="#878787">
                 <FormControl>
-                  <FormLabel>Email address</FormLabel>
-                  <Input
-                    color="black"
-                    marginTop="-3"
-                    name="email"
-                    variant="flushed"
-                    placeholder="Enter Email"
-                    value={inputValues.email}
-                    onChange={handleChange}
-                  />
-                  <Text color="red" fontSize="xs">
-                    {error.email}
-                  </Text>
+                  {!isCheck ? (
+                    <>
+                      {' '}
+                      <FormLabel>Email address</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="email"
+                        variant="flushed"
+                        placeholder="Enter Email"
+                        value={inputValues.email}
+                        onChange={handleChange}
+                      />
+                      <Text color="red" fontSize="xs">
+                        {error.email}
+                      </Text>
+                    </>
+                  ) : (
+                    ''
+                  )}
 
                   {isCheck ? (
                     <>
@@ -262,17 +254,31 @@ export function Login() {
                     </Link>
                   </Text>
 
-                  <Button
-                    onClick={handleSubmit}
-                    borderRadius="0.5"
-                    marginTop="4"
-                    padding="6"
-                    color="white"
-                    bg="#fb641b"
-                    width="19.7rem"
-                  >
-                    Login
-                  </Button>
+                  {!isCheck ? (
+                    <Button
+                      onClick={handleSubmit}
+                      borderRadius="0.5"
+                      marginTop="4"
+                      padding="6"
+                      color="white"
+                      bg="#fb641b"
+                      width="19.7rem"
+                    >
+                      Login
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={SubmitOtp}
+                      borderRadius="0.5"
+                      marginTop="4"
+                      padding="6"
+                      color="white"
+                      bg="#fb641b"
+                      width="19.7rem"
+                    >
+                      Submit OTP
+                    </Button>
+                  )}
                   <Text marginTop="2" marginBottom="2" textAlign="center">
                     OR
                   </Text>
