@@ -3,6 +3,7 @@ import { Box, Button, Checkbox, CheckboxGroup, Flex, Img, Input, Radio, RadioGro
 import { FaSearch } from 'react-icons/fa';
 import { IoFilterOutline } from 'react-icons/io5';
 import {AiOutlineRight} from 'react-icons/ai'
+import {BiRadioCircle} from 'react-icons/bi'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './OrderPage.css'
@@ -39,7 +40,7 @@ function OrderPage() {
                     <CheckboxGroup colorScheme='blue' >
                         <Text pb="10px"> ORDER STATUS</Text>
                         <Stack spacing={[1, 2]} >
-                            <Checkbox value='ontheway'>On the way</Checkbox>
+                            <Checkbox  value='ontheway'>On the way</Checkbox>
                             <Checkbox value='deliverd'>Deliverd</Checkbox>
                             <Checkbox value='cancelled'>Cancelled</Checkbox>
                             <Checkbox value='returned'>Returned</Checkbox>
@@ -68,14 +69,14 @@ function OrderPage() {
 
 
                     {Order.map((item) => (
-                        <Flex fontSize={{base:"8.5px", md:"15px", lg:"18px"}} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow: "2xl" }}>
+                        <Flex fontSize={{base:"8.5px", md:"15px", lg:"18px"}} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow:'md' }}>
                             <Img maxWidth="60px" src={item.image} alt="img" />
-                            <Box>  <Text fontWeight={"400"}> {item.description}</Text>
+                            <Box>  <Text fontWeight={"400"} fontSize="16px"> {item.description}</Text>
 
                                 <Text color={"#878787"} fontSize="13px"> Color : {item.color}</Text>
                             </Box>
-                            <Text>₹ {item.new_price}</Text>
-                            <Text>  Delivery Expected By  Nov 20</Text>
+                            <Text fontSize={"14px"} fontWeight={"semibold"}>₹ {item.new_price}</Text>
+                            <Text display="flex" fontSize={"14px"} alignItems="center"> <BiRadioCircle color="green" size="16px"/>  Delivery Expected By  Nov 20</Text>
                         </Flex>
 
                     ))}
@@ -87,12 +88,12 @@ function OrderPage() {
                     {Order.map((item) => (
                         <Flex fontSize={{base:"8.5px", md:"15px", lg:"18px"}} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow: "2xl" }}>
                             <Img maxWidth="40px" src={item.image} alt="img" />
-                            <Box>   <Text fontSize="12px"  fontWeight={"500"}>  Delivery Expected By  Nov 20</Text>
-                                 <Text pt="15px"> {item.description}</Text>
+                            <Box>   <Text fontSize="15px" alignItems="center" display={"flex"} fontWeight={"semibold"}>  Delivery Expected By  Nov 20</Text>
+                                 <Text pt="15px"fontSize="12px" fontWeight={"light"}> {item.description}</Text>
 
                            
                             </Box>
-                           <Text> <AiOutlineRight size={"15px"}/> </Text>
+                           <Text> <AiOutlineRight size={"18px"}/> </Text>
                     
                         </Flex>
 
