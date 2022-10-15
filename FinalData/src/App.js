@@ -14,11 +14,6 @@ import BannerOffer2 from "./Components/BannerOffer2";
 import CategoryBar from "./Components/CategoryBar";
 import CategoryBarForMobile from "./Components/CategoryBarForMobile";
 function App() {
-  const containerStyles = {
-    width: "100%",
-    height: "280px",
-    margin: "0 auto",
-  };
   return (
     <div className="App">
       <CategoryBar /> 

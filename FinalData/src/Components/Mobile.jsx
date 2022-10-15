@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box,Alert,SkeletonCircle,SkeletonText,AlertIcon,AlertTitle,AlertDescription, Button, Img, Text, WrapItem } from '@chakra-ui/react';
+import { Box,Alert,SkeletonCircle,SkeletonText,AlertIcon,AlertTitle,AlertDescription, Button, Img, Text, WrapItem, Flex } from '@chakra-ui/react';
 import './fashion.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -104,38 +104,44 @@ function Mobile() {
     return (
         <Box display={"flex"} mt="20px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
 
-            <Box w="15%" m="auto" textAlign={"center"} className="dealsBox">
-                <Text fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Top Mobile Deals</Text>
+            <Box w="25%" m="auto" textAlign={"center"} className="dealsBox">
+                <Text paddingTop={{base:"120px", md:"120px", lg:"70px"}} fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Top Mobile Deals</Text>
 
-                <WrapItem>
+                <WrapItem pt="20px">
                     <Button fontSize={{ base: '6px', md: '9px', lg: '12px' }} m={"auto"} colorScheme='messenger'>VIEW ALL</Button>
                 </WrapItem>
-                <Img mt="20%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQJ6xBHIA9e3Pf3QMok5yTZn3XF2Z3KcZ3w&usqp=CAU" alt="fg" />
+                <Img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQJ6xBHIA9e3Pf3QMok5yTZn3XF2Z3KcZ3w&usqp=CAU" alt="fg" />
 
             </Box>
-            <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider" >
+            <Box w={{ base: '80%', md: '74%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
-                    {mobile.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img mw="130px" h="230px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
-                        <Text fontWeight="700"> {item.description}</Text>
-                        
-                        <Text color={"green"}>₹ {item.new_price}</Text>
-                         <Text > {item.brand}</Text>   
+                    {mobile.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"}>
+                    <Img maxWidth="190px" h="220px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                        <Text fontWeight="500"> {item.description}</Text>
+                       <Flex textAlign={"center"} justifyContent={'space-around'} w="50%" m="auto">
+                         <Text fontSize={"15px"} fontWeight={"600"} >   ₹ {item.new_price}</Text>
+                         <Text  fontSize={"12px"}><del> ₹ {item.old_price}</del></Text>
+                       </Flex>
+                       
+                        <Text fontWeight={"medium"} color={"green"}>Upto {item.discount} % Off</Text>
                     </Box>)}
 
                 </Slider>
             </Box>
             <Box display={{ base: 'block', md: 'none', lg: 'none' }} bg="#FFC3E6" p="10px" backgroundImage={"https://rukminim1.flixcart.com/fk-p-reco/600/150/images/Reco_BDS_ffb8e3.jpg?q=90"}> 
-                <Box mb="20px" mt="10px" alignItems={"center"} display="flex" justifyContent={"space-between"}> <Text>  Top Mobile Deals</Text> <Button size="sm" colorScheme='messenger'>View All</Button></Box>
+                <Box mb="20px" mt="10px" alignItems={"center"} display="flex" justifyContent={"space-between"}> <Text fontSize={"19px"} >  Top Mobile Deals</Text> <Button size="sm" colorScheme='messenger'>View All</Button></Box>
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }}>
                     
                     
-                    {mobile.map(item => <Box key={Math.random()} borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
-                        <Img h="150px" mw="200px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
-                        <Text   maxHeight="40px" fontWeight="700"> {item.description}</Text>
-
-                        <Text color={"green"}>₹ {item.new_price}</Text>
-                        <Text pb="5px" > {item.brand}</Text>
+                    {mobile.map(item => <Box key={Math.random()} borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
+                    <Img maxWidth="150px" h="150px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                        <Text fontWeight="500" p="5px" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.description}</Text>
+                       <Flex textAlign={"center"} justifyContent={'space-around'} w="50%" m="auto">
+                         <Text fontSize={"15px"} fontWeight={"600"} >   ₹ {item.new_price}</Text>
+                         <Text  fontSize={"12px"}><del> ₹ {item.old_price}</del></Text>
+                       </Flex>
+                       
+                        <Text fontSize={{base:"13px", md:"14px", lg:"15px"}} fontWeight={"medium"} color={"green"} pb="10px">Upto {item.discount} % Off</Text>
                     </Box>)}
                     
                 </Box>

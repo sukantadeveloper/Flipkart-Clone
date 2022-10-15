@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box,Alert,SkeletonCircle,SkeletonText,AlertIcon,AlertTitle,AlertDescription, Button, Img, Text, WrapItem } from '@chakra-ui/react';
+import { Box,Alert,SkeletonCircle,SkeletonText,AlertIcon,AlertTitle,AlertDescription, Button, Img, Text, WrapItem, Flex } from '@chakra-ui/react';
 import './fashion.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -47,8 +47,8 @@ function Electronics() {
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToShow: 2,
+              slidesToScroll: 2,
               
             }
           },
@@ -105,23 +105,26 @@ function Electronics() {
         <div> 
         <Box display={"flex"} mt="20px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p='1' bg='white' >
 
-            <Box w="15%" m="auto" textAlign={"center"} className="dealsBox">
-                <Text fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Best Of Electronics</Text>
+            <Box width="25%" h="300px" m="auto" textAlign={"center"} className="dealsBox">
+                <Text paddingTop={{base:"120px", md:"120px", lg:"40px"}}  fontSize={{ base: '10px', md: '20px', lg: '30px' }}> Best Of Electronics</Text>
 
-                <WrapItem>
-                    <Button fontSize={{ base: '6px', md: '9px', lg: '12px' }} m={"auto"} colorScheme='messenger'>VIEW ALL</Button>
+                <WrapItem pt="30px">
+                    <Button  fontSize={{ base: '6px', md: '9px', lg: '12px' }} m={"auto"} colorScheme='messenger'>VIEW ALL</Button>
                 </WrapItem>
-                <img src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90" alt="fg" />
+                <Img   src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90" alt="fg" />
 
             </Box>
-            <Box w={{ base: '80%', md: '84%', lg: '84%' }} m="auto" className="OffSlider" >
+            <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
-                    {electronics.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} key={item.item_id}>
-                        <Img maxWidth="150px" h="150px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
-                        <Text fontWeight="700"> {item.description}</Text>
-                        
-                        <Text color={"green"}>₹ {item.new_price}</Text>
-                         <Text > {item.brand}</Text>   
+                    {electronics.map(item => <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} >
+                    <Img maxWidth="210px" h="210px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                        <Text fontWeight="500" p="5px" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.description}</Text>
+                       <Flex textAlign={"center"} justifyContent={'space-around'} w="50%" m="auto">
+                         <Text fontSize={"15px"} fontWeight={"600"} >   ₹ {item.new_price}</Text>
+                         <Text  fontSize={"12px"}><del> ₹ {item.old_price}</del></Text>
+                       </Flex>
+                       
+                        <Text  mt="8px" fontSize={{base:"13px", md:"14px", lg:"15px"}} fontWeight={"medium"} color={"green"} mb="-40px"> {item.discount} % Off</Text>
                     </Box>)}
 
                 </Slider>
@@ -129,11 +132,11 @@ function Electronics() {
             </Box>
               {/* mobile version */}
               <Box display={{ base: 'block', md: 'none', lg: 'none' }} bg="orange" backgroundImage={"https://rukminim1.flixcart.com/fk-p-reco/850/200/images/Reco_BDS_9be2e3.jpg?q=90"} p="10px"> 
-                <Box mb="20px" mt="10px" alignItems={"center"} display="flex" justifyContent={"space-between"}> <Text>  Best Of Electronics</Text> <Button size="sm" colorScheme='messenger'>View All</Button></Box>
+                <Box mb="20px" mt="10px" alignItems={"center"} display="flex" justifyContent={"space-between"}> <Text fontWidth={"600"} fontSize="19px">  Best Of Electronics</Text> <Button size="sm" colorScheme='messenger'>View All</Button></Box>
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }} >
                     
                     
-                    {electronics.map(item => <Box m="5px" key={Math.random()} borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={item.item_id} border="1px solid silver">
+                    {electronics.map(item => <Box m="5px" key={Math.random()} borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
                         <Img mw="160px" h="160px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 

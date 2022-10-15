@@ -183,7 +183,7 @@
     {
       "category_id":5,
       "category_name":"electronics",
-      "description": "SAMSUNG 6 kg 5 Star With Hygiene Steam and Ceramic Heater Fully Automatic Front Load with In-built Hea...",
+      "description": "SAMSUNG 6 kg 5 Star With Hygiene Steam ",
       "image": "https://i.ibb.co/KLvR4KZ/573c2d3062fa.jpg",
       "stars": 4.4,
       "ratings": "12,707 Ratings ",
@@ -233,7 +233,7 @@
   {
       "category_id":5,
       "category_name":"electronics",
-      "description": "realme TechLife 8 kg 5 Star Rating Fully Automatic Top Load with In-built Heater Grey",
+      "description": "realme TechLife 8 kg  Heater Grey",
       "image": "https://i.ibb.co/M61RVPY/51f818ac3a29.jpg",
       "stars": 4.2,
       "ratings": "6,790 Ratings ",
@@ -843,13 +843,13 @@
     }
    
 ],
-     "groceries":[
+     "disforyou":[
     {   
         "category_id":2,
         "category_name":"grocery",
-        "image": "https://i.postimg.cc/gJSxxxX6/shamppo.webp",
+        "image": "https://rukminim1.flixcart.com/image/200/200/kj7gwi80-0/face-wash/4/i/e/purifying-neem-himalaya-original-imafytqnaj5f9htm.jpeg?q=70",
         "brand": "TRESemme Keratin Smooth Shampoo  (580 ml)",
-        "description": "Flaunt your fabulous, shiny, smooth, and luscious hair every single day by using the TRESemme Keratin Smooth shampoo",
+        "description": "Himalaya Fash Wash",
         "new_price": 189,
         "old_price": 150,
         "discount": 52,
@@ -860,9 +860,9 @@
     {
         "category_id":2,
         "category_name":"grocery",
-        "image": "https://i.ibb.co/FwhPZx0/2a303a406383.jpg",
-        "brand": "Kwality Original Corn Flakes Pouch  (800 g)",
-        "description": "Corn",
+        "image": "https://rukminim1.flixcart.com/image/200/200/kj1r53k0-0/data-cable/usb-type-c-cable/8/8/u/deuce-330-2-in-1-boat-original-imafyphgz6hcnhfm.jpeg?q=70",
+        "brand": "Mobile Cabel",
+        "description": "Mobile Cabel",
         "new_price": 180,
         "old_price": 200,
         "discount": 68,
@@ -875,7 +875,7 @@
         "category_name":"grocery",
         "image": "https://i.postimg.cc/nV3K612p/oil.webp",
         "brand": "Fortune Refined Soyabean Oil Pouch  (1 L)",
-        "description": "Fortune soya health is certified as India�s No. 1 cooking oil brand.",
+        "description": "Fortune soya ",
         "new_price": 150,
         "old_price": 120,
         "discount": 64,
@@ -900,7 +900,7 @@
         "category_id":2,
         "category_name":"grocery",
         "image": "https://i.postimg.cc/XYLQY0cB/fair-and-some.webp",
-        "description": "Fair & Handsome Fair and Handsome Fairness Cream(60G)",
+        "description": "Fair & Handsome ",
         "new_price":99,
         "old_price": 120,
         "discount": 20,
@@ -908,69 +908,22 @@
         "hidden_stars": 4,
         "item_id": 5
     },
-    {
-        "category_id":2,
-        "category_name":"grocery",
-        "image": "https://i.postimg.cc/XYLQY0cB/fair-and-some.webp",
-        "description": "Fair & Handsome Fair and Handsome Fairness Cream(60G)",
-        "new_price":99,
-        "old_price": 120,
-        "discount": 20,
-        "delivery_type": "Free delivery",
-        "hidden_stars": 4,
-        "item_id": 6
-    },
-    {
-        "category_id":2,
-        "category_name":"grocery",
-        "image": "https://i.postimg.cc/XYLQY0cB/fair-and-some.webp",
-        "description": "Fair & Handsome Fair and Handsome Fairness Cream(60G)",
-        "new_price":99,
-        "old_price": 120,
-        "discount": 20,
-        "delivery_type": "Free delivery",
-        "hidden_stars": 4,
-        "item_id": 7
-    },
+   
+   
     {
         "category_id":2,
         "category_name":"grocery",
         "image": "https://i.ibb.co/FwhPZx0/2a303a406383.jpg",
         "brand": "Kwality Original Corn Flakes Pouch  (800 g)",
-        "description": "Corn",
+        "description": "American Tourister",
         "new_price": 180,
         "old_price": 200,
         "discount": 68,
         "delivery_type": "Free delivery",
         "hidden_stars": 4.3,
         "item_id": 8
-    },
-    {
-        "category_id":2,
-        "category_name":"grocery",
-        "image": "https://i.ibb.co/FwhPZx0/2a303a406383.jpg",
-        "brand": "Kwality Original Corn Flakes Pouch  (800 g)",
-        "description": "Corn",
-        "new_price": 180,
-        "old_price": 200,
-        "discount": 68,
-        "delivery_type": "Free delivery",
-        "hidden_stars": 4.3,
-        "item_id": 9
-    },
-    {
-        "category_id":2,
-        "category_name":"grocery",
-        "image": "https://i.ibb.co/FwhPZx0/2a303a406383.jpg",
-        "brand": "Kwality Original Corn Flakes Pouch  (800 g)",
-        "description": "Corn",
-        "new_price": 180,
-        "old_price": 200,
-        "discount": 68,
-        "delivery_type": "Free delivery",
-        "hidden_stars": 4.3,
-        "item_id": 10
     }
+    
 ],
 "bestselling":[
     {
@@ -1180,5 +1133,531 @@
         "hidden_stars": 3.7,
         "item_id": 14
     }
-]
+],
+"mens" : 
+        [
+            {
+                "id": 1,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "ADIDAS",
+                "Title": "Solid Men Round Neck Dark Blue T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/540/648/kq9ta4w0/t-shirt/c/m/9/m-723-5-ftx-original-imag4bhzme8zjc3j.jpeg?q=50",
+                    "https://rukminim1.flixcart.com/image/540/648/kq9ta4w0/t-shirt/c/m/9/m-723-5-ftx-original-imag4bhzme8zjc3j.jpeg?q=50",
+                    "https://rukminim1.flixcart.com/image/540/648/kq9ta4w0/t-shirt/c/m/9/m-723-5-ftx-original-imag4bhzme8zjc3j.jpeg?q=50"
+                ],
+
+                "price": {
+                    "MRP":2999,
+                    "Final_Price":1599,
+                    "Discount": 50
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4.4,
+                "reviews": 591,
+                "rating": 6764,
+                "Colour": "White",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 2,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "WROGN",
+                "Title": "Solid Men Mandarin Collar Blue T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/t/a/z/m-wmsh0516-wrogn-original-imaghyrtm6acru8r.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/4/d/i/m-wmsh0516-wrogn-original-imaghyrthbunwqbf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/q/c/9/m-wmsh0516-wrogn-original-imaghyrt7d5tg8ze.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":2199,
+                    "Final_Price":949,
+                    "Discount": 56
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 3.5,
+                "reviews": 5,
+                "rating": 4,
+                "Colour": "Blue",
+                "Gender": "Men",
+
+                "Assured": false,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 3,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "AUSK",
+                "Title": "Striped Men Round Neck Blue, Yellow T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/kzsqykw0/t-shirt/g/m/b/s-ausk0137-ausk-original-imagbqe7yf2qbmzu.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kzsqykw0/t-shirt/1/e/m/s-ausk0137-ausk-original-imagbqe7uahaarvj.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kzsqykw0/t-shirt/e/p/m/s-ausk0137-ausk-original-imagbqe7mbnycpht.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":1499,
+                    "Final_Price":299,
+                    "Discount": 85
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4,
+                "reviews": 737,
+                "rating": 10869,
+                "Colour": "Yellow",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": false,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": false,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 4,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "Young trendz",
+                "Title": "Typography Men Round Neck White T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/1/s/u/xl-over-hs-mens-love-has-paws-sblue-young-trendz-original-imagh2b3u2fqabpe.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/i/x/8/xl-over-hs-mens-love-has-paws-sblue-young-trendz-original-imagh2b3h3uc9vry.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/k/h/8/xl-over-hs-mens-love-has-paws-sblue-young-trendz-original-imagh2b3frhr3gaw.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":1499,
+                    "Final_Price":398,
+                    "Discount": 76
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4.2,
+                "reviews": 13,
+                "rating": 2,
+                "Colour": "White",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":true
+            },
+            {
+                "id": 5,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "LEE",
+                "Title": "Striped Men Polo Neck Blue T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/l1b1oy80/t-shirt/p/h/a/m-lmts001487-lee-original-imagcwh3ewuywayw.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l1b1oy80/t-shirt/t/l/6/m-lmts001487-lee-original-imagcwh3hg5fhaaz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l1b1oy80/t-shirt/e/7/v/m-lmts001487-lee-original-imagcwh3unmsyadg.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":760,
+                    "Final_Price":399,
+                    "Discount": 20
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 3.9,
+                "reviews": 3,
+                "rating": 115,
+                "Colour": "Yellow",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": false,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 6,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "Smartees",
+                "Title": " Printed Men Hooded Neck Black T-Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/l2urv680/t-shirt/m/o/x/l-hood-spray-black-smartees-original-image3nnagm2cna8.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l2urv680/t-shirt/b/h/n/l-hood-spray-black-smartees-original-image3nnzrdfgrb8.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l2urv680/t-shirt/m/o/x/l-hood-spray-black-smartees-original-image3nnagm2cna8.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":1575,
+                    "Final_Price":199,
+                    "Discount": 86
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4.1,
+                "reviews": 626,
+                "rating": 8485,
+                "Colour": "Black",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 7,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Shirt",
+                "Brand": "WROGN",
+                "Title": "Men Slim Fit Solid Casual Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/j5bceq80/shirt/y/d/h/xl-1758578-wrogn-original-imaev3t28z5sqjxz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/j5bceq80/shirt/y/d/h/xl-1758578-wrogn-original-imaev3t2ggyzxxhy.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/j5bceq80/shirt/y/d/h/xl-1758578-wrogn-original-imaev3t2cas7m2qt.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":2099,
+                    "Final_Price":859,
+                    "Discount": 59
+                },
+                "Size":["XL"],
+                "Rating_Star": 3.9,
+                "reviews": 10,
+                "rating": 108,
+                "Colour": "Green",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+
+            {
+                "id": 8,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Shirt",
+                "Brand": "WROGN",
+                "Title": "Men Regular Fit Solid Casual Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/jsaocy80/shirt/4/b/h/l-2478210-wrogn-original-imafdvdtuhxfzqkb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/js98x3k0/shirt/4/b/h/m-2478210-wrogn-original-imafdvdzngh86huf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/js98x3k0/shirt/4/b/h/m-2478210-wrogn-original-imafdvdn2hweurdb.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":991,
+                    "Final_Price":1599,
+                    "Discount": 60
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 3.9,
+                "reviews": 59,
+                "rating": 674,
+                "Colour": "Pink",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 9,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Shirt",
+                "Brand": "WROGN",
+                "Title": "Men Regular Fit Solid Casual Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/kgjqefk0-0/shirt/c/y/y/46-12328816-wrogn-original-imafwr326s327zpa.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kgjqefk0-0/shirt/g/p/k/46-12328816-wrogn-original-imafwr32mfsrghgf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/y/m/1/-original-imaggmyfqh9tymqy.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":723,
+                    "Final_Price":399,
+                    "Discount": 50
+                },
+                "Size":[ "M", "XL"],
+                "Rating_Star": 4.6,
+                "reviews": 91,
+                "rating": 564,
+                "Colour": "White",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 10,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Jeans",
+                "Brand": "WROGN",
+                "Title": "Slim Men Grey Jeans",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/jvtujrk0/jean/s/s/f/32-2338117-wrogn-original-imafgmprytkwkcju.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jvtujrk0/jean/s/s/f/30-2338117-wrogn-original-imafgmprp6mmwfxm.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jvtujrk0/jean/s/s/f/36-2338117-wrogn-original-imafgmprnwjfamyf.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":3000,
+                    "Final_Price":1199,
+                    "Discount": 48
+                },
+                "Size":["S", "M", "L"],
+                "Rating_Star": 4.5,
+                "reviews": 590,
+                "rating": 2333,
+                "Colour": "Blue",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 11,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Shirt",
+                "Brand": "LEVI'S",
+                "Title": "Men Slim Fit Striped Spread Collar Casual Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/l4zxn680/shirt/5/h/p/-original-imagfrzhnqhqzhz6.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l4zxn680/shirt/a/s/o/-original-imagfrzhgy9zfagu.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l4zxn680/shirt/f/d/t/-original-imagfrzhwyqujuwa.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":2499,
+                    "Final_Price":1399,
+                    "Discount": 44
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4.1,
+                "reviews": 11,
+                "rating": 88,
+                "Colour": "Pink",
+                "Gender": "Men",
+
+                "Assured": false,
+                "Trending": true,
+                "Free_Delivery":false,
+                "Popularity": true,
+                "Newest_First": true,
+                "AVAILABILITY": false,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": true,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 12,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"Jeans",
+                "Brand": "LEVI'S",
+                "Title": "511 Slim Men Blue Jeans",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jean/l/x/e/32-18298-0914-levi-s-original-imag6rdp8nrhhz6u-bb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ktep2fk0/jean/z/d/b/32-18298-0914-levi-s-original-imag6rdpfhgg4hjk.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ktep2fk0/jean/i/r/j/32-18298-0914-levi-s-original-imag6rdpxprbxywc.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":3699,
+                    "Final_Price":1194,
+                    "Discount": 64
+                },
+                "Size":["S", "M"],
+                "Rating_Star": 4.1,
+                "reviews": 555,
+                "rating": 1164,
+                "Colour": "Dark Blue",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": false,
+                "Newest_First": true,
+                "AVAILABILITY": true,
+
+                "Buy_More_Save_More": true,
+                "No Cost EMI": false,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            },
+            {
+                "id": 13,
+                "quantity": 1,
+                "Category_name": "Men",
+                "Sub_category_name": "Clothing",
+                "Sub_category_Type":"T-Shirt",
+                "Brand": "LEVI'S",
+                "Title": "Men Slim Fit Solid Spread Collar Casual Shirt",
+                "imageUrl": [
+                    "https://rukminim1.flixcart.com/image/832/832/l4fxh8w0/shirt/d/g/s/-original-imagfc3p3zpnkehg.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l4fxh8w0/shirt/q/y/o/-original-imagfc3p4z6hwpfn.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l4fxh8w0/shirt/t/m/s/-original-imagfc3phkzfkzrq.jpeg?q=70"
+                ],
+
+                "price": {
+                    "MRP":2199,
+                    "Final_Price":889,
+                    "Discount": 60
+                },
+                "Size":["S", "M", "L", "XL"],
+                "Rating_Star": 4.1,
+                "reviews": 39,
+                "rating": 134,
+                "Colour": "Yellow",
+                "Gender": "Men",
+
+                "Assured": true,
+                "Trending": true,
+                "Free_Delivery":true,
+                "Popularity": true,
+                "Newest_First": false,
+                "AVAILABILITY": false,
+
+                "Buy_More_Save_More": false,
+                "No Cost EMI": false,
+                "Special_Price": true,
+
+                "Top_Discount_on_Sale": true,
+                "Saver_Deal":false
+            }
+
+        ]
+    
 }

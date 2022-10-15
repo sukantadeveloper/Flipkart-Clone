@@ -4,7 +4,7 @@ import React from 'react';
 function BannerOffer2() {
     return (
         <div>
-            <Box m="15px">
+            <Box m="15px" display={{base:"none", md:"block", lg:"block"}}>
                 <SimpleGrid columns={[1, 2, 3]} spacing='20px'>
                     <Box>
                         <Img src="https://rukminim1.flixcart.com/fk-p-flap/480/480/image/61e0d82c7c5e5a64.jpg?q=50" />
