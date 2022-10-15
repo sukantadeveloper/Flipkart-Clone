@@ -124,6 +124,7 @@ function Summary(){
                  justifyContent='space-between'
                  alignItems='center'
                  shadow='md'
+                 mt='4'
                  >
                     <Box>
                     <Box ml='6' display='flex' alignItems='center' >
@@ -302,9 +303,14 @@ function Summary(){
                  shadow='md'
                  >
                     <Box ml='6' display='flex' alignItems='center' >
-                        <Box bg='#f1f3f6' pl='2' pr='2' color='blue' mr='4' borderRadius='2' >3</Box>
-                        <Text fontWeight='500' color='grey' >{globalAddress.Name}</Text>
+                        {/* <Box bg='#f1f3f6' pl='2' pr='2' color='blue' mr='4' borderRadius='2' >3</Box> */}
+                        <Text fontWeight='400' color='black' > Order Confirmation email will be sent to     </Text>
+                        <Text fontWeight='500' color='black' ml='2' > { globalAddress.Email }  </Text>
                     </Box>
+                    <Button color='white' bg='#fb641b' mr='3' borderRadius='0' >
+                         <Link to='/payment' >CONTINUE</Link>
+                        </Button>
+                    {/* <Box>  </Box> */}
                  </Box>
                 <Box 
                  w='100%'
