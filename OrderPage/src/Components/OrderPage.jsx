@@ -1,12 +1,24 @@
 import React from 'react';
-import { Box, Button, Checkbox, CheckboxGroup, Flex, Img, Input, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Checkbox, CheckboxGroup, Flex, Img, Input, Radio, RadioGroup, Stack, Text, useDisclosure } from '@chakra-ui/react'
 import { FaSearch } from 'react-icons/fa';
-import { BsCircle } from 'react-icons/bs';
-
+import { IoFilterOutline } from 'react-icons/io5';
+import {AiOutlineRight} from 'react-icons/ai'
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import './OrderPage.css'
+import {
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    
+} from '@chakra-ui/react'
 function OrderPage() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [placement, setPlacement] = React.useState('bottom')
     const [Order, setOrder] = useState([]);
     const getData = () => {
         fetch('http://localhost:4000/fashion').then((res) => (res.json()))
@@ -19,8 +31,8 @@ function OrderPage() {
     }, [])
     console.log(Order, "der");
     return (
-        <Box display="flex" gap="15px" bg="#F1F3F6" pt="50px">
-            <Box w="20%" h="fit-content" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" bg="white" >
+        <Box display="flex" gap="15px" bg="#F1F3F6">
+            <Box w="20%" h="fit-content" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" bg="white" display={{ base: "none", md: "none", lg: "block" }} >
 
                 <Text pl="50px" fontSize={"22px"} > Filters</Text>
                 <hr /><Box p="5px 0px 13px 50px">
@@ -47,24 +59,64 @@ function OrderPage() {
                         </Stack>
                     </CheckboxGroup> </Box>
             </Box>
-            <Box w="80%" h="900px">
-                <Box w="88%" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" display="flex">  <Input w="90%" outline={{ border: "1px solid black" }} placeholder='Search Your orders here' size='md' rounded={'0px'} /> <Button bg="#2874F0" color="white" rounded={"0px"} _hover={{ bg: "#2874F0" }}> <Text mr="6px"> <FaSearch size={"14px"} /> </Text> Search  Orders</Button></Box>
-                <Box mt="15px" w="98%">
+            <Box width={{ base: "100%", md: "100%", lg: "80%" }} h="900px">
+                <Box w="88%" bg="white" display={{ base: "none", md: "none", lg: "flex" }} boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" >  <Input w="90%" outline={{ border: "1px solid black" }} placeholder='Search Your orders here' size='md' rounded={'0px'} /> <Button bg="#2874F0" color="white" rounded={"0px"} _hover={{ bg: "#2874F0" }}> <Text mr="6px"> <FaSearch size={"14px"} /> </Text> Search  Orders</Button></Box>
+                {/* mobile search button start  */}
+                <Box w="100%" bg="white" p="12px 15px 12px 10px" alignItems={"center"} display={{ base: "flex", md: "flex", lg: "none" }} position="fixed" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" > <Box display="flex" alignItems={"center"} border="1px solid silver" pl="10px">  <FaSearch size={"16px"} color="#838383" /> <Input className='out' style={{ outline: "none", padding: "7px" }} w={{base:"260px", md:"500px",lg:"15px"}} outline={{ border: "1px solid red" }} border="none" placeholder='Search Your orders here' size='md' rounded={'0px'} /></Box> <Box ml="20px" mr="20px" onClick={onOpen}> <IoFilterOutline color='black' size="25px" /></Box> <Text color={"black"}> Filters</Text> </Box>
+                {/* mobile search button end */}
+                <Box mt="6px" w="98%" overflow={"auto"} display={{base:"none", md:"none",lg:"block"}}>
 
 
                     {Order.map((item) => (
-                        <Flex h="110px" border={"1px solid silver"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{boxShadow:"2xl"}}>
+                        <Flex fontSize={{base:"8.5px", md:"15px", lg:"18px"}} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow: "2xl" }}>
                             <Img maxWidth="60px" src={item.image} alt="img" />
                             <Box>  <Text fontWeight={"400"}> {item.description}</Text>
 
                                 <Text color={"#878787"} fontSize="13px"> Color : {item.color}</Text>
                             </Box>
-                            <Text>₹      {item.new_price}</Text>
+                            <Text>₹ {item.new_price}</Text>
                             <Text>  Delivery Expected By  Nov 20</Text>
                         </Flex>
 
                     ))}
                 </Box>
+           {/* mobile mode start  */}
+           <Box mt={{ base: "67px", md: "67px", lg: "0" }} w="98%" overflow={"auto"} display={{base:"block", md:"block",lg:"none"}}>
+
+
+                    {Order.map((item) => (
+                        <Flex fontSize={{base:"8.5px", md:"15px", lg:"18px"}} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow: "2xl" }}>
+                            <Img maxWidth="40px" src={item.image} alt="img" />
+                            <Box>   <Text fontSize="12px"  fontWeight={"500"}>  Delivery Expected By  Nov 20</Text>
+                                 <Text pt="15px"> {item.description}</Text>
+
+                           
+                            </Box>
+                           <Text> <AiOutlineRight size={"15px"}/> </Text>
+                    
+                        </Flex>
+
+                    ))}
+                </Box>
+                {/* mobile mode end */}
+
+                <Drawer placement={placement} onClose={onClose} isOpen={isOpen} >
+                    <DrawerOverlay />
+                    <DrawerContent>
+                        <DrawerHeader borderBottomWidth='1px'>Filters</DrawerHeader>
+                        <DrawerBody>
+                        <CheckboxGroup colorScheme='blue' >
+                        <Text pb="10px"> ORDER STATUS</Text>
+                        <Stack spacing={[1, 2]} >
+                            <Checkbox value='ontheway'>On the way</Checkbox>
+                            <Checkbox value='deliverd'>Deliverd</Checkbox>
+                            <Checkbox value='cancelled'>Cancelled</Checkbox>
+                            <Checkbox value='returned'>Returned</Checkbox>
+                        </Stack>
+                    </CheckboxGroup>
+                        </DrawerBody>
+                    </DrawerContent>
+                </Drawer>
             </Box>
         </Box>
     );
