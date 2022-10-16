@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "category_id": 7,
+      "category_name": "appliances",
+      "description": "SAMSUNG 6.5 kg Diamond Drum feature Fully Automatic Top Load Silver",
+      "image": "https://i.ibb.co/rGxFXRT/ce39ad8d6345.jpg",
+      "stars": 4.4,
+      "ratings": "1,04,278 Ratings ",
+      "reviews": " 9,689 Reviews",
+      "new_price": 1459,
+      "old_price": 1689,
+      "discount": 14,
+      "delivery_type": "Free delivery",
+      "offer": "Bank Offer",
+      "hidden_stars": 4.4,
+      "id": 3,
+      "quantity": 2
+    },
+    {
+      "category_id": 4,
+      "category_name": "fashion",
+      "image": "https://i.ibb.co/23StKfC/5e3aa027808d.jpg",
+      "brand": "Fashionuma",
+      "description": "Georgette Blend Stitched Flared/A-line Gown",
+      "color": "Green",
+      "new_price": 1739,
+      "old_price": 4999,
+      "discount": 65,
+      "delivery_type": "Free delivery",
+      "hidden_stars": 4.2,
+      "id": 1,
+      "quantity": 1
+    }
+  ],
+  "address": {
+    "Name": "GAURAV AGARWAL",
+    "Number": "809083460",
+    "Pincode": "241001",
+    "Email": "gaurav8090983460@gmail.com",
+    "Address": "PIHANI CHUNGI,\nABDUL PURVA",
+    "City": "Hardoi",
+    "State": "Uttar Pradesh"
+  }
+}
