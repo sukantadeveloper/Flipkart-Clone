@@ -122,7 +122,7 @@ export function Login() {
     })
   }
   const OTPVALUES = () => {
-    toast('WRONG OTP', {
+    toast.error('WRONG OTP', {
       position: 'top-center',
     })
     setIsAuth('')
