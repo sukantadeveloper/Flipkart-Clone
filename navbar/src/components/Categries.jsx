@@ -48,7 +48,7 @@ export const Categories=()=>{
     setarrp(arr17);
     setarrq(arr18);
     setarrr(arr19);
-  },[])
+  },[]);
 
   if(isLargerThan670){
     return(
@@ -81,7 +81,7 @@ export const Categories=()=>{
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Iphone 13</ListItem>
 
 </List>
-    <List w='100%' bg='dadada' pl='15px'>
+    <List w='100%'  bg='c2c2c2' pl='15px'>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Mobile Accesories</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Cover</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Power Bank</ListItem>
@@ -109,7 +109,7 @@ export const Categories=()=>{
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Computer Peripherals</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Printers & Ink Cartridges</ListItem>
 </List>
-<List w="100%" pl='15px' bg='dadada'>
+<List w="100%" pl='15px'  bg='ebebeb'>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Television</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'>Speaker</ListItem>
   <ListItem fontSize='14px' pb='10px' cursor='pointer'> Home Audio System</ListItem>
@@ -144,7 +144,7 @@ export const Categories=()=>{
   ))}
 
 </List>
-    <List w='100%' bg='dadada' pl='15px' >
+    <List w='100%'  bg='ebebeb' pl='15px' >
 
   {arrb.map(el=>(
     <ListItem fontSize='14px' pb='10px' cursor='pointer' key={el}>{el}</ListItem>
@@ -189,7 +189,7 @@ export const Categories=()=>{
 
 
 </List>
-    <List w='100%' bg='dadada' pl='15px'>
+    <List w='100%'  bg='ebebeb' pl='15px'>
  
     {arrg.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
@@ -231,7 +231,7 @@ export const Categories=()=>{
   ))}
 
 </List>
-    <List w='100%' bg='dadada' pl='15px'>
+    <List w='100%'  bg='ebebeb' pl='15px'>
     {arrl.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
@@ -241,7 +241,7 @@ export const Categories=()=>{
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
   
-</List><List w='100%' bg='dadada' >
+</List><List w='100%'  bg='ebebeb' >
 {arrn.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
@@ -267,7 +267,7 @@ export const Categories=()=>{
   ))}
 
 </List>
-    <List w='100%' bg='dadada' >
+    <List w='100%'  bg='ebebeb' >
     {arrp.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
@@ -276,7 +276,7 @@ export const Categories=()=>{
          {arrq.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}
-</List><List w='100%' bg='dadada'>
+</List><List w='100%'  bg='ebebeb'>
 {arrr.map(el=>(
     <ListItem fontSize='14px' pb='10px' pl='15px' bg="dadada" cursor='pointer' key={el}>{el}</ListItem>
   ))}

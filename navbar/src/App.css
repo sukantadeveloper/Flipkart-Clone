@@ -38,8 +38,9 @@
 .drawer{
     font-weight: 600;
 }
-.drawercontent{
-    overflow-y: hidden;
+.drawercontent::-webkit-scrollbar{
+    display:none;
+    width: 0px;
 }
 .header{
     display: flex;

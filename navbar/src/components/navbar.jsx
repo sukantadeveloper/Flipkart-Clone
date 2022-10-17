@@ -64,9 +64,9 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef();
   
-  const [isLargerThan670] = useMediaQuery('(min-width: 730px)')
+  const [isLargerThan730] = useMediaQuery('(min-width: 730px)')
 
-if(isLargerThan670){
+if(isLargerThan730){
   return (
     <div>
       <Flex bg="#2874f0" h="56px" align="center" position='fixed' w='100%'>
