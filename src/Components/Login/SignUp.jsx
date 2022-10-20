@@ -40,7 +40,7 @@ export function Signup() {
   }
 
   const handleSignup = (body) => {
-    fetch(`http://localhost:4000/Userdetails`)
+    fetch(`https://flipkart-data.onrender.com/Userdetails`)
       .then((res) => res.json())
       .then((res) => {
         res.map((el) => {
@@ -53,7 +53,7 @@ export function Signup() {
         if (flag == false) {
           console.log(inputValues + ' ')
           console.log(flag + 'raj')
-          fetch(`http://localhost:4000/Userdetails`, {
+          fetch(`https://flipkart-data.onrender.com/Userdetails`, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Image, Radio, RadioGroup, SimpleGrid, Skeleton, Stack, Tab, TabList, Tabs, Text, useCheckboxGroup, useDisclosure, useMediaQuery, VStack } from '@chakra-ui/react'
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Center, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Image, Radio, RadioGroup, SimpleGrid, Skeleton, Spinner, Stack, Tab, TabList, Tabs, Text, useCheckboxGroup, useDisclosure, useMediaQuery, VStack } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useEffect } from 'react'
 import ProductItem from './ProductItem'
@@ -9,11 +9,10 @@ import { Categories } from '../Navbar/Categries'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductError, getProductLoading, getProductsSuccess } from '../../Redux/Products/action'
 import { useParams } from 'react-router'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-const url = `http://localhost:4000`
-// http://localhost:4000
-
-// http://localhost:4000
+const url = `https://flipkart-data.onrender.com`
+// https://flipkart-data.onrender.com
 
 const Products = () => {
     const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
@@ -112,7 +111,33 @@ const Products = () => {
     // </Alert>
     // </>
     // }
+
     
+    const getScrollProducts = async() => {
+        try {
+          const res = await fetch(`${url}/all?_limit=8&_page=${page}`);
+            const data = await res.json();
+            dispatch(getProductsSuccess(data))
+        } catch (error) {
+          console.log(error);
+        }
+        finally{
+        }
+      };
+
+    const getMoreProducts = () => {
+        setTimeout(() => {
+          setPage(page + 1);
+          getScrollProducts();
+        }, 500);
+      };
+    
+      useEffect(() => {
+        if(isLargerThan720){
+            setPage(1);
+            // getFirstProducts();
+        }
+      }, []);
     return (
         <Box bg='#f1f3f6' border='1px solid #f1f3f6' fontFamily='Roboto,Arial,sans-serif'>
             <Categories/>
@@ -223,6 +248,39 @@ const Products = () => {
                                     ))
                                 }
                             </SimpleGrid>
+                            // :
+                            // !isLargerThan720?
+                            // <Box>
+                            //     <InfiniteScroll
+                            //         style={{ overflowY: "hidden" }}
+                            //         dataLength={products.length}
+                            //         next={getMoreProducts}
+                            //         hasMore={total >= products.length}
+                            //         loader={
+                            //         <Center>
+                            //             <Spinner />
+                            //         </Center>
+                            //         }
+                            //         scrollThreshold="100%"
+                            //     >
+                            // <SimpleGrid columns={2} minChildWidth={isLargerThan720?'220px':""} 
+                            // spacing={isLargerThan720?'10px':""} pt={0}
+                            // >
+                            //     {
+                            //         products.map((property, i) => (
+                            //             <ProductItem key={i} property={property} />
+                            //         ))
+                            //     }
+                            // </SimpleGrid>
+                            // </InfiniteScroll>
+                            // {total !== products.length ? (
+                            //     <Center>
+                            //       <Button bg="#42A8D6" colorScheme="white" mt={5}>
+                            //         Show More Results
+                            //       </Button>
+                            //     </Center>
+                            //   ) : null}
+                            // </Box>
                             :
                             <SimpleGrid columns={2} minChildWidth={isLargerThan720?'220px':""} 
                             spacing={isLargerThan720?'10px':""} pt={0}
@@ -313,7 +371,7 @@ const Products = () => {
                                 }
                             </TabList>
                         </Tabs>
-                        <Text></Text>
+                        <Text as='span'></Text>
                     </Flex>:""
                     }
                     <Box bg={'#f1f3f6'} p='10px 0'>

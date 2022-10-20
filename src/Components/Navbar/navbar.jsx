@@ -32,7 +32,7 @@ import icon15 from "./Icon/icon15.png";
 
 import { Flex, Box, Center, Image, Spacer, InputGroup, Input, InputLeftElement, Icon } from "@chakra-ui/react";
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons"
-import { BsFillFilePlusFill, BsFillCreditCard2BackFill, BsBellFill, BsQuestionSquareFill } from "react-icons/bs";
+import { BsFillFilePlusFill, BsFillCreditCard2BackFill, BsBellFill, BsQuestionSquareFill, BsMic } from "react-icons/bs";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { RiInboxUnarchiveFill, RiCoupon3Fill } from "react-icons/ri"
@@ -71,7 +71,7 @@ const Navbar = () => {
   const [hiddenDiv, setHiddenDiv] = useState(false)
 
   const [isLargerThan670] = useMediaQuery('(min-width: 730px)')
-  const url = `http://localhost:4000/all`
+  const url = `https://flipkart-data.onrender.com/all`
   // const url = `https://flipkart.dvishal485.workers.dev/search/`
 
   const [data, setData] = useState([])
@@ -479,7 +479,9 @@ const Navbar = () => {
                 }
         </Center>
         
-        <Center color='white' mr='10px'>Login</Center>
+        <Center color='white' mr='10px'>
+        <Register/>
+        </Center>
       </Flex>
       <Flex bg="#2874f0" h='52px'>
         <Center w='100%' ml='1%' mr='1%' pos={'relative'}> 
@@ -496,6 +498,9 @@ const Navbar = () => {
                 onInput={handleinput}
                 id='inputBox'
               />
+              <Box mt='10px' ml='-25px' zIndex={'100'}>
+                <BsMic />
+              </Box>
           {/* <InputLeftElement 
             pos={'absolute'} zIndex='10'
             children={

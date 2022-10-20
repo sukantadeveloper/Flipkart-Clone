@@ -27,7 +27,7 @@ function OrderPage() {
 
     const getData = () => {
         setOrder([...orderpageData]);
-        // fetch(`http://localhost:4000/orderedProducts`)
+        // fetch(`https://flipkart-data.onrender.com/orderedProducts`)
         //     .then((res) => (res.json()))
         //     .then((res) => {
         //         setOrder(res);

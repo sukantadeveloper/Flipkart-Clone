@@ -11,23 +11,24 @@ import Products from './Components/Products.jsx/Products';
 import Viewpage from './Components/ProductsView.jsx/Viewpage';
 
 function App() {
-  const location =useLocation();
-  const [checkOtpPage, setCheckOtpPage] = useState(false);
-  useEffect(()=>{
-    if(location.pathname==='/otp'){
-      setCheckOtpPage(true)
-      console.log(location.pathname, " loaction ");
-    }
-  },[])
-  console.log(location.pathname, " out from if loaction ");
+  // const location =useLocation();
+  // const [checkOtpPage, setCheckOtpPage] = useState(false);
+  // useEffect(()=>{
+  //   if(location.pathname==='/otp'){
+  //     setCheckOtpPage(true)
+  //     console.log(location.pathname, " loaction ");
+  //   }
+  // },[])
+  // console.log(location.pathname, " out from if loaction ");
   const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
-  console.log(checkOtpPage, " checkOtpPage ");
+  // console.log(checkOtpPage, " checkOtpPage ");
   return (
     <Box>
-      {
+      {/* {
         checkOtpPage? "":<Navbar/>
       }
-      
+       */}
+      <Navbar/>
       <AllRoutes/>
       {/* <Home/> */}
       {/* <Products/> */}
@@ -36,10 +37,10 @@ function App() {
       {/* {
         isLargerThan720? <Footer/> : ""
       } */}
-      {
-        checkOtpPage?"":<Footer/>
-      }
-
+      {/* {
+        checkOtpPage?"":
+      } */}
+      <Footer/>
     </Box>
   );
 }

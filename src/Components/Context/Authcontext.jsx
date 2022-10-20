@@ -13,7 +13,7 @@ const AuthContextProvider = ({ children }) => {
     // const [isAuth, setIsAuth] = useState(false);
   
     // const handleLogin = (body) => {
-    //   fetch(`http://localhost:4000/User`, {
+    //   fetch(`https://flipkart-data.onrender.com/User`, {
     //     method: "POST",
     //     body: JSON.stringify(body),
     //     headers: {

@@ -65,7 +65,7 @@ function Groceries() {
       };
     const getFashion = () => {
         setLoading(true)
-        fetch("http://localhost:4000/all")
+        fetch("https://flipkart-data.onrender.com/all")
             .then(res => res.json())
             .then(res => setGroceries(res))
             .catch(err => setError(true))
@@ -112,8 +112,8 @@ function Groceries() {
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
                     {groceries.filter(item=>item.category_name==="grocery").map(item =>
-                    <NavLink to={`/products/view/${item.item_id}`}>
-                        <Box key={Math.random()} m="5px" alignItems="center" textAlign={"center"}>
+                    <NavLink to={`/products/view/${item.item_id}`} key={Date.now()+item.item_id+Math.random()}>
+                        <Box m="5px" alignItems="center" textAlign={"center"}>
                         <Img mw="170px" h="200px" m="auto" _hover={{ transform: "scale(1.1)",transition:"400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="600" p="5px" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.description}</Text>
                         
@@ -130,8 +130,8 @@ function Groceries() {
                     
                     
                     {groceries.filter(item=>item.category_name==="grocery").map(item => 
-                    <NavLink to={`/products/view/${item.item_id}`}>
-                    <Box key={Math.random()} m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
+                    <NavLink to={`/products/view/${item.item_id}`} key={Date.now()+item.item_id+Math.random()}>
+                    <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
                         <Img w="180px" h="190px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                         <Text fontWeight="700"> {item.description}</Text>
 

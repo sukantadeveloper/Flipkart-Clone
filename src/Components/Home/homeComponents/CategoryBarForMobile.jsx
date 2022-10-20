@@ -52,8 +52,8 @@ function CategoryBarForMobile() {
             <Grid pb="20px" textAlign={"center"} templateColumns='repeat(5, 1fr)' m="auto"  >
                 {
                     data.map((ele, index) => (
-                        <NavLink key={index} to='/products'>
-                        <GridItem key={Math.random()}  _hover={{color:"#2874F0"}} fontSize={{base:"10px", md:"13px", lg:"14px"}} >
+                        <NavLink key={Date.now()+index+Math.random()} to='/products'>
+                        <GridItem _hover={{color:"#2874F0"}} fontSize={{base:"10px", md:"13px", lg:"14px"}} >
                             <Box > <Img src={ele.image} alt=""  height={{base:"60px", md:"60px", lg:"70px"}} m="auto" />
                              <Text> {ele.title}</Text>
                             </Box>

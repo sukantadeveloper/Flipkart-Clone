@@ -63,7 +63,7 @@ function DeliveryPage(){
         if(address.Name != "" && address.Number != "" && address.Pincode != "" && address.Email != "" && address.Address != "" && address.City != "" && address.State != "" ){
             console.log("yes its working");
 
-            fetch(`http://localhost:4000/address`,{
+            fetch(`https://flipkart-data.onrender.com/address`,{
                 method : 'POST',
                 body: JSON.stringify(address),
                 headers : {

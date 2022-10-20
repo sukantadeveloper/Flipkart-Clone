@@ -5,7 +5,7 @@ import { Signup } from './SignUp'
 const Register = () => {
   return (
     <div>
-     
+    
         <Login/>
         
     </div>
