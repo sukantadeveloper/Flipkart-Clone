@@ -18,6 +18,7 @@ import {
   FormControl,
   Input,
   FormLabel,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { Authcontext } from '../Context/Authcontext'
 import { ChevronDownIcon } from '@chakra-ui/icons'
@@ -65,7 +66,7 @@ export function Login() {
   }
 
   const handlelogin = (inputValues) => {
-    fetch(`http://localhost:4000/Userdetails`)
+    fetch(`https://flipkart-data.onrender.com/Userdetails`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res, " check res in 67");
@@ -169,6 +170,8 @@ export function Login() {
     setInputValues(initialvalues)
   }
 
+  const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
+
   return (
     <>
       {
@@ -182,6 +185,12 @@ export function Login() {
               {" "}
               <ChevronDownIcon/>
               </Text>
+        :
+        !isLargerThan720?
+        <Text p='4px' bg='#2874f0' color={'#fff'} border='0' textAlign="center" fontSize={'15px'}
+                fontWeight="700"
+                cursor="pointer"
+              >Login</Text>
         :
         <Text p='4px 30px' _hover={{bg:""}} textAlign="center" fontSize={'15px'} onClick={onOpen}
         bg="white"

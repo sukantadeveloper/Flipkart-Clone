@@ -72,7 +72,7 @@ function Electronics() {
       };
     const getFashion = () => {
         setLoading(true)
-        fetch("http://localhost:4000/all")
+        fetch("https://flipkart-data.onrender.com/all")
             .then(res => res.json())
             .then(res => setElectronics(res))
             .catch(err => setError(true))
@@ -122,8 +122,8 @@ function Electronics() {
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider" >
                 <Slider {...settings}>
                     {electronics.filter(item=>item.category_name==="electronics").map(item =>
-                    <NavLink to={`/products/view/${item.item_id}`}>
-                        <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} >
+                    <NavLink to={`/products/view/${item.item_id}`} key={Date.now()+item.item_id+Math.random()}>
+                        <Box m="5px" alignItems="center" textAlign={"center"} >
                         <Img maxWidth="210px" h="210px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="500" p="5px" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.description}</Text>
                        <Flex textAlign={"center"} justifyContent={'space-around'} w="50%" m="auto">
@@ -146,8 +146,8 @@ function Electronics() {
                     
                     
                     {electronics.filter(item=>item.category_name==="electronics").map(item =>
-                        <NavLink to={`/products/view/${item.item_id}`}>
-                            <Box m="5px" key={Math.random()} borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
+                        <NavLink to={`/products/view/${item.item_id}`} key={Date.now()+item.item_id+Math.random()}>
+                            <Box m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
                             <Img mw="160px" h="160px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }}  p="10px" src={item.image} alt="" />
                             <Text fontWeight="700"> {item.description}</Text>
 

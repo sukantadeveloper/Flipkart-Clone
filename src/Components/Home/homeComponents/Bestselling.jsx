@@ -72,7 +72,7 @@ function Bestselling() {
       };
     const getFashion = () => {
         setLoading(true)
-        fetch("http://localhost:4000/all")
+        fetch("https://flipkart-data.onrender.com/all")
             .then(res => res.json())
             .then(res => setBestselling(res))
             .catch(err => setError(true))
@@ -120,9 +120,9 @@ function Bestselling() {
             </Box>
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
-                    {bestselling.filter(item=>item.category_name==="home").map(item =>
-                        <NavLink to={`/products/view/${item.item_id}`}>
-                            <Box m="5px" key={Math.random()} alignItems="center" textAlign={"center"} >
+                    {bestselling.filter(item=>item.category_name==="home").map((item, index) =>
+                        <NavLink to={`/products/view/${item.item_id}`} key={Date.now()+index+Math.random()}>
+                            <Box m="5px" alignItems="center" textAlign={"center"} >
                             <Img maxWidth="190px" h="240px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                                 <Text p="5px" fontWeight="500" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.description}</Text>
                             
@@ -139,8 +139,9 @@ function Bestselling() {
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }} >
                     
                     
-                    {bestselling.map(item => <Box key={Math.random()} m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}border="1px solid silver">
-                    <Img maxWidth="160px" h="190px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
+                    {bestselling.map((item,index) => 
+                    <Box key={Math.random()+index} m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"}border="1px solid silver">
+                        <Img maxWidth="160px" h="190px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                         <Text fontWeight="500" p="5px"> {item.description}</Text>
                       
                        

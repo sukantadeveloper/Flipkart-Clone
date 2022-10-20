@@ -55,7 +55,7 @@ function CategoryBar() {
                 <Grid pb="20px" textAlign={"center"} templateColumns='repeat(10, 1fr)' m="auto" gap="20px" mt='1rem' pl="5px" pr="5px"  >
                     {
                         data.map((ele, index) => (
-                            <NavLink key={index} to='/products'>
+                            <NavLink key={Date.now()+index+Math.random()} to='/products'>
                                 <GridItem _hover={{ color: "#2874F0" }} fontSize={{ base: "0px", md: "12px", lg: "14px" }}
                                 >
                                     <Box cursor={'pointer'} > <Img src={ele.image} alt="" height={{ base: "0px", md: "60px", lg: "70px" }} m="auto" />

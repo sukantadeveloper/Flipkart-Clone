@@ -66,7 +66,7 @@ function TopOffers() {
     };
     const getFashion = () => {
         setLoading(true)
-        fetch("http://localhost:4000/mens?_limit=12")
+        fetch("https://flipkart-data.onrender.com/mens?_limit=12")
             .then(res => res.json())
             .then(res => settopOffers(res))
             .catch(err => setError(true))
@@ -110,7 +110,8 @@ function TopOffers() {
             </Box>
             <Box w={{ base: '80%', md: '75%', lg: '84%' }} m="auto" className="OffSlider">
                 <Slider {...settings}>
-                    {topOffers.map((item, index) => <Box key={index}  m="5px" alignItems="center" textAlign={"center"} >
+                    {topOffers.map((item, index) => 
+                    <Box key={index}  m="5px" alignItems="center" textAlign={"center"} >
                         <Img mw="180px" h="250px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.imageUrl[0]} alt="" />
                         <Text fontWeight="600" p="5px" fontSize={{base:"13px", md:"12px", lg:"14px"}}> {item.Title}</Text>
                         <Text  mt="8px" fontSize={{base:"13px", md:"14px", lg:"15px"}} color={"green"}>20 - {item.price.Discount} % Off</Text>
@@ -125,12 +126,12 @@ function TopOffers() {
                 <Box className='itemGrid'display={{ base: 'grid', md: 'none', lg: 'none' }} >
                     
                     
-                    {topOffers.map((item, index) => <Box  m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={index} border="1px solid silver">
-                    <Img mw="160px" h="200px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.imageUrl[0]} alt="" />
+                    {topOffers.map((item, index) => 
+                    <Box  m="5px" borderRadius="6px" bg="white" alignItems="center" textAlign={"center"} key={index} border="1px solid silver">
+                        <Img mw="160px" h="200px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.imageUrl[0]} alt="" />
                         <Text fontWeight="600"> {item.Title}</Text>
                         <Text color={"green"}>{item.price.Discount} % Off</Text>
                         <Text pb="10px">₹ {item.price.Final_Price}</Text>
-                       
                     </Box>)}
                     
                 </Box>
