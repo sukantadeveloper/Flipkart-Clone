@@ -1,4 +1,6 @@
 # Flipkart-Clone
+## INTRODUCTION
+Flipkart Private Limited is an Indian e-commerce company established in 2007. It started with a primary focus on online book sales and soon, expanded to lifestyle products, electronics, home essentials and groceries.
 ## STORY
 We all are students of masai school full stack web development course , In masai school when we complete any particular unit so we have to show our knowledge like what we had learn in this unit by creating project so this time management assign us task to create a pixel perfect clone of Flipkart website and after some discussions like how we are going to start our project after these discussions and meeting we are start working on that and completed all the given task in a week and complete our project succesfully and got 1st rank in construct week presentation.
 
