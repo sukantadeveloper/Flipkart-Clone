@@ -85,6 +85,7 @@ function Summary() {
         display="flex"
         alignItems="start"
         justifyContent='space-between'
+      
       >
         {/*LEFT BOX  */}
         <Box
@@ -127,7 +128,7 @@ function Summary() {
            
           >
             <Box>
-              <Box ml='6' display='flex' alignItems='center'  m={["10px","0px","0px"]}>
+              <Box  ml='6' display='flex' alignItems='center'  pt={["6px","0px","0px"]}>
                 <Box bg='#f1f3f6' pl='2' pr='2' color='blue' mr='4' borderRadius='2' > 2</Box>
                 <Text fontWeight='500' color='grey' >DELIVERY ADDRESS</Text>
                 <CheckIcon ml='3' color='blue.600' />

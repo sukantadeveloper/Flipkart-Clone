@@ -40,6 +40,14 @@ function OrderPage() {
         window.scrollTo(0, 0)
         getData();
     }, [])
+
+    const FormatDate = () => {
+        let month = new Date().getMonth();
+        month = month + 2;
+        const year = new Date().getFullYear();
+        return `15 / ${month} / ${year}`
+      }
+    
     return (
 
         <>
@@ -98,7 +106,7 @@ function OrderPage() {
 
                                         </Box>
                                         <Text fontSize={"14px"} fontWeight={"semibold"}>₹ {item.new_price}</Text>
-                                        <Text display="flex" fontSize={"14px"} alignItems="center"> <BiRadioCircle color="green" size="16px" />  Delivery Expected By  Nov 20</Text>
+                                        <Text display="flex" fontSize={"14px"} alignItems="center"> <BiRadioCircle color="green" size="16px" />  Delivery Expected By  {FormatDate()}</Text>
                                     </Flex>
                                 ))}
                             </Box>
@@ -109,7 +117,7 @@ function OrderPage() {
                                 {Order.map((item) => (
                                     <Flex fontSize={{ base: "8.5px", md: "15px", lg: "18px" }} h="110px" border={"0.3px solid #DBDBDB"} rounded="5px" p="5px 0px 5px 0px" key={Math.random()} mb="9px" alignItems={"center"} justifyContent={"space-around"} gap="15px" bg="white" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" _hover={{ boxShadow: "2xl" }}>
                                         <Img maxWidth="50px" maxHeight="90px" src={item.image} alt="img" />
-                                        <Box>   <Text fontSize="15px" alignItems="center" display={"flex"} fontWeight={"semibold"}>  Delivery Expected By  Nov 20</Text>
+                                        <Box>   <Text fontSize="15px" alignItems="center" display={"flex"} fontWeight={"semibold"}>  Delivery Expected By  {FormatDate()}</Text>
                                             <Text pt="15px" w="220px" fontSize="12px" fontWeight={"light"}> {item.description}</Text>
 
 

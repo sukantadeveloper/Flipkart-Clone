@@ -85,20 +85,21 @@ function PaymentPage() {
     return (
 
 
-        <Box w='100%' pt='20' bg='#f1f3f6' >
+        <Box w='100%' pt={["5", "20", "20"]} bg='#f1f3f6' >
 
             <HStack
-                w="82%"
+                w={["98%","82%","82%"]}
                 //  h='50vh'
                 //  bg="pink"
                 margin="auto"
                 display="flex"
                 alignItems="start"
                 justifyContent='space-between'
+              
             >
                 {/*LEFT BOX  */}
                 <Box
-                    w='69%'
+                    w={["100%", "69%", "69%"]}
                     //  h='40vh'
                     bg='#f1f3f6'
                 >
@@ -349,6 +350,7 @@ function PaymentPage() {
                     position="sticky"
                     top="0"
                     shadow='sm'
+                    display={["none", "block", "block"]}
                 >
                     <Box display='flex' justifyContent='flex-start' alignItems='center' bg='white' w='100%' h='12' >
                         <Text ml='5' fontWeight='500' color='grey' >PRICE DETAILS</Text>
