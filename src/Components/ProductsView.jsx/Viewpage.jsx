@@ -50,13 +50,11 @@ function Viewpage() {
         try {
             const res = await fetch(`https://flipkart-data.onrender.com/all?item_id=${item_id}`)
             const res2 = await res.json()
-            console.log(res2);
             setViewData([...res2]);
             setLoading(false)
         } catch (err) {
             setLoading(false)
             setError(true)
-            console.log(err, "err");
         }
         
     }
@@ -114,7 +112,6 @@ function Viewpage() {
         )
     }
     const addDatainCart = () => { // viewData[0]
-        console.log(viewData[0], " check data ");
 
         fetch(`https://flipkart-data.onrender.com/products`, {
             method: "POST",
@@ -126,13 +123,11 @@ function Viewpage() {
             .then((res) => res.json())
             .then((res) => {
                 getData()
-                console.log(" res in view page ", res);
             })
     }
 
     const handleAddToCart = () => {
         addDatainCart()
-        console.log(" handleAddToCart ");
     }
     const handleBuyNow = () => {
         addDatainCart()

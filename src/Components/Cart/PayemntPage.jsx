@@ -47,7 +47,7 @@ function PaymentPage() {
         }
         // setCardNumberValidation(e.target.value);
 
-        console.log(cardNumber);
+       
         // console.log(cardNumberValidation.length, 'len');
         // console.log(cardNumberValidation);
 
@@ -61,7 +61,7 @@ function PaymentPage() {
         setOpenOtpBox(true);
         if (cardNumber) {
             // return <Navigate to='/otp'/>
-            console.log("xyz");
+      
         } else {
             toast({
                 position: 'top',

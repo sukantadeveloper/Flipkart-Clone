@@ -22,12 +22,10 @@ const Products = () => {
     const [total, setTotal] = useState(0);
     
     const { category_name } = useParams()
-    console.log(category_name, " category_name");
 
     const dispatch = useDispatch();
     const { loading, error, products } = useSelector((state)=>state)
 
-    console.log(products, " products ", loading, error );
 
     const [priceRange, setPriceRange] = useState([]);
     // console.log(priceRange, " priceRange ");

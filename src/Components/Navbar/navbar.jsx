@@ -56,13 +56,14 @@ import { Signup } from "../Login/SignUp";
 import { Authcontext } from "../Context/Authcontext";
 import { IoMdPower } from "react-icons/io";
 import { CartContext } from "../Context/CartContext";
+import { Login } from "../Login/Login";
 
 
 const Navbar = () => {
-  const {cartData} = useContext(CartContext);
-  console.log(cartData, " cartData ");
+  const { cartData } = useContext(CartContext);
 
-  const {correct, setCorrect} = useContext(Authcontext)
+
+  const { correct, setCorrect } = useContext(Authcontext)
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef();
@@ -76,18 +77,18 @@ const Navbar = () => {
 
   const [data, setData] = useState([])
   const [searchVal, setSearchVal] = useState("");
-  useEffect(()=>{
+  useEffect(() => {
     fetchData(searchVal)
-  },[searchVal])
-  
-  const fetchData=(searchVal)=>{
+  }, [searchVal])
+
+  const fetchData = (searchVal) => {
     fetch(`${url}?_limit=5&q=${searchVal}`)
-    .then((res)=>res.json())
-    .then((res)=>{
-      // setData(res)
-      setData(res)
-      console.log(res, " search input data after fetched ");
-    })
+      .then((res) => res.json())
+      .then((res) => {
+        // setData(res)
+        setData(res)
+
+      })
   }
 
   // const handleinput = (e)=>{
@@ -96,36 +97,33 @@ const Navbar = () => {
   //   setSearchVal(val)
   // }
 
-  const debounce = (fn, timeout)=>{
+  const debounce = (fn, timeout) => {
     let timerid;
-    return ()=>{
+    return () => {
       clearTimeout(timerid)
       timerid = setTimeout(() => {
         fn()
       }, timeout);
     }
   }
-  const handleinput = debounce(()=>{
+  const handleinput = debounce(() => {
     const val = ref.current.value
-    console.log(" event val check in debounce ", val);
     setHiddenDiv(true)
     setSearchVal(val)
   }, 500)
 
-  window.addEventListener("click",(e)=>{
-    console.log(e.target.id, " check window ");
-    if(e.target.id!=="inputBox"){
+  window.addEventListener("click", (e) => {
+    if (e.target.id !== "inputBox") {
       setHiddenDiv(false)
     }
   })
 
-  const handleSetQuaryUrl = (query_url)=>{
+  const handleSetQuaryUrl = (query_url) => {
     // console.log("handleSetQuaryUrl", query_url);
     // console.log("check after slice ",query_url.slice(48));
-    console.log(query_url);
   }
 
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     setCorrect(false)
     console.log(" handleLogout ", correct);
   }
@@ -137,47 +135,47 @@ const Navbar = () => {
     return (
       <Box mt='-1px' ml='-1px'>
         <Box mb='3.4rem' border={'1px solid blue'}>
-        <Flex bg="#2874f0" h="56px" align="center"  position='fixed' w='100%' zIndex={'100'}>
-          <Spacer />
-          <Box>
-            <NavLink to='/'>
-            <Box mr="10px" cursor={'pointer'} >
-              <Image
-                src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
-                alt="flipkart"
-                h="20px"
-                marginBottom="-5px"
-              />
-              <Flex alignItems='center' >
-                <Text className="explore" color="white">
-                  Explore
-                </Text>
-                <Text className="explore1" color="yellow.400">
-                  Plus
-                </Text>
-                <Image src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="plus" w='10px' h='10px' />
-              </Flex>
+          <Flex bg="#2874f0" h="56px" align="center" position='fixed' w='100%' zIndex={'100'}>
+            <Spacer />
+            <Box>
+              <NavLink to='/'>
+                <Box mr="10px" cursor={'pointer'} >
+                  <Image
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                    alt="flipkart"
+                    h="20px"
+                    marginBottom="-5px"
+                  />
+                  <Flex alignItems='center' >
+                    <Text className="explore" color="white">
+                      Explore
+                    </Text>
+                    <Text className="explore1" color="yellow.400">
+                      Plus
+                    </Text>
+                    <Image src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="plus" w='10px' h='10px' />
+                  </Flex>
+                </Box>
+              </NavLink>
             </Box>
-            </NavLink>
-          </Box>
 
-          {/* =======search======== */}
+            {/* =======search======== */}
 
-          <Box w="34%" pos={'relative'}>
-            <InputGroup>
-              <Input
-                placeholder="Search for products,brands and more"
-                bg="white"
-                w="100%"
-                borderRadius="2px"
-                h="36px"
-                fontSize="14px"
-                ref={ref}
-                // value={}
-                onInput={handleinput}
-                id='inputBox'
-              />
-              {/* <Box w={'100%'} pos='relative' zIndex='10'>
+            <Box w="34%" pos={'relative'}>
+              <InputGroup>
+                <Input
+                  placeholder="Search for products,brands and more"
+                  bg="white"
+                  w="100%"
+                  borderRadius="2px"
+                  h="36px"
+                  fontSize="14px"
+                  ref={ref}
+                  // value={}
+                  onInput={handleinput}
+                  id='inputBox'
+                />
+                {/* <Box w={'100%'} pos='relative' zIndex='10'>
                 <ReactSearchAutocomplete
                     styling={{
                       borderRadius: "2px",
@@ -202,306 +200,322 @@ const Navbar = () => {
                     // resultStringKeyName={"sy"+Date.now()+Math.random()}
                   />
               </Box> */}
-              <InputRightElement
-              pos='absolute' zIndex='10'
-                children={
-                  <IoSearchSharp
-                    color="#2874f0"
-                    cursor="pointer"
-                    fontSize="23px"
-                    fontWeight="bold"
-                  />
-                }
-              />
-            </InputGroup>
-            <Box
-              display={hiddenDiv?"":"none"}
-              pos={'absolute'} zIndex={'10'}
-              maxH='320px' overflowY={'auto'}
-              borderRadius='0 0 2px 2px'
-              borderTop={'1px solid #e0e0e0'}
-              w='100%'
-              bg='#fff'
-              boxShadow={'2px 3px 5px -1px rgb(0 0 0 / 50%)'}
-            >
-              {
-                data.map((item, index)=>(
-                  <Box key={index}>
-                    <NavLink to={`/products/view/${item.item_id}`}>
-                      <Flex gap={2} p='10px 25px' m='10px 0'
-                      align={'center'}
-                      cursor='pointer'
-                      _hover={{bg:"#F5F8FF"}}
-                      // onClick={()=>handleSetQuaryUrl(item.query_url)}
-                      >
-                        <Box maxH='32px' w='32px'>
-                          <Image maxH='30px' maxW='32px' src=
-                          {item.image}
-                          // {item.thumbnail}
-                          />
-                        </Box>
-                        <Box color={'#212121'}
-                        >
-                          {item.description}
-                          {/* {item.name} */}
-                        </Box>
-                      </Flex>
-                    </NavLink>
-                  </Box>
-                ))
-              }
-            </Box>
-          </Box>
-          {/* ======================================search end======================================= */}
-          <Popover trigger="hover" >
-            <PopoverTrigger>
-              <Box >
-                <Register/>
-              </Box>
-            </PopoverTrigger>
-            <PopoverContent
-              zIndex={4}
-              bg="white"
-              color="white"
-              w="250px"
-              borderRadius="2px"
-              mt="5px"
-            >
-              <PopoverArrow bg="white" />
-
-              <PopoverBody color="black" className='shade' >
-                {
-                  correct?"":
-                  <Flex h="56px" justifyContent="space-between">
-                  <Center fontWeight="600" fontSize='14px'>New Customer?</Center>
-                  <Center>
-                    <Link color="#2874f0" fontSize='14px'>
-                    {/* Sign Up */}
-                    <Signup/>
-                    </Link>
-                  </Center>
-                </Flex>
-                }
-                <hr margin="0px" />
-                <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
-                  <Center ml='10px'><HiUserCircle color="#2874f0" size="18px" /></Center> <Center ml='16px'>My Profile</Center>
-                </Flex>
-                <hr />
-                <Flex cursor={'pointer'} className="pop1" h='49px' fontSize='14px'><Center ml='10px'><Image src={vikas} alt="vikas" /></Center> <Center ml='16px'>Flipkart Plus Zone</Center></Flex>
-                <hr />
-                {/* orderpage */}
-                <NavLink to='/orderpage'>
-                    <Flex  cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"  > 
-                      <Center ml='10px'>
-                          <RiInboxUnarchiveFill color="#2874f0" size="18px" />
-                      </Center> 
-                        <Center ml='16px'>
-                          Orders
-                        </Center>
-                    </Flex>
-                </NavLink>
-                  <hr />
-                <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><AiFillHeart color="#2874f0" size="18px" /></Center> <Center ml='16px'> Wishlist</Center></Flex><hr />
-                <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1">  <Center ml='10px'><RiCoupon3Fill color="#2874f0" size="18px" /></Center><Center ml='16px'>Rewards</Center></Flex><hr />
-                <Flex cursor={'pointer'}  h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsFillCreditCard2BackFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Gift cards</Center></Flex><hr />
-                {
-                  correct?
-                  <Flex onClick={handleLogout} 
-                  cursor={'pointer'} h="49px" fontSize='14px' className="pop1"> 
-                <Center ml='10px'>
-                  <IoMdPower color="#2874f0" size="18px" />
-                </Center> 
-                  <Center ml='16px'>
-                  Log Out
-                  </Center>
-              </Flex>:""
-                }
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
-
-          {/* {=============login end====================} */}
-          <Box
-            fontSize="16px"
-            textAlign="center"
-            w="14%"
-            color="white"
-            fontWeight="600"
-            cursor={'pointer'}
-          >
-            Become a Seller
-          </Box>
-
-          {/* ==================================more============= */}
-          <Popover trigger="hover" >
-            <PopoverTrigger>
-              <Box
-                fontSize="16px"
-                textAlign="center"
-                w="7%"
-                color="white"
-                fontWeight="600"
-                cursor={'pointer'}
-              >
-                <NavLink to='./products'>More</NavLink>
-                <ChevronDownIcon
-                  _hover={{ transform: "rotate(180deg)" }}
+                <InputRightElement
+                  pos='absolute' zIndex='10'
+                  children={
+                    <IoSearchSharp
+                      color="#2874f0"
+                      cursor="pointer"
+                      fontSize="23px"
+                      fontWeight="bold"
+                    />
+                  }
                 />
-              </Box>
-            </PopoverTrigger>
-            <PopoverContent
-              zIndex={4}
-              bg="white"
-              color="white"
-              w="250px"
-              borderRadius="2px"
-              mt="5px"
-              h='auto'
-            >
-              <PopoverArrow bg="white" />
-
-              <PopoverBody color="black" className='shade'>
-                <Flex h="49px" fontSize='14px' className="pop1"  > <Center ml='10px'><BsBellFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Notification Prefernces</Center></Flex> <hr />
-                <Flex h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsQuestionSquareFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>24x7 Customer care</Center></Flex> <hr />
-                <Flex h="49px" fontSize='14px' className="pop1">  <Center ml='10px'><BiTrendingUp color="#2874f0" size="18px" /></Center><Center ml='16px'>Advertize</Center></Flex><hr />
-                <Flex h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><HiDownload color="#2874f0" size="18px" /></Center> <Center ml='16px'>Download app</Center></Flex>
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
-
-          {/* ===============================more end============= */}
-
-          <NavLink to='./cart'>
-            <Flex align={'center'} justify='' cursor={'pointer'}>
-              <Icon as={FaShoppingCart} w={5} h={5} color="white" ml="2%" mr="-5px" />
-                {
-                  cartData.length>0?<Flex 
-                    ml='-8px' mt='-25px' zIndex={5} bg={'#ff6161'} fontSize='12px' p='6px' 
-                    border={'1px solid #fff'}
-                    borderRadius={'40%'} w='18px' h='18px' 
-                    align={'center'} justify='center' color='#fff'
-                    >{cartData.length}</Flex>:""
-                }
+              </InputGroup>
               <Box
-                fontSize="17px"
-                ml="10px"
-                textAlign="center"
-                color="white"
-                fontWeight="600"
+                display={hiddenDiv ? "" : "none"}
+                pos={'absolute'} zIndex={'10'}
+                maxH='320px' overflowY={'auto'}
+                borderRadius='0 0 2px 2px'
+                borderTop={'1px solid #e0e0e0'}
+                w='100%'
+                bg='#fff'
+                boxShadow={'2px 3px 5px -1px rgb(0 0 0 / 50%)'}
               >
-                Cart
+                {
+                  data.map((item, index) => (
+                    <Box key={index}>
+                      <NavLink to={`/products/view/${item.item_id}`}>
+                        <Flex gap={2} p='10px 25px' m='10px 0'
+                          align={'center'}
+                          cursor='pointer'
+                          _hover={{ bg: "#F5F8FF" }}
+                        // onClick={()=>handleSetQuaryUrl(item.query_url)}
+                        >
+                          <Box maxH='32px' w='32px'>
+                            <Image maxH='30px' maxW='32px' src=
+                              {item.image}
+                            // {item.thumbnail}
+                            />
+                          </Box>
+                          <Box color={'#212121'}
+                          >
+                            {item.description}
+                            {/* {item.name} */}
+                          </Box>
+                        </Flex>
+                      </NavLink>
+                    </Box>
+                  ))
+                }
               </Box>
-            </Flex>
-          </NavLink>
+            </Box>
+            {/* ======================================search end======================================= */}
+            <Popover trigger="hover" >
+              <PopoverTrigger>
+                <Box>
+                  {/* here i use login and comment register */}
+                  <Register />
+                  {/* <Login /> */}
+                </Box>
+              </PopoverTrigger>
+              <PopoverContent
+                zIndex={4}
+                bg="white"
+                color="white"
+                w="250px"
+                borderRadius="2px"
+                mt="5px"
+              >
+                <PopoverArrow bg="white" />
 
-          {/* <Button onClick={toggleColorMode}>Toggle Color Mode</Button> */}
+                <PopoverBody color="black" className='shade' >
+                  {
+                    correct ? "" :
+                      <Flex h="56px" justifyContent="space-between">
+                        <Center fontWeight="600" fontSize='14px'>New Customer?</Center>
+                        <Center>
+                          <Link color="#2874f0" fontSize='14px'>
+                            {/* Sign Up */}
+                            <Signup />
+                          </Link>
+                        </Center>
+                      </Flex>
+                  }
+                  <hr margin="0px" />
+                  <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
+                    <Center ml='10px'><HiUserCircle color="#2874f0" size="18px" /></Center> <Center ml='16px'>My Profile</Center>
+                  </Flex>
+                  <hr />
+                  <Flex cursor={'pointer'} className="pop1" h='49px' fontSize='14px'><Center ml='10px'><Image src={vikas} alt="dfd" /></Center> <Center ml='16px'>Flipkart Plus Zone</Center></Flex>
+                  <hr />
+                  {/* orderpage */}
+                  <NavLink to='/orderpage'>
+                    <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1"  >
+                      <Center ml='10px'>
+                        <RiInboxUnarchiveFill color="#2874f0" size="18px" />
+                      </Center>
+                      <Center ml='16px'>
+                        Orders
+                      </Center>
+                    </Flex>
+                  </NavLink>
+                  <hr />
+                  <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><AiFillHeart color="#2874f0" size="18px" /></Center> <Center ml='16px'> Wishlist</Center></Flex><hr />
+                  <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1">  <Center ml='10px'><RiCoupon3Fill color="#2874f0" size="18px" /></Center><Center ml='16px'>Rewards</Center></Flex><hr />
+                  <Flex cursor={'pointer'} h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsFillCreditCard2BackFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Gift cards</Center></Flex><hr />
+                  {
+                    correct ?
+                      <Flex onClick={handleLogout}
+                        cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
+                        <Center ml='10px'>
+                          <IoMdPower color="#2874f0" size="18px" />
+                        </Center>
+                        <Center ml='16px'>
+                          Log Out
+                        </Center>
+                      </Flex> : ""
+                  }
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
 
-          <Spacer />
-        </Flex>
-      </Box>
+            {/* {=============login end====================} */}
+            <Box
+              fontSize="16px"
+              textAlign="center"
+              w="14%"
+              color="white"
+              fontWeight="600"
+              cursor={'pointer'}
+            >
+              Become a Seller
+            </Box>
+
+            {/* ==================================more============= */}
+            <Popover trigger="hover" >
+              <PopoverTrigger>
+                <Box
+                  fontSize="16px"
+                  textAlign="center"
+                  w="7%"
+                  color="white"
+                  fontWeight="600"
+                  cursor={'pointer'}
+                >
+                  <NavLink >More</NavLink>
+                  <ChevronDownIcon
+                    _hover={{ transform: "rotate(180deg)" }}
+                  />
+                </Box>
+              </PopoverTrigger>
+              <PopoverContent
+                zIndex={4}
+                bg="white"
+                color="white"
+                w="250px"
+                borderRadius="2px"
+                mt="5px"
+                h='auto'
+              >
+                <PopoverArrow bg="white" />
+
+                <PopoverBody color="black" className='shade'>
+                  <Flex h="49px" fontSize='14px' className="pop1"  > <Center ml='10px'><BsBellFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>Notification Prefernces</Center></Flex> <hr />
+                  <Flex h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><BsQuestionSquareFill color="#2874f0" size="18px" /></Center> <Center ml='16px'>24x7 Customer care</Center></Flex> <hr />
+                  <Flex h="49px" fontSize='14px' className="pop1">  <Center ml='10px'><BiTrendingUp color="#2874f0" size="18px" /></Center><Center ml='16px'>Advertize</Center></Flex><hr />
+                  <Flex h="49px" fontSize='14px' className="pop1"> <Center ml='10px'><HiDownload color="#2874f0" size="18px" /></Center> <Center ml='16px'>Download app</Center></Flex>
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+
+            {/* ===============================more end============= */}
+
+            <NavLink to='./cart'>
+              <Flex align={'center'} justify='' cursor={'pointer'}>
+                <Icon as={FaShoppingCart} w={5} h={5} color="white" ml="2%" mr="-5px" />
+                {
+                  cartData.length > 0 ? <Flex
+                    ml='-8px' mt='-25px' zIndex={5} bg={'#ff6161'} fontSize='12px' p='6px'
+                    border={'1px solid #fff'}
+                    borderRadius={'40%'} w='18px' h='18px'
+                    align={'center'} justify='center' color='#fff'
+                  >{cartData.length}</Flex> : ""
+                }
+                <Box
+                  fontSize="17px"
+                  ml="10px"
+                  textAlign="center"
+                  color="white"
+                  fontWeight="600"
+                >
+                  Cart
+                </Box>
+              </Flex>
+            </NavLink>
+
+            {/* <Button onClick={toggleColorMode}>Toggle Color Mode</Button> */}
+
+            <Spacer />
+          </Flex>
+        </Box>
       </Box>
     );
   }
-  
+
   else {
     return (
-    <Box mt='-1px' ml='-1px'>
-      <Box mb='6.4rem' border={'1px solid blue'}>
-      <Box position='fixed' w='100%' zIndex={'100'}>
-      <Flex bg="#2874f0" h='52px' >
-        <Center ml='10px' ref={btnRef} color='white' onClick={onOpen}>
-          <HamburgerIcon color='white' fontSize='20px' />
-        </Center>
-        <Drawer
-          isOpen={isOpen}
-          placement='left'
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent
-            className="drawercontent">
+      <Box mt='-1px' ml='-1px' >
+        <Box mb='6.4rem' border={'1px solid blue'}>
+          <Box position='fixed' w='100%' zIndex={'100'}>
+            <Flex bg="#2874f0" h='52px' >
+              <Center ml='10px' ref={btnRef} color='white' onClick={onOpen}>
+                <HamburgerIcon color='white' fontSize='20px' />
+              </Center>
+              <Drawer
+                isOpen={isOpen}
+                placement='left'
+                onClose={onClose}
+                finalFocusRef={btnRef}
+              >
+                <DrawerOverlay />
+                <DrawerContent
+                  className="drawercontent">
 
-            <DrawerHeader bg='#2874f0' color='white' h='40px' className="head"> <Center><FaUser pr='10px' fontSize='15px' /> &nbsp; Login & Signup</Center> <Center><Image src={icon15} w='20px' h='20px' /></Center></DrawerHeader>
+                  <DrawerHeader bg='#2874f0' color='white' h='40px' className="head"> <Center ><FaUser pr='10px' fontSize='15px' /> &nbsp; <Login /> </Center> <Center><Image src={icon15} w='20px' h='20px' /></Center></DrawerHeader>
 
-            <DrawerBody ml='-5px'>
-              <Flex h="38px" fontSize='14px'   > <Center ><Image src={coin2} alt="c" w='15px' /></Center> <Center className="drawer" ml='16px'>SuperCoin Zone</Center></Flex>
-              <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon3} w="15px" /></Center> <Center className="drawer" ml='16px'>Flipkart Plus Zone</Center></Flex><hr />
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={url1} w='15px' /></Center> <Center className="drawer" ml='16px'> All Categories</Center></Flex>
-              <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon4} w='15px' /></Center><Center className="drawer" ml='16px'>Trending Stores</Center></Flex>
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon5} w='15px' /></Center> <Center className="drawer" ml='16px'>More on Flipkart</Center></Flex><hr />
-              <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon6} w='15px' /></Center> <Center className="drawer" ml='16px'>Choose Language</Center></Flex><hr />
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon7} w='15px' /></Center> <Center className="drawer" ml='16px'> Offer Zone</Center></Flex>
-              <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon8} w='15px' /></Center><Center className="drawer" ml='16px'>Sell on Flipkart</Center></Flex>
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon9} w='15px' /></Center> <Center className="drawer" ml='16px'>My Orders</Center></Flex>
-              <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon10} w='15px' /></Center> <Center className="drawer" ml='16px'>Coupons</Center></Flex>
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon11} w='15px' /></Center> <Center className="drawer" ml='16px'> My Cart</Center></Flex>
-              <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon12} w='15px' /></Center><Center className="drawer" ml='16px'>My Wishlist</Center></Flex>
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon13} w='15px' /></Center> <Center className="drawer" ml='16px'>My Account</Center></Flex>
-              <Flex h="38px" fontSize='14px' > <Center ><Image src={icon14} w='15px' /></Center> <Center className="drawer" ml='16px'>My Notification</Center></Flex><hr />
-              <Flex h="38px" fontSize='14px' > <Center className="drawer">Notification Preferences</Center></Flex>
-              <Flex h="38px" fontSize='14px' >  <Center className="drawer" >Help Center</Center></Flex>
-              <Flex h="38px" fontSize='14px' >  <Center className="drawer" >Legal</Center></Flex>
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
-        <Center ml='10px' mt='5px'>
-          <Box  >
-            <Image
-              src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
-              alt="flipkart"
-              h="16px"
-              marginBottom="-3px"
-            />
-            <Flex alignItems='center' >
+                  <DrawerBody ml='-5px' onClick={onClose}>
+                    <Flex h="38px" fontSize='14px'   > <Center ><Image src={coin2} alt="c" w='15px' /></Center> <Center className="drawer" ml='16px'>SuperCoin Zone</Center></Flex>
+                    <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon3} w="15px" /></Center> <Center className="drawer" ml='16px'>Flipkart Plus Zone</Center></Flex><hr />
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={url1} w='15px' /></Center> <Center className="drawer" ml='16px'> All Categories</Center></Flex>
+                    <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon4} w='15px' /></Center><Center className="drawer" ml='16px'>Trending Stores</Center></Flex>
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon5} w='15px' /></Center> <Center className="drawer" ml='16px'>More on Flipkart</Center></Flex><hr />
+                    <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon6} w='15px' /></Center> <Center className="drawer" ml='16px'>Choose Language</Center></Flex><hr />
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon7} w='15px' /></Center> <Center className="drawer" ml='16px'> Offer Zone</Center></Flex>
+                    <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon8} w='15px' /></Center><Center className="drawer" ml='16px'>Sell on Flipkart</Center></Flex>
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon9} w='15px' /></Center> <Center className="drawer" ml='16px'> <NavLink to='/orderpage'> My Orders</NavLink></Center></Flex>
+                    <Flex h="38px" fontSize='14px'   > <Center ><Image src={icon10} w='15px' /></Center> <Center className="drawer" ml='16px'>Coupons</Center></Flex>
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon11} w='15px' /></Center> <Center className="drawer" ml='16px' onClick={onClose}> <NavLink to='cart'> My Cart</NavLink> </Center></Flex>
+                    <Flex h="38px" fontSize='14px'>  <Center ><Image src={icon12} w='15px' /></Center><Center className="drawer" ml='16px'>My Wishlist</Center></Flex>
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon13} w='15px' /></Center> <Center className="drawer" ml='16px' onClick={onClose}> My Account</Center></Flex>
+                    <Flex h="38px" fontSize='14px' > <Center ><Image src={icon14} w='15px' /></Center> <Center className="drawer" ml='16px'>My Notification</Center></Flex><hr />
+                    <Flex h="38px" fontSize='14px' > <Center className="drawer">Notification Preferences</Center></Flex>
+                    <Flex h="38px" fontSize='14px' >  <Center className="drawer" >Help Center</Center></Flex>
+                  
+                    {
+                    correct ?
+                      <Flex onClick={handleLogout}
+                        cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
+                        <Center ml='10px'>
+                          <IoMdPower color="#2874f0" size="18px" />
+                        </Center>
+                        <Center ml='16px'>
+                          Log Out
+                        </Center>
+                      </Flex> : ""
+                  }
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+              <Center ml='10px' mt='5px'>
+                <Box  >
+                  <NavLink to='/'>
+                    <Image
+                      src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                      alt="flipkart"
+                      h="16px"
+                      marginBottom="-3px"
+                    /> </NavLink>
+                  <NavLink to='/'>
+                    <Flex alignItems='center' >
 
-              <Link className="explore3" color="white">
-                Explore
-              </Link>
-              <Link className="explore4" color="yellow.400">
-                Plus
-              </Link>
-              <Image src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="plus" w='10px' h='10px' />
-            </Flex>
-          </Box>
-        </Center>
-        <Spacer />
-        <Center w='45px'><BsFillFilePlusFill color='white' /></Center>
-        <Center w='45px'>
-          <FaShoppingCart color='white' />
+                      <Link className="explore3" color="white">
+                        Explore
+                      </Link>
+                      <Link className="explore4" color="yellow.400">
+                        Plus
+                      </Link>
+                      <Image src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="plus" w='10px' h='10px' />
+                    </Flex></NavLink>
+                </Box>
+              </Center>
+              <Spacer />
+              <Center w='45px'><BsFillFilePlusFill color='white' /></Center>
+              <Center w='45px'>
+                <NavLink to='/cart'>  <FaShoppingCart color='white' /> </NavLink>
                 {
-                  cartData.length>0?<Flex 
-                    ml='-5px' mt='-20px' zIndex={5} bg={'#d32f2f'} fontSize='9px' p='6px' 
+                  cartData.length > 0 ? <Flex
+                    ml='-5px' mt='-20px' zIndex={5} bg={'#d32f2f'} fontSize='9px' p='6px'
                     border={'2px solid #fff'} fontWeight='600'
-                    borderRadius={'50%'} w='15px' h='15px' 
+                    borderRadius={'50%'} w='15px' h='15px'
                     align={'center'} justify='center' color='#fff'
-                    >{cartData.length}</Flex>:""
+                  >{cartData.length}</Flex> : ""
                 }
-        </Center>
-        
-        <Center color='white' mr='10px'>
-        <Register/>
-        </Center>
-      </Flex>
-      <Flex bg="#2874f0" h='52px'>
-        <Center w='100%' ml='1%' mr='1%' pos={'relative'}> 
-        <InputGroup pos={'relative'}>
-            <Input
-                placeholder="Search for products,brands and more"
-                bg="white"
-                w="100%"
-                borderRadius="2px"
-                h="36px"
-                fontSize="14px"
-                ref={ref}
-                // value={}
-                onInput={handleinput}
-                id='inputBox'
-              />
-              <Box mt='10px' ml='-25px' zIndex={'100'}>
-                <BsMic />
-              </Box>
-          {/* <InputLeftElement 
+              </Center>
+
+              <Center color='white' mr='10px' >
+                {/* <Register /> */}
+              </Center>
+            </Flex>
+            <Flex bg="#2874f0" h='52px'>
+              <Center w='100%' ml='1%' mr='1%' pos={'relative'}>
+                <InputGroup pos={'relative'}>
+                  <Input
+                    placeholder="Search for products,brands and more"
+                    bg="white"
+                    w="100%"
+                    borderRadius="2px"
+                    h="36px"
+                    fontSize="14px"
+                    ref={ref}
+                    // value={}
+                    onInput={handleinput}
+                    id='inputBox'
+                  />
+                  <Box mt='10px' ml='-25px' zIndex={'100'}>
+                    <BsMic />
+                  </Box>
+                  {/* <InputLeftElement 
             pos={'absolute'} zIndex='10'
             children={
               <IoSearchSharp
@@ -512,51 +526,51 @@ const Navbar = () => {
               />
             }
           /> */}
-            <Box
-            mt='36px'
-              display={hiddenDiv?"":"none"}
-              pos={'absolute'} zIndex={'10'}
-              maxH='320px' overflowY={'auto'}
-              borderRadius='0 0 2px 2px'
-              borderTop={'1px solid #e0e0e0'}
-              w='100%'
-              bg='#fff'
-              boxShadow={'2px 3px 5px -1px rgb(0 0 0 / 50%)'}
-            >
-              {
-                data.map((item, index)=>(
-                  <Box key={index}>
-                    <NavLink to={`/products/view/${item.item_id}`}>
-                      <Flex gap={2} p='10px 25px' m='10px 0'
-                      align={'center'}
-                      cursor='pointer'
-                      _hover={{bg:"#F5F8FF"}}
-                      // onClick={()=>handleSetQuaryUrl(item.query_url)}
-                      >
-                        <Box maxH='32px' w='32px'>
-                          <Image maxH='30px' maxW='32px' src=
-                          {item.image}
-                          // {item.thumbnail}
-                          />
+                  <Box
+                    mt='36px'
+                    display={hiddenDiv ? "" : "none"}
+                    pos={'absolute'} zIndex={'10'}
+                    maxH='320px' overflowY={'auto'}
+                    borderRadius='0 0 2px 2px'
+                    borderTop={'1px solid #e0e0e0'}
+                    w='100%'
+                    bg='#fff'
+                    boxShadow={'2px 3px 5px -1px rgb(0 0 0 / 50%)'}
+                  >
+                    {
+                      data.map((item, index) => (
+                        <Box key={index}>
+                          <NavLink to={`/products/view/${item.item_id}`}>
+                            <Flex gap={2} p='10px 25px' m='10px 0'
+                              align={'center'}
+                              cursor='pointer'
+                              _hover={{ bg: "#F5F8FF" }}
+                            // onClick={()=>handleSetQuaryUrl(item.query_url)}
+                            >
+                              <Box maxH='32px' w='32px'>
+                                <Image maxH='30px' maxW='32px' src=
+                                  {item.image}
+                                // {item.thumbnail}
+                                />
+                              </Box>
+                              <Box color={'#212121'}
+                              >
+                                {item.description}
+                                {/* {item.name} */}
+                              </Box>
+                            </Flex>
+                          </NavLink>
                         </Box>
-                        <Box color={'#212121'}
-                        >
-                          {item.description}
-                          {/* {item.name} */}
-                        </Box>
-                      </Flex>
-                    </NavLink>
+                      ))
+                    }
                   </Box>
-                ))
-              }
-            </Box>
-        </InputGroup>
-          
-        </Center>
-      </Flex>
-    </Box>
-    </Box>
-    </Box>
+                </InputGroup>
+
+              </Center>
+            </Flex>
+          </Box>
+        </Box>
+      </Box>
     )
 
   }

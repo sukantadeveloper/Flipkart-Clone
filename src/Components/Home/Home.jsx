@@ -29,11 +29,13 @@ const Home = () => {
             <Bestselling />
             <Appliances />
             <BannerOffer2 />
-            <TopOffers />
+            
             <Electronics />
             <Groceries />
             <Mobile />
+            <TopOffers />
             <BeforeFooter />
+
             {/* <Footer /> */}
         </Box>
     )

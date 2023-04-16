@@ -36,8 +36,7 @@ export function Login() {
   const [isCheck, setIsCheck] = useState(false)
   const [incorrect, setIncorrect] = useState(0)
   // const [correct, setCorrect] = useState(0)
-  const {correct, setCorrect} = useContext(Authcontext)
-  console.log(correct," check correct in login ");
+  const { correct, setCorrect } = useContext(Authcontext)
   // const [otpvalue, setOtpValue] = useState(false)
   let loginsetName = JSON.parse(localStorage.getItem("loginsetName")) || "Login"
   const [name, setName] = useState(loginsetName)
@@ -58,7 +57,6 @@ export function Login() {
   let checkOtp = (e) => {
     setIsAuth(e.target.value)
   }
-  console.log(isAuth)
   const handleChange = (inp) => {
     const { name, value } = inp.target
     setInputValues({ ...inputValues, [name]: value })
@@ -69,20 +67,20 @@ export function Login() {
     fetch(`https://flipkart-data.onrender.com/Userdetails`)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, " check res in 67");
-        let test2  = res.filter((el) => {
+
+        let test2 = res.filter((el) => {
           return el.email === inputValues.email &&
             el.password === inputValues.password
         })
-        if(test2.length===1){
+        console.log(test2, "line70")
+        if (test2.length === 1) {
           // setCorrect(true)
           notify()
-          setName(test2[0].email.slice(0,5))
-        }else{
+          setName(test2[0].name)
+        } else {
           setIncorrect(true)
           check()
         }
-        console.log(res, test2, " check res in 74");
       })
       .catch((err) => {
         console.log(err)
@@ -169,45 +167,47 @@ export function Login() {
     setIsSubmit(true)
     setInputValues(initialvalues)
   }
+ 
+
 
   const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
 
   return (
     <>
       {
-        correct?
-        <Text 
-              p='4px 30px' bg='#2874f0' color={'#fff'} border='0' textAlign="center" fontSize={'15px'}
-                fontWeight="700"
-                ml="19px"
-                cursor="pointer"
-              > {name}
-              {" "}
-              <ChevronDownIcon/>
-              </Text>
-        :
-        !isLargerThan720?
-        <Text p='4px' bg='#2874f0' color={'#fff'} border='0' textAlign="center" fontSize={'15px'}
-                fontWeight="700"
-                cursor="pointer"
-              >Login</Text>
-        :
-        <Text p='4px 30px' _hover={{bg:""}} textAlign="center" fontSize={'15px'} onClick={onOpen}
-        bg="white"
-                // h="31px"
-                // w="9.5%"
-                // p='0px 20px'
-                fontWeight="700"
-                color="#2874f0"
-                ml="19px"
-                // pt="2px"
-                borderRadius="2px"
-                cursor="pointer"
-                // border={'1px solid #dbdbdb'}
+        correct ?
+          <Text
+            p='4px 30px' bg='#2874f0' color={'#fff'} border='0' textAlign="center" fontSize={'15px'}
+            fontWeight="700"
+            ml="19px"
+            cursor="pointer"
+          > {name}
+            {" "}
+            <ChevronDownIcon />
+          </Text>
+          :
+          !isLargerThan720 ?
+            <Text p='4px' bg='#2874f0' color={'#fff'} border='0' textAlign="center" fontSize={'15px'}
+              fontWeight="700"
+              cursor="pointer" onClick={onOpen}
+            >Login</Text>
+            :
+            <Text p='4px 30px' _hover={{ bg: "" }} textAlign="center" fontSize={'15px'} onClick={onOpen}
+              bg="white"
+              // h="31px"
+              // w="9.5%"
+              // p='0px 20px'
+              fontWeight="700"
+              color="#2874f0"
+              ml="19px"
+              // pt="2px"
+              borderRadius="2px"
+              cursor="pointer"
+            // border={'1px solid #dbdbdb'}
 
-        >Login</Text>
+            >Login</Text>
       }
-      <Modal
+      {isLargerThan720 ? <Modal
         loginRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
@@ -217,7 +217,7 @@ export function Login() {
       >
         <ModalOverlay />
 
-        <ModalContent>
+        <ModalContent  >
           <ModalBody padding="-1.5">
             <ToastContainer />
             <ModalCloseButton
@@ -388,7 +388,7 @@ export function Login() {
                       textAlign="center"
                       color="#2f74f0"
                     >
-                      New to Flipkart? {<Signup onClose={onClose} />}{' '}
+                      New to Flipkart?{<Signup />}{' '}
                     </Text>{' '}
                   </Link>
                 </FormControl>
@@ -396,7 +396,494 @@ export function Login() {
             </div>
           </ModalBody>
         </ModalContent>
+
+        {/* for mobile  */}
+        {/* <ModalContent display={['block', 'none', 'none']}>
+          <ModalBody padding="-1.5">
+
+
+            <Box height="32rem" padding="25" width="19rem" color="#878787" margin={'auto'}>
+              <FormControl>
+                {!isCheck ? (
+                  <>
+                    {' '}
+                    <FormLabel>Email address</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      name="email"
+                      variant="flushed"
+                      placeholder="Enter Email"
+                      value={inputValues.email}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Text color="red" fontSize="xs">
+                      {error.email}
+                    </Text>
+                  </>
+                ) : (
+                  ''
+                )}
+
+                {isCheck ? (
+                  <>
+                    {' '}
+                    <FormLabel marginTop="5">Enter your OTP</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      name="password"
+                      type="number"
+                      variant="flushed"
+                      placeholder="Enter OTP"
+                      value={isAuth}
+                      onChange={checkOtp}
+                      required
+                    />
+                  </>
+                ) : (
+                  <>
+                    {' '}
+                    <FormLabel marginTop="5">Password</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      name="password"
+                      type="password"
+                      variant="flushed"
+                      placeholder="Enter Password"
+                      value={inputValues.password}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Text color="red" fontSize="xs">
+                      {error.password}
+                    </Text>
+                  </>
+                )}
+
+                <Text marginTop="5" fontSize="xs">
+                  By continuing, you agree to Flipkart's{' '}
+                  <Link color="#2f74f0" href="">
+                    Terms of Use{' '}
+                  </Link>
+                  and{' '}
+                  <Link color="#2f74f0" href="">
+                    Privacy Policy.
+                  </Link>
+                </Text>
+
+                {!isCheck ? (
+                  <Button
+                    onClick={handleSubmit}
+                    borderRadius="0.5"
+                    marginTop="4"
+                    padding="6"
+                    color="white"
+                    bg="#fb641b"
+                    width="14rem"
+                  >
+                    Login
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={SubmitOtp}
+                    borderRadius="0.5"
+                    marginTop="4"
+                    padding="6"
+                    color="white"
+                    bg="#fb641b"
+                    width="14rem"
+                    required
+                  >
+                    Submit OTP
+                  </Button>
+                )}
+                <Text marginTop="2" marginBottom="2" textAlign="center">
+                  OR
+                </Text>
+                {!isCheck ? (
+                  <>
+                    {' '}
+                    <Button
+                      onClick={Otp}
+                      boxShadow="md"
+                      p="6"
+                      rounded="md"
+                      borderRadius="0.5"
+                      padding="6"
+                      color="#2f74f0"
+                      bg="white"
+                      width="14rem"
+                    >
+                      Request OTP
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    {' '}
+                    <Button
+                      onClick={Pass}
+                      boxShadow="md"
+                      p="6"
+                      rounded="md"
+                      borderRadius="0.5"
+                      padding="6"
+                      color="#2f74f0"
+                      bg="white"
+                      width="19.7rem"
+                    >
+                      Request Password
+                    </Button>
+                  </>
+                )}
+                <Link>
+                  <Text
+                    marginTop="2"
+                    bg="white"
+                    textAlign="center"
+                    color="#2f74f0"
+                  >
+                    New to Flipkart?{<Signup onClose={onClose} />}{' '}
+                  </Text>{' '}
+                </Link>
+              </FormControl>
+            </Box>
+
+          </ModalBody>
+        </ModalContent> */}
       </Modal>
+
+        : <Modal
+          loginRef={initialRef}
+          finalFocusRef={finalRef}
+          isOpen={isOpen}
+          onClose={onClose}
+          size="2xl"
+          padding="0px"
+        >
+          <ModalOverlay />
+
+          <ModalContent  >
+            <ModalBody padding="-1.5">
+              <ToastContainer />
+              {/* <ModalCloseButton
+                size="lg"
+                color="white"
+                marginRight="-3.5rem"
+                marginTop="-4"
+              /> */}
+              <Box height="32rem" padding="25" width="19rem" color="#878787" margin={'auto'}>
+                <FormControl>
+                  {!isCheck ? (
+                    <>
+                      {' '}
+                      <FormLabel>Email address</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="email"
+                        variant="flushed"
+                        placeholder="Enter Email"
+                        value={inputValues.email}
+                        onChange={handleChange}
+                        required
+                      />
+                      <Text color="red" fontSize="xs">
+                        {error.email}
+                      </Text>
+                    </>
+                  ) : (
+                    ''
+                  )}
+
+                  {isCheck ? (
+                    <>
+                      {' '}
+                      <FormLabel marginTop="5">Enter your OTP</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="password"
+                        type="number"
+                        variant="flushed"
+                        placeholder="Enter OTP"
+                        value={isAuth}
+                        onChange={checkOtp}
+                        required
+                      />
+                    </>
+                  ) : (
+                    <>
+                      {' '}
+                      <FormLabel marginTop="5">Password</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="password"
+                        type="password"
+                        variant="flushed"
+                        placeholder="Enter Password"
+                        value={inputValues.password}
+                        onChange={handleChange}
+                        required
+                      />
+                      <Text color="red" fontSize="xs">
+                        {error.password}
+                      </Text>
+                    </>
+                  )}
+
+                  <Text marginTop="5" fontSize="xs">
+                    By continuing, you agree to Flipkart's{' '}
+                    <Link color="#2f74f0" href="">
+                      Terms of Use{' '}
+                    </Link>
+                    and{' '}
+                    <Link color="#2f74f0" href="">
+                      Privacy Policy.
+                    </Link>
+                  </Text>
+
+                  {!isCheck ? (
+                    <Button
+                      onClick={handleSubmit}
+                      borderRadius="0.5"
+                      marginTop="4"
+                      padding="6"
+                      color="white"
+                      bg="#fb641b"
+                      width="16rem"
+                    >
+                      Login
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={SubmitOtp}
+                      borderRadius="0.5"
+                      marginTop="4"
+                      padding="6"
+                      color="white"
+                      bg="#fb641b"
+                      width="16rem"
+                      required
+                    >
+                      Submit OTP
+                    </Button>
+                  )}
+                  <Text marginTop="2" marginBottom="2" textAlign="center">
+                    OR
+                  </Text>
+                  {!isCheck ? (
+                    <>
+                      {' '}
+                      <Button
+                        onClick={Otp}
+                        boxShadow="md"
+                        p="6"
+                        rounded="md"
+                        borderRadius="0.5"
+                        padding="6"
+                        color="#2f74f0"
+                        bg="white"
+                        width="14rem"
+                      >
+                        Request OTP
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      {' '}
+                      <Button
+                        onClick={Pass}
+                        boxShadow="md"
+                        p="6"
+                        rounded="md"
+                        borderRadius="0.5"
+                        padding="6"
+                        color="#2f74f0"
+                        bg="white"
+                        width="19.7rem"
+                      >
+                        Request Password
+                      </Button>
+                    </>
+                  )}
+                  <Link>
+                    <Text
+                      marginTop="2"
+                      bg="white"
+                      textAlign="center"
+                      color="#2f74f0"
+                    >
+                      New to Flipkart?{<Signup onClose={onClose} />}{' '}
+                    </Text>{' '}
+                  </Link>
+                </FormControl>
+              </Box>
+            </ModalBody>
+          </ModalContent>
+
+          {/* for mobile  */}
+          {/* <ModalContent display={['block', 'none', 'none']}>
+        <ModalBody padding="-1.5">
+
+
+          <Box height="32rem" padding="25" width="19rem" color="#878787" margin={'auto'}>
+            <FormControl>
+              {!isCheck ? (
+                <>
+                  {' '}
+                  <FormLabel>Email address</FormLabel>
+                  <Input
+                    color="black"
+                    marginTop="-3"
+                    name="email"
+                    variant="flushed"
+                    placeholder="Enter Email"
+                    value={inputValues.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Text color="red" fontSize="xs">
+                    {error.email}
+                  </Text>
+                </>
+              ) : (
+                ''
+              )}
+
+              {isCheck ? (
+                <>
+                  {' '}
+                  <FormLabel marginTop="5">Enter your OTP</FormLabel>
+                  <Input
+                    color="black"
+                    marginTop="-3"
+                    name="password"
+                    type="number"
+                    variant="flushed"
+                    placeholder="Enter OTP"
+                    value={isAuth}
+                    onChange={checkOtp}
+                    required
+                  />
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <FormLabel marginTop="5">Password</FormLabel>
+                  <Input
+                    color="black"
+                    marginTop="-3"
+                    name="password"
+                    type="password"
+                    variant="flushed"
+                    placeholder="Enter Password"
+                    value={inputValues.password}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Text color="red" fontSize="xs">
+                    {error.password}
+                  </Text>
+                </>
+              )}
+
+              <Text marginTop="5" fontSize="xs">
+                By continuing, you agree to Flipkart's{' '}
+                <Link color="#2f74f0" href="">
+                  Terms of Use{' '}
+                </Link>
+                and{' '}
+                <Link color="#2f74f0" href="">
+                  Privacy Policy.
+                </Link>
+              </Text>
+
+              {!isCheck ? (
+                <Button
+                  onClick={handleSubmit}
+                  borderRadius="0.5"
+                  marginTop="4"
+                  padding="6"
+                  color="white"
+                  bg="#fb641b"
+                  width="14rem"
+                >
+                  Login
+                </Button>
+              ) : (
+                <Button
+                  onClick={SubmitOtp}
+                  borderRadius="0.5"
+                  marginTop="4"
+                  padding="6"
+                  color="white"
+                  bg="#fb641b"
+                  width="14rem"
+                  required
+                >
+                  Submit OTP
+                </Button>
+              )}
+              <Text marginTop="2" marginBottom="2" textAlign="center">
+                OR
+              </Text>
+              {!isCheck ? (
+                <>
+                  {' '}
+                  <Button
+                    onClick={Otp}
+                    boxShadow="md"
+                    p="6"
+                    rounded="md"
+                    borderRadius="0.5"
+                    padding="6"
+                    color="#2f74f0"
+                    bg="white"
+                    width="14rem"
+                  >
+                    Request OTP
+                  </Button>
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <Button
+                    onClick={Pass}
+                    boxShadow="md"
+                    p="6"
+                    rounded="md"
+                    borderRadius="0.5"
+                    padding="6"
+                    color="#2f74f0"
+                    bg="white"
+                    width="19.7rem"
+                  >
+                    Request Password
+                  </Button>
+                </>
+              )}
+              <Link>
+                <Text
+                  marginTop="2"
+                  bg="white"
+                  textAlign="center"
+                  color="#2f74f0"
+                >
+                  New to Flipkart?{<Signup onClose={onClose} />}{' '}
+                </Text>{' '}
+              </Link>
+            </FormControl>
+          </Box>
+
+        </ModalBody>
+      </ModalContent> */}
+        </Modal>}
+
+
     </>
   )
 }

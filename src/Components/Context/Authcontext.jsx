@@ -25,7 +25,6 @@ const AuthContextProvider = ({ children }) => {
     // };
   
   
-    console.log(correct," check correct in context  ");
     return (
       <Authcontext.Provider value={{ correct, setCorrect }}>
         {children}

@@ -29,7 +29,6 @@ const { cartData, SetCartData, getData, setOrderpageData, orderpageData } = useC
               </Box>
             ),
           })
-          console.log(cartData, "lets see cart data")
     }, []);
 
     const orderPageProducts = ()=>{
@@ -58,20 +57,18 @@ const { cartData, SetCartData, getData, setOrderpageData, orderpageData } = useC
       })
       .then(data =>{
         getData()
-          console.log(data, " test after delete data ")
       })
       }
     }
 
-    console.log(value, "default");
-    console.log(state);
+ 
 
 
 const handelgetOtp=(e)=>{
 
     setRealOtp(realOtp+ e.target.value);
 }
-console.log(realOtp);
+
 
 
 const handelSubmitOtp= ()=>{
@@ -90,8 +87,7 @@ const handelSubmitOtp= ()=>{
               </Box>
             ),
           })
-        console.log(realOtp);
-        console.log(value, "RANDOM");
+       
     }
     
 }

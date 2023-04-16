@@ -40,7 +40,7 @@ function FinalBanner() {
         <Box>
 
 
-            <Box display={{ base: 'none', md: 'none', lg: 'block' }} className="fiximg" style={{ marginTop: "7px" }} height={{ base: '130px', md: '220px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
+            <Box  display={{ base: 'none', md: 'none', lg: 'block' }} className="fiximg" style={{ marginTop: "7px" }} height={{ base: '130px', md: '220px', lg: '300px' }} width={{ base: '100%', md: '100%', lg: '100%' }}>
                 <Slider  {...settings}
                 >
                     <div>
@@ -59,7 +59,7 @@ function FinalBanner() {
                 </Slider>
             </Box>
             {/* mobile start  */}
-            <Box className="fiximg" style={{ marginTop: "20px" }} h="150px" display={{ base: 'block', md: 'none', lg: 'none' }} mb="50px">
+            <Box className="fiximg" width={'100%'} style={{ marginTop: "20px" }} h="150px" display={{ base: 'block', md: 'none', lg: 'none' }} mb="50px">
                 <Slider  {...settings}
                 >
                     <div>

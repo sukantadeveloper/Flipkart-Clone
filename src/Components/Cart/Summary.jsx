@@ -27,11 +27,7 @@ function Summary(){
       })
       localStorage.setItem("Total", JSON.stringify(totalAmount) );
       discount = Math.floor(((discount/cartData.length)* sellingPrice)/100);
-      console.log(sellingPrice, "SP");
-      console.log(discount, "DIS");
-      console.log(totalAmount, "TOTAL");
-
-      console.log(cartData);
+      
 
 
     const { globalAddress } = useContext(CartContext);
@@ -50,7 +46,7 @@ function Summary(){
       },
       body: JSON.stringify({ ...quantity, quantity: quantity - 1 }),
     });
-    console.log(id);
+
     // setCount(count - 1);
     setLessQuantityState( lessQuantityState - 1 );
   };
@@ -70,7 +66,7 @@ function Summary(){
 
 
 
-    console.log(globalAddress, "GLOBAL");
+
 
     if(cartData.length === 0 ){
        return  <Navigate to='/cart'/>

@@ -26,7 +26,6 @@ const CartContextProvider = ( {children} )=>{
         fetch(carturl)
           .then((res) => res.json())
           .then((res) => {
-            console.log(res, " res ddd cart ");
             SetCartData(res)
           })
           .catch((err) => console.log(err))

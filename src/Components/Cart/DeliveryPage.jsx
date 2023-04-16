@@ -24,11 +24,7 @@ function DeliveryPage(){
         totalAmount+= data.new_price* data.quantity;  
       })
       discount = Math.floor(((discount/cartData.length)* sellingPrice)/100);
-      console.log(sellingPrice, "SP");
-      console.log(discount, "DIS");
-      console.log(totalAmount, "TOTAL");
-
-      console.log(cartData);
+  
 
 
     const [allFilled, setAllFilled] = useState(true);
@@ -51,7 +47,6 @@ function DeliveryPage(){
     setGlobalAddress( {...globalAddress, [name] : value} )
     }
 
-    console.log(globalAddress, "GLOBAL");
 
     if(cartData.length === 0 ){
     //    return  <Navigate to='/cart'/>
@@ -61,7 +56,6 @@ function DeliveryPage(){
     const handelCheckAddress= ()=>{
         setAllFilled(true);
         if(address.Name != "" && address.Number != "" && address.Pincode != "" && address.Email != "" && address.Address != "" && address.City != "" && address.State != "" ){
-            console.log("yes its working");
 
             fetch(`https://flipkart-data.onrender.com/address`,{
                 method : 'POST',
@@ -76,7 +70,6 @@ function DeliveryPage(){
             // return <Navigate to='/summary' />
 
         }else{
-            console.log("Wrong");
             setAllFilled(false)
         }
     }

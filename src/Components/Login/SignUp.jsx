@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Login } from './Login'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Alert, AlertIcon, AlertTitle, position } from '@chakra-ui/react'
+import { Alert, AlertIcon, AlertTitle, position, useMediaQuery } from '@chakra-ui/react'
 import {
   Modal,
   ModalOverlay,
@@ -25,15 +25,20 @@ export function Signup() {
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
 
-  const initialvalues = { email: '', password: '' }
+  const initialvalues = { name: '', email: '', password: '' }
   const [inputValues, setInputValues] = useState(initialvalues)
   const [error, setError] = useState({})
   const [isAuth, setIsAuth] = useState(false)
   const [isSubmit, setIsSubmit] = useState(false)
-
+  let loginsetName = JSON.parse(localStorage.getItem("loginsetName")) || "Login"
+  const [name, setName] = useState(loginsetName)
+  localStorage.setItem("loginsetName", JSON.stringify(name));
   var flag = false
 
+  const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
+
   const handleChange = (inp) => {
+
     const { name, value } = inp.target
     setInputValues({ ...inputValues, [name]: value })
     // console.log(inputValues);
@@ -51,8 +56,7 @@ export function Signup() {
       })
       .then(() => {
         if (flag == false) {
-          console.log(inputValues + ' ')
-          console.log(flag + 'raj')
+
           fetch(`https://flipkart-data.onrender.com/Userdetails`, {
             method: 'POST',
             body: JSON.stringify(body),
@@ -63,6 +67,8 @@ export function Signup() {
             .then(() => {
               setIsAuth(true)
               notify()
+              setName(body.name);
+
             })
 
             .catch(() => setIsAuth(false))
@@ -75,14 +81,15 @@ export function Signup() {
   const notify = () => {
     toast('SignUp SuccesFully', {
       position: 'top-center',
-      autoClose:"1000"
+      autoClose: "1000"
     })
+    onClose();
   }
 
   const check = () => {
     toast.error('Already Exist', {
       position: 'top-center',
-      autoClose:"1000"
+      autoClose: "1000"
     })
   }
 
@@ -98,7 +105,7 @@ export function Signup() {
       errors.password = 'password is required'
     } else if (values.password.length < 6) {
       errors.password = 'password must not be less than 6 character'
-    }else{
+    } else {
       handleSignup(values)
     }
     return errors
@@ -128,119 +135,241 @@ export function Signup() {
       >
         Signup
       </Button>
+      {
+        isLargerThan720 ?
 
-      <Modal
-        SignupRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-        size="2xl"
-        padding="0px"
-      >
-        <ModalOverlay />
+          <Modal
+            SignupRef={initialRef}
+            finalFocusRef={finalRef}
+            isOpen={isOpen}
+            onClose={onClose}
+            size="2xl"
+            padding="0px"
+          >
+            <ModalOverlay />
 
-        <ModalContent>
-          <ModalBody padding="-1.5">
-            <ToastContainer />
-            <ModalCloseButton
-              size="lg"
-              color="white"
-              marginRight="-3.5rem"
-              marginTop="-4"
-            />
-            <div style={{ display: 'flex' }}>
-              <Box height="32rem" bg="#2874f0" width="16rem" padding="35px">
-                <Text fontWeight="600" color="white" fontSize="2xl">
-                  Looks like you're new here!
-                </Text>
-                <Text
-                  fontWeight="600"
-                  marginTop="15px"
-                  color="#Dbdbdb"
-                  fontSize="1xl"
-                >
-                  Sign up with your email
-                  <br /> address to get started
-                </Text>
-                <Image
-                  marginTop="10rem"
-                  src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png"
-                  alt="image"
+            <ModalContent>
+              <ModalBody padding="-1.5">
+                <ToastContainer />
+                <ModalCloseButton
+                  size="lg"
+                  color="white"
+                  marginRight="-3.5rem"
+                  marginTop="-4"
                 />
-              </Box>
-              <Box height="32rem" padding="35" width="24rem" color="#878787">
-                <FormControl>
-                  <FormLabel>Email address</FormLabel>
-                  <Input
-                    color="black"
-                    marginTop="-3"
-                    name="email"
-                    variant="flushed"
-                    placeholder="Enter Email"
-                    value={inputValues.email}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Text color="red" fontSize="xs">
-                    {error.email}
-                  </Text>
-                  <FormLabel marginTop="5">Password</FormLabel>
-                  <Input
-                    color="black"
-                    marginTop="-3"
-                    name="password"
-                    variant="flushed"
-                    placeholder="Enter Password"
-                    value={inputValues.password}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Text color="red" fontSize="xs">
-                    {error.password}
-                  </Text>
+                <div style={{ display: 'flex' }}>
+                  <Box height="32rem" bg="#2874f0" width="16rem" padding="35px">
+                    <Text fontWeight="600" color="white" fontSize="2xl">
+                      Looks like you're new here!
+                    </Text>
+                    <Text
+                      fontWeight="600"
+                      marginTop="15px"
+                      color="#Dbdbdb"
+                      fontSize="1xl"
+                    >
+                      Sign up with your email
+                      <br /> address to get started
+                    </Text>
+                    <Image
+                      marginTop="10rem"
+                      src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png"
+                      alt="image"
+                    />
+                  </Box>
+                  <Box height="32rem" padding="35" width="24rem" color="#878787">
+                    <FormControl>
+                      <FormLabel>Name</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="name"
+                        variant="flushed"
+                        placeholder="Enter Name"
+                        value={inputValues.name}
+                        onChange={handleChange}
+                        required
+                      />
+                      <FormLabel pt={'20px'}>Email address</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        name="email"
+                        variant="flushed"
+                        placeholder="Enter Email"
+                        value={inputValues.email}
+                        onChange={handleChange}
+                        required
+                      />
+                      <Text color="red" fontSize="xs">
+                        {error.email}
+                      </Text>
+                      <FormLabel marginTop="5">Password</FormLabel>
+                      <Input
+                        color="black"
+                        marginTop="-3"
+                        type='password'
+                        name="password"
+                        variant="flushed"
+                        placeholder="Enter Password"
+                        value={inputValues.password}
+                        onChange={handleChange}
+                        required
+                      />
+                      <Text color="red" fontSize="xs">
+                        {error.password}
+                      </Text>
 
-                  <Text marginTop="7" fontSize="xs">
-                    By continuing, you agree to Flipkart's{' '}
-                    <Link color="#2f74f0" href="">
-                      Terms of Use{' '}
-                    </Link>
-                    and{' '}
-                    <Link color="#2f74f0" href="">
-                      Privacy Policy.
-                    </Link>
-                  </Text>
+                      <Text marginTop="7" fontSize="xs">
+                        By continuing, you agree to Flipkart's{' '}
+                        <Link color="#2f74f0" href="">
+                          Terms of Use{' '}
+                        </Link>
+                        and{' '}
+                        <Link color="#2f74f0" href="">
+                          Privacy Policy.
+                        </Link>
+                      </Text>
 
-                  <Button
-                    onClick={handleSubmit}
-                    borderRadius="0.5"
-                    marginTop="4"
-                    padding="6"
-                    color="white"
-                    bg="#fb641b"
-                    width="19.7rem"
-                  >
-                    CONTINUE
-                  </Button>
-                  <Button
-                    marginTop="4"
-                    boxShadow="md"
-                    p="6"
-                    rounded="md"
-                    borderRadius="0.5"
-                    padding="6"
-                    color="#2f74f0"
-                    bg="#fff"
-                    width="19.7rem"
-                    _hover={'#fff'}
-                  >
-                    Existing User?{<Login />}
-                  </Button>
-                </FormControl>
-              </Box>
-            </div>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+                      <Button
+                        onClick={handleSubmit}
+                        borderRadius="0.5"
+                        marginTop="4"
+                        padding="6"
+                        color="white"
+                        bg="#fb641b"
+                        width="19.7rem"
+                      >
+                        CONTINUE
+                      </Button>
+                      <Button
+                        marginTop="4"
+                        boxShadow="md"
+                        p="6"
+                        rounded="md"
+                        borderRadius="0.5"
+                        padding="6"
+                        color="#2f74f0"
+                        bg="#fff"
+                        width="19.7rem"
+                        _hover={'#fff'}
+                      >
+                        Existing User?{<Login />}
+                      </Button>
+                    </FormControl>
+                  </Box>
+                </div>
+              </ModalBody>
+            </ModalContent>
+          </Modal>
+          :
+          <Modal
+            SignupRef={initialRef}
+            finalFocusRef={finalRef}
+            isOpen={isOpen}
+            onClose={onClose}
+            size="2xl"
+            padding="0px"
+          >
+            <ModalOverlay />
+
+            <ModalContent>
+              <ModalBody padding="-1.5">
+                {/* <ToastContainer />
+                <ModalCloseButton
+                  size="lg"
+                  color="white"
+                  marginRight="-3.5rem"
+                  marginTop="-4"
+                /> */}
+
+                <Box height="32rem" padding="25" width="19rem" color="#878787" margin={'auto'}>
+                  <FormControl>
+                    <FormLabel>Name</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      name="name"
+                      variant="flushed"
+                      placeholder="Enter Name"
+                      value={inputValues.name}
+                      onChange={handleChange}
+                      required
+                    />
+                    <FormLabel pt={'20px'}>Email address</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      name="email"
+                      variant="flushed"
+                      placeholder="Enter Email"
+                      value={inputValues.email}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Text color="red" fontSize="xs">
+                      {error.email}
+                    </Text>
+                    <FormLabel marginTop="5">Password</FormLabel>
+                    <Input
+                      color="black"
+                      marginTop="-3"
+                      type='password'
+                      name="password"
+                      variant="flushed"
+                      placeholder="Enter Password"
+                      value={inputValues.password}
+                      onChange={handleChange}
+                      required
+                    />
+                    <Text color="red" fontSize="xs">
+                      {error.password}
+                    </Text>
+
+                    <Text marginTop="7" fontSize="xs">
+                      By continuing, you agree to Flipkart's{' '}
+                      <Link color="#2f74f0" href="">
+                        Terms of Use{' '}
+                      </Link>
+                      and{' '}
+                      <Link color="#2f74f0" href="">
+                        Privacy Policy.
+                      </Link>
+                    </Text>
+
+                    <Button
+                      onClick={handleSubmit}
+                      borderRadius="0.5"
+                      marginTop="4"
+                      padding="6"
+                      color="white"
+                      bg="#fb641b"
+                      width="16rem"
+
+                    >
+                      CONTINUE
+                    </Button>
+                    <Button
+                      marginTop="5"
+                      boxShadow="md"
+                      p="6"
+                      rounded="md"
+                      borderRadius="0.5"
+                      padding="6"
+                      color="#2f74f0"
+                      bg="#fff"
+                      width="16rem"
+                      _hover={'#fff'}
+                    >
+                      Existing User?{<Login />}
+                    </Button>
+                  </FormControl>
+                </Box>
+
+              </ModalBody>
+            </ModalContent>
+          </Modal>
+      }
     </>
   )
 }
