@@ -56,12 +56,12 @@ function Viewpage() {
             setLoading(false)
             setError(true)
         }
-        
+
     }
     if (loading) {
         return (
             <>
-            
+
                 <Stack>
                     <Skeleton height='20px' />
                     <Skeleton height='20px' />
@@ -91,23 +91,23 @@ function Viewpage() {
     if (error) {
         return (
             <><Alert
-            status='error'
-            variant='subtle'
-            flexDirection='column'
-            alignItems='center'
-            justifyContent='center'
-            textAlign='center'
-            height='500px'
-          >
-            <AlertIcon  boxSize='40px' mr={0} />
-            
-            <AlertTitle mt={4} mb={1} fontSize='lg'>
-           Opps!
-            </AlertTitle>
-            <AlertDescription maxWidth='2xl'>
-              Thanks for Your Patience. Please Refresh.
-            </AlertDescription>
-          </Alert>
+                status='error'
+                variant='subtle'
+                flexDirection='column'
+                alignItems='center'
+                justifyContent='center'
+                textAlign='center'
+                height='500px'
+            >
+                <AlertIcon boxSize='40px' mr={0} />
+
+                <AlertTitle mt={4} mb={1} fontSize='lg'>
+                    Opps!
+                </AlertTitle>
+                <AlertDescription maxWidth='2xl'>
+                    Thanks for Your Patience. Please Refresh.
+                </AlertDescription>
+            </Alert>
             </>
         )
     }
@@ -212,21 +212,26 @@ function Viewpage() {
                                 rounded='1px'
                                 color={"black"}
                                 fontSize="15px"
+                                onClick={handleAddToCart}
                                 _hover={{ backgroundColor: "#ffff" }}
                             >
                                 ADD TO CART
-                            </Button><Button
+                            </Button> 
+                            <Link to='/cart'>
+                            <Button
                                 size='md'
                                 height="50px"
                                 width='48%'
                                 bg="#FB641B"
                                 rounded='1px'
                                 fontSize="15px"
+                                onClick={handleBuyNow}
                                 _hover={{ backgroundColor: "#FB641B" }}
                             >
 
                                 BUY NOW
                             </Button>
+                            </Link>
                         </Flex>
                     </Box>
 
