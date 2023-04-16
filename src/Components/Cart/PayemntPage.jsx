@@ -47,7 +47,7 @@ function PaymentPage() {
         }
         // setCardNumberValidation(e.target.value);
 
-       
+
         // console.log(cardNumberValidation.length, 'len');
         // console.log(cardNumberValidation);
 
@@ -61,7 +61,7 @@ function PaymentPage() {
         setOpenOtpBox(true);
         if (cardNumber) {
             // return <Navigate to='/otp'/>
-      
+
         } else {
             toast({
                 position: 'top',
@@ -88,14 +88,14 @@ function PaymentPage() {
         <Box w='100%' pt={["5", "20", "20"]} bg='#f1f3f6' >
 
             <HStack
-                w={["98%","82%","82%"]}
+                w={["98%", "82%", "82%"]}
                 //  h='50vh'
                 //  bg="pink"
                 margin="auto"
                 display="flex"
                 alignItems="start"
                 justifyContent='space-between'
-              
+
             >
                 {/*LEFT BOX  */}
                 <Box
@@ -128,22 +128,23 @@ function PaymentPage() {
                     {/* Left top 1 */}
                     <Box
                         w='100%'
-                        h='10vh'
+                        minH={'10vh'}
                         bg='white'
                         display='flex'
                         justifyContent='space-between'
                         alignItems='center'
                         shadow='md'
                         mt='4'
+
                     >
                         <Box>
-                            <Box ml='6' display='flex' alignItems='center' >
+                            <Box ml='6' display='flex' alignItems='center' pt={["6px", "0px", "0px"]}>
                                 <Box bg='#f1f3f6' pl='2' pr='2' color='blue' mr='4' borderRadius='2' > 2</Box>
                                 <Text fontWeight='500' color='grey' >DELIVERY ADDRESS</Text>
                                 <CheckIcon ml='3' color='blue.600' />
                             </Box>
-                            <Box display='flex'>
-                                <Text ml='66px' fontWeight='500' mr='2' >{globalAddress.Name}   </Text>
+                            <Box display={["block", "flex", "flex"]} ml={["10px", "0px", "0px"]} >
+                                <Text ml={['4px', '66px', '66px']} fontWeight='500' mr='2' >{globalAddress.Name}   </Text>
                                 <Text mr='2' >  {globalAddress.Address} </Text>
                                 <Text mr='2' >{globalAddress.City} -</Text>
                                 <Text>{globalAddress.Pincode}</Text>
@@ -258,11 +259,11 @@ function PaymentPage() {
 
                         </Box>
                         <Box display='grid' justifyContent='start' textAlign='start' alignItems='start' >
-                            <Input ml='16' bg='white' w='60%' borderRadius='0'  focusBorderColor={cardNumber ? 'lime' : 'red.300'} disabled={cardNumber} onKeyUp={handelCardNumber} placeholder="Enter Card Number" />
+                            <Input ml='16' bg='white' w='60%' borderRadius='0' focusBorderColor={cardNumber ? 'lime' : 'red.300'} disabled={cardNumber} onKeyUp={handelCardNumber} placeholder="Enter Card Number" />
                             <Box display='flex' w='100%' mt='2'>
                                 <Input ml='16' bg='white' w='40%' type={'month'} placeholder='none' borderRadius='0' />
-                                <Input ml='2'   bg='white' w='30%' maxLength={'3'}  placeholder="CVV" borderRadius='0' /> 
-                                
+                                <Input ml='2' bg='white' w='30%' maxLength={'3'} placeholder="CVV" borderRadius='0' />
+
                             </Box>
                             {/* {
                                 openOtpBox?
@@ -276,11 +277,11 @@ function PaymentPage() {
                                 </HStack>
                                 :null
                             } */}
-                            
+
                             <Button ml='16' color='white' mt='4' w='40%' onClick={handelForwardOtp} bg='#fb641b' borderRadius='0' >
-                                <Link 
-                                to={cardNumber ? '/otp' : ''} 
-                                  >
+                                <Link
+                                    to={cardNumber ? '/otp' : ''}
+                                >
                                     PAY ₹{totalAmount}
                                 </Link>
                             </Button>
