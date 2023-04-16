@@ -159,7 +159,7 @@ function CartPage() {
 
   if (cartData.length === 0) {
     return (
-      <Box w="100%" bg="#f1f3f6" h="150vh" pt="100px"  >
+      <Box w="100%" bg="#f1f3f6" h="150vh" pt="50px"  >
         <Box w="78%" h='60.3vh' margin='auto' style={{ boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' }} >
 
 
@@ -185,7 +185,7 @@ function CartPage() {
               justifyContent='center'
             >
               <Image src='https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90'
-                w='20%'
+                w={["80%","20%","20%"]}
                 mt='5'
               />
             </Box>
