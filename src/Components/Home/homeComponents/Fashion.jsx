@@ -146,7 +146,7 @@ function Fashion() {
                                 <Box  borderRadius="6px" m="5px" bg="white" alignItems="center" textAlign={"center"}  border="1px solid silver">
                             <Img maxWidth="170px" h="170px" m="auto" _hover={{ transform: "scale(1.1)", transition: "400ms" }} p="10px" src={item.image} alt="" />
                                 <Text fontWeight="500" p="5px"> {item.description}</Text>
-                            <Flex textAlign={"center"} justifyContent={'space-around'} w="50%" m="auto">
+                            <Flex textAlign={"center"} justifyContent={'space-around'} w="70%" alignItems={'center'} m="auto">
                                 <Text fontSize={"15px"} fontWeight={"600"} >   ₹ {item.new_price}</Text>
                                 <Text  fontSize={"12px"}><del> ₹ {item.old_price}</del></Text>
                             </Flex>
