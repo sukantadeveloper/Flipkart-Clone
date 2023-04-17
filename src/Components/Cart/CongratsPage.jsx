@@ -49,7 +49,7 @@ const ConsratsPage = () => {
           boxShadow="base"
           p="1rem"
           width="92%"
-          border="2px solid black"
+         
           h="160px"
           bg="white"
         >

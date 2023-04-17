@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState, useEffect } from 'react'
 import { Login } from './Login'
 import { ToastContainer, toast } from 'react-toastify'
@@ -20,6 +20,7 @@ import {
   FormLabel,
   Link,
 } from '@chakra-ui/react'
+import { Authcontext } from '../Context/Authcontext'
 export function Signup() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef(null)
@@ -34,6 +35,7 @@ export function Signup() {
   const [name, setName] = useState(loginsetName)
   localStorage.setItem("loginsetName", JSON.stringify(name));
   var flag = false
+  const { correct, setCorrect } = useContext(Authcontext)
 
   const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
 
@@ -45,7 +47,7 @@ export function Signup() {
   }
 
   const handleSignup = (body) => {
-    fetch(`https://flipkart-data.onrender.com/Userdetails`)
+    fetch(`https://flipkart-data-h5tg.onrender.com/Userdetails`)
       .then((res) => res.json())
       .then((res) => {
         res.map((el) => {
@@ -57,7 +59,7 @@ export function Signup() {
       .then(() => {
         if (flag == false) {
 
-          fetch(`https://flipkart-data.onrender.com/Userdetails`, {
+          fetch(`https://flipkart-data-h5tg.onrender.com/Userdetails`, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
@@ -65,6 +67,7 @@ export function Signup() {
             },
           })
             .then(() => {
+              setCorrect(true);
               setIsAuth(true)
               notify()
               setName(body.name);

@@ -27,7 +27,7 @@ function OrderPage() {
 
     const getData = () => {
         setOrder([...orderpageData]);
-        // fetch(`https://flipkart-data.onrender.com/orderedProducts`)
+        // fetch(`https://flipkart-data-h5tg.onrender.com/orderedProducts`)
         //     .then((res) => (res.json()))
         //     .then((res) => {
         //         setOrder(res);
@@ -53,7 +53,8 @@ function OrderPage() {
         <>
             {
                 Order.length ?
-                    <Box display="flex" gap="15px" bg="#F1F3F6" pt='2.5rem'>
+                   <Box minH={["80vh", "86vh"]}>  <Box display="flex" gap="15px" bg="#F1F3F6" pt='2.5rem' 
+                    >
                         <Box w="20%" h="fit-content" boxShadow="0 2px 4px 0 rgb(0 0 0 / 8%)" bg="white" display={{ base: "none", md: "none", lg: "block" }} >
 
                             <Breadcrumb pb='0.6rem' color={'#878787'} fontWeight={'600'} fontSize={{ base: "0px", md: "10px", lg: "13px" }} pl='1.5rem' bg='#F1F3F6' spacing='2px' separator={<ChevronRightIcon color='gray.500' />}>
@@ -148,7 +149,9 @@ function OrderPage() {
                                 </DrawerContent>
                             </Drawer>
                         </Box>
-                    </Box> : <Box h={["50vh", "86vh"]}> <Text textAlign={'center'} fontSize={'4xl'}> No Order is done yet</Text> </Box>
+                    </Box></Box>
+                    
+                    : <Box h={["50vh", "86vh"]}> <Text textAlign={'center'} fontSize={'4xl'}> No Order is done yet</Text> </Box>
             }</>
     );
 }

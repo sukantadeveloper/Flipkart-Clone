@@ -11,8 +11,8 @@ import { getProductError, getProductLoading, getProductsSuccess } from '../../Re
 import { useParams } from 'react-router'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-const url = `https://flipkart-data.onrender.com`
-// https://flipkart-data.onrender.com
+const url = `https://flipkart-data-h5tg.onrender.com`
+// https://flipkart-data-h5tg.onrender.com
 
 const Products = () => {
     const [isLargerThan720] = useMediaQuery('(min-width: 720px)')

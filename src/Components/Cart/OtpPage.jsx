@@ -33,7 +33,7 @@ function OtpPgae() {
 
   const orderPageProducts = () => {
     // for(var i=0; i<cartData.length;i++){
-    //   fetch(`https://flipkart-data.onrender.com/orderedProducts`, {
+    //   fetch(`https://flipkart-data-h5tg.onrender.com/orderedProducts`, {
     //     method: "POST",
     //     body: JSON.stringify({...cartData[i]}),
     //     headers: {
@@ -49,7 +49,7 @@ function OtpPgae() {
     setOrderpageData([...orderpageData, ...cartData,])
 
     for (let i = 0; i < cartData.length; i++) {
-      fetch(`https://flipkart-data.onrender.com/products/${cartData[i].id}`, {
+      fetch(`https://flipkart-data-h5tg.onrender.com/products/${cartData[i].id}`, {
         method: "DELETE"
       })
         .then(response => {

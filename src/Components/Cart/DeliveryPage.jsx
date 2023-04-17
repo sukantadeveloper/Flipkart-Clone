@@ -57,7 +57,7 @@ function DeliveryPage() {
         setAllFilled(true);
         if (address.Name != "" && address.Number != "" && address.Pincode != "" && address.Email != "" && address.Address != "" && address.City != "" && address.State != "") {
 
-            fetch(`https://flipkart-data.onrender.com/address`, {
+            fetch(`https://flipkart-data-h5tg.onrender.com/address`, {
                 method: 'POST',
                 body: JSON.stringify(address),
                 headers: {

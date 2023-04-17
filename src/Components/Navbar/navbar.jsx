@@ -72,7 +72,7 @@ const Navbar = () => {
   const [hiddenDiv, setHiddenDiv] = useState(false)
 
   const [isLargerThan670] = useMediaQuery('(min-width: 730px)')
-  const url = `https://flipkart-data.onrender.com/all`
+  const url = `https://flipkart-data-h5tg.onrender.com/all`
   // const url = `https://flipkart.dvishal485.workers.dev/search/`
 
   const [data, setData] = useState([])
@@ -133,7 +133,7 @@ const Navbar = () => {
 
   if (isLargerThan670) {
     return (
-      <Box mt='-1px' ml='-1px'>
+      <Box mt='-1px' ml='-1px' > 
         <Box mb='3.4rem' border={'1px solid blue'}>
           <Flex bg="#2874f0" h="56px" align="center" position='fixed' w='100%' zIndex={'100'}>
             <Spacer />
@@ -441,19 +441,19 @@ const Navbar = () => {
                     <Flex h="38px" fontSize='14px' > <Center ><Image src={icon14} w='15px' /></Center> <Center className="drawer" ml='16px'>My Notification</Center></Flex><hr />
                     <Flex h="38px" fontSize='14px' > <Center className="drawer">Notification Preferences</Center></Flex>
                     <Flex h="38px" fontSize='14px' >  <Center className="drawer" >Help Center</Center></Flex>
-                  
+
                     {
-                    correct ?
-                      <Flex onClick={handleLogout}
-                        cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
-                        <Center ml='10px'>
-                          <IoMdPower color="#2874f0" size="18px" />
-                        </Center>
-                        <Center ml='16px'>
-                          Log Out
-                        </Center>
-                      </Flex> : ""
-                  }
+                      correct ?
+                        <Flex onClick={handleLogout}
+                          cursor={'pointer'} h="49px" fontSize='14px' className="pop1">
+                          <Center ml='10px'>
+                            <IoMdPower color="#2874f0" size="18px" />
+                          </Center>
+                          <Center ml='16px'>
+                            Log Out
+                          </Center>
+                        </Flex> : ""
+                    }
                   </DrawerBody>
                 </DrawerContent>
               </Drawer>

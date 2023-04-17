@@ -48,7 +48,7 @@ function Viewpage() {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const res = await fetch(`https://flipkart-data.onrender.com/all?item_id=${item_id}`)
+            const res = await fetch(`https://flipkart-data-h5tg.onrender.com/all?item_id=${item_id}`)
             const res2 = await res.json()
             setViewData([...res2]);
             setLoading(false)
@@ -113,7 +113,7 @@ function Viewpage() {
     }
     const addDatainCart = () => { // viewData[0]
 
-        fetch(`https://flipkart-data.onrender.com/products`, {
+        fetch(`https://flipkart-data-h5tg.onrender.com/products`, {
             method: "POST",
             body: JSON.stringify({ ...viewData[0] }),
             headers: {

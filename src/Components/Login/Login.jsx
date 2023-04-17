@@ -64,7 +64,7 @@ export function Login() {
   }
 
   const handlelogin = (inputValues) => {
-    fetch(`https://flipkart-data.onrender.com/Userdetails`)
+    fetch(`https://flipkart-data-h5tg.onrender.com/Userdetails`)
       .then((res) => res.json())
       .then((res) => {
 
@@ -108,6 +108,13 @@ export function Login() {
     if (Object.keys(error).length === 0 && isSubmit) {
     }
   }, [error, correct])
+
+  useEffect(() => {
+    console.log("is there any noise comming")
+    if (correct) {
+      onClose();
+    }
+  }, [correct])
 
   const validate = (values) => {
     const errors = {}
@@ -167,7 +174,7 @@ export function Login() {
     setIsSubmit(true)
     setInputValues(initialvalues)
   }
- 
+
 
 
   const [isLargerThan720] = useMediaQuery('(min-width: 720px)')
@@ -343,7 +350,7 @@ export function Login() {
                       Submit OTP
                     </Button>
                   )}
-                  <Text marginTop="2" marginBottom="2" textAlign="center">
+                  {/* <Text marginTop="2" marginBottom="2" textAlign="center">
                     OR
                   </Text>
                   {!isCheck ? (
@@ -380,7 +387,7 @@ export function Login() {
                         Request Password
                       </Button>
                     </>
-                  )}
+                  )} */}
                   <Link>
                     <Text
                       marginTop="2"
@@ -672,10 +679,11 @@ export function Login() {
                       Submit OTP
                     </Button>
                   )}
-                  <Text marginTop="2" marginBottom="2" textAlign="center">
+                  {/* Otp part  */}
+                  {/* <Text marginTop="2" marginBottom="2" textAlign="center">
                     OR
-                  </Text>
-                  {!isCheck ? (
+                  </Text> */}
+                  {/* {!isCheck ? (
                     <>
                       {' '}
                       <Button
@@ -709,7 +717,7 @@ export function Login() {
                         Request Password
                       </Button>
                     </>
-                  )}
+                  )} */}
                   <Link>
                     <Text
                       marginTop="2"

@@ -9,7 +9,7 @@ export const CartContext = createContext();
 
 
 const CartContextProvider = ( {children} )=>{
-    const carturl = `https://flipkart-data.onrender.com/products`
+    const carturl = `https://flipkart-data-h5tg.onrender.com/products`
     
     const [cartData, SetCartData] = useState([]);
     const [ loading, setLoading ] = useState(false);

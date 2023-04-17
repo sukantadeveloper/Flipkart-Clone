@@ -53,7 +53,7 @@ function CartPage() {
 
   function getAddress() {
 
-    fetch(`https://flipkart-data.onrender.com/address`)
+    fetch(`https://flipkart-data-h5tg.onrender.com/address`)
       .then((res) => res.json())
       .then((res) => setAddress(res));
   }
@@ -121,7 +121,7 @@ function CartPage() {
       "Deleted": "ADD NEW ADDRESS"
     }
 
-    fetch(`https://flipkart-data.onrender.com/address`, {
+    fetch(`https://flipkart-data-h5tg.onrender.com/address`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
