@@ -16,7 +16,7 @@ We all are students of masai school full stack web development course , In masai
 
 # DEPLOYED LINKS
 
-#### NETLIFY :- https://flipkart-clone-project-m.netlify.app/
+#### NETLIFY :- https://ecommerce-app-sukanta.netlify.app
 #### GITHUB :- https://github.com/Sukantad/Flipkart-Clone
 
 # FUNCTIONALITIES
